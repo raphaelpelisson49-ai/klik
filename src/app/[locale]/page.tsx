@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { AgendaCalendar } from "@/components/AgendaCalendar";
+import { HeroCalculator } from "@/components/HeroCalculator";
 import { Reveal } from "@/components/Reveal";
 import { MagneticButton } from "@/components/MagneticButton";
 import { Spotlight } from "@/components/Spotlight";
@@ -179,8 +179,8 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
 
               <div className="klik-hero-in">
                 <AgendaCalendar locale={locale} />
-                <Link
-                  href={`/${locale}/calculadora`}
+                <a
+                  href="#calculadora"
                   className="group mt-4 flex items-center justify-between rounded-2xl border border-champagne/15 bg-grafito px-5 py-4 transition-colors hover:border-champagne/40"
                 >
                   <span>
@@ -188,21 +188,38 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
                     <span className="block font-sans text-xs text-piedra">{t.heroTeaser.subtitle}</span>
                   </span>
                   <span className="font-serif text-xl text-champagne transition-transform group-hover:translate-x-1">
-                    →
+                    ↓
                   </span>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Diagnóstico interactivo */}
-        <section id="diagnostico" className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        {/* 00 · Calculadora */}
+        <section id="calculadora" className="mx-auto max-w-6xl scroll-mt-24 px-6 pt-4 pb-20 sm:pb-24">
           <Reveal>
             <div className="text-center">
               <span className="font-serif text-5xl italic text-champagne/30 sm:text-6xl" aria-hidden>
                 00
               </span>
+              <h2 className="mx-auto mt-1 max-w-2xl font-serif text-3xl font-semibold text-ivoire sm:text-4xl">
+                {t.heroTeaser.title}
+              </h2>
+              <p className="mx-auto mt-4 max-w-lg font-sans text-[15.5px] leading-relaxed text-ivoire/70">
+                {t.heroTeaser.subtitle}
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={100} className="mx-auto mt-10 max-w-xl">
+            <HeroCalculator locale={locale} />
+          </Reveal>
+        </section>
+
+        {/* Diagnóstico interactivo */}
+        <section id="diagnostico" className="mx-auto max-w-6xl px-6 pb-20 sm:pb-24">
+          <Reveal>
+            <div className="text-center">
               <p className="mt-1 font-sans text-xs font-semibold uppercase tracking-[0.14em] text-champagne">
                 {t.diagnostic.eyebrow}
               </p>
