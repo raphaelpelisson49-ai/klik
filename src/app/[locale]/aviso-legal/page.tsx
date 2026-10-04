@@ -38,23 +38,26 @@ function ContentEs() {
   return (
     <>
       <p>
-        En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de
-        Servicios de la Sociedad de la Información y de Comercio Electrónico
-        (LSSI-CE), se informa de los siguientes datos: este sitio web
+        En cumplimiento de la Ley francesa n.º 2004-575, de 21 de junio de
+        2004, para la Confianza en la Economía Digital (LCEN, artículos 6-III
+        y 19), se informa de los siguientes datos: este sitio web
         (en adelante, &ldquo;el sitio&rdquo;) es operado por:
       </p>
 
       <ul>
-        <li><strong>Titular:</strong> [Nombre completo o razón social de klik]</li>
-        <li><strong>NIF/CIF:</strong> [Pendiente de completar]</li>
-        <li><strong>Domicilio:</strong> [Pendiente de completar]</li>
+        <li><strong>Titular:</strong> Raphaël Pelisson Laurent</li>
+        <li><strong>Estatuto:</strong> Micro-empresario individual (régime micro-social simplifié), dispensado de inscripción en el Registro Mercantil (RCS) y en el Repertorio de Oficios (RM)</li>
+        <li><strong>SIRET:</strong> 944 140 995 00019</li>
+        <li><strong>Domicilio:</strong> 1 rue de la Charpenterie, 49000 Écouflant, Francia</li>
+        <li><strong>Teléfono:</strong> +33 7 45 56 96 42</li>
         <li><strong>Correo electrónico:</strong> klikia@klikagencies.com</li>
         <li><strong>Actividad:</strong> Servicios de marketing y captación de clientes asistidos por inteligencia artificial para pequeñas y medianas empresas técnicas.</li>
       </ul>
 
-      <p className="text-xs text-piedra">
-        Los campos marcados como pendientes deben completarse con los datos
-        reales del titular antes de publicar este sitio en producción.
+      <p>
+        <strong>Alojamiento web:</strong> Vercel Inc., 340 S Lemon Ave #4133,
+        Walnut, CA 91789, Estados Unidos —{" "}
+        <a href="https://vercel.com" target="_blank" rel="noreferrer noopener">vercel.com</a>.
       </p>
 
       <section>
@@ -122,10 +125,10 @@ function ContentEs() {
       <section>
         <h2>6. Legislación aplicable y jurisdicción</h2>
         <p>
-          Las presentes condiciones se rigen por la legislación española. Para
+          Las presentes condiciones se rigen por la legislación francesa. Para
           la resolución de cualquier controversia que pudiera derivarse del
-          acceso o uso del sitio, las partes se someten a los juzgados y
-          tribunales que correspondan conforme a derecho.
+          acceso o uso del sitio, y a falta de solución amistosa, las partes
+          se someten a los juzgados y tribunales franceses competentes.
         </p>
       </section>
     </>
@@ -136,23 +139,26 @@ function ContentFr() {
   return (
     <>
       <p>
-        Conformément à l&apos;article 10 de la loi espagnole 34/2002 du 11 juillet
-        relative aux services de la société de l&apos;information et au commerce
-        électronique (LSSI-CE), les informations suivantes sont communiquées :
-        ce site web (ci-après, &laquo; le site &raquo;) est exploité par :
+        Conformément à la loi n&deg; 2004-575 du 21 juin 2004 pour la confiance
+        dans l&apos;économie numérique (LCEN, articles 6-III et 19), les
+        informations suivantes sont communiquées : ce site web (ci-après,
+        &laquo; le site &raquo;) est édité par :
       </p>
 
       <ul>
-        <li><strong>Titulaire :</strong> [Nom complet ou raison sociale de klik]</li>
-        <li><strong>Numéro fiscal (NIF/CIF) :</strong> [À compléter]</li>
-        <li><strong>Adresse :</strong> [À compléter]</li>
+        <li><strong>Éditeur :</strong> Raphaël Pelisson Laurent</li>
+        <li><strong>Statut :</strong> Micro-entrepreneur (régime micro-social simplifié), dispensé d&apos;immatriculation au Registre du Commerce et des Sociétés (RCS) et au Répertoire des Métiers (RM)</li>
+        <li><strong>SIRET :</strong> 944 140 995 00019</li>
+        <li><strong>Adresse :</strong> 1 rue de la Charpenterie, 49000 Écouflant, France</li>
+        <li><strong>Téléphone :</strong> 07 45 56 96 42</li>
         <li><strong>E-mail :</strong> klikia@klikagencies.com</li>
         <li><strong>Activité :</strong> Services de marketing et d&apos;acquisition de clients assistés par intelligence artificielle pour les petites et moyennes entreprises techniques.</li>
       </ul>
 
-      <p className="text-xs text-piedra">
-        Les champs marqués comme à compléter doivent l&apos;être avec les données
-        réelles du titulaire avant la mise en production de ce site.
+      <p>
+        <strong>Hébergement :</strong> Vercel Inc., 340 S Lemon Ave #4133,
+        Walnut, CA 91789, États-Unis —{" "}
+        <a href="https://vercel.com" target="_blank" rel="noreferrer noopener">vercel.com</a>.
       </p>
 
       <section>
@@ -221,10 +227,10 @@ function ContentFr() {
       <section>
         <h2>6. Droit applicable et juridiction</h2>
         <p>
-          Les présentes conditions sont régies par le droit espagnol. Pour la
+          Les présentes conditions sont régies par le droit français. Pour la
           résolution de tout litige pouvant découler de l&apos;accès ou de
-          l&apos;utilisation du site, les parties se soumettent aux tribunaux
-          compétents conformément au droit.
+          l&apos;utilisation du site, et à défaut de résolution amiable, les
+          parties se soumettent aux tribunaux français compétents.
         </p>
       </section>
     </>
@@ -235,23 +241,26 @@ function ContentEn() {
   return (
     <>
       <p>
-        In compliance with Article 10 of Spanish Law 34/2002 of 11 July on
-        Information Society Services and Electronic Commerce (LSSI-CE), the
+        In compliance with French Law No. 2004-575 of 21 June 2004 for
+        Confidence in the Digital Economy (LCEN, articles 6-III and 19), the
         following information is provided: this website (hereinafter, &ldquo;the
-        site&rdquo;) is operated by:
+        site&rdquo;) is published by:
       </p>
 
       <ul>
-        <li><strong>Owner:</strong> [Full legal name or company name of klik]</li>
-        <li><strong>Tax ID (NIF/CIF):</strong> [Pending]</li>
-        <li><strong>Registered address:</strong> [Pending]</li>
+        <li><strong>Publisher:</strong> Raphaël Pelisson Laurent</li>
+        <li><strong>Status:</strong> Sole trader (French micro-entrepreneur, simplified micro-social regime), exempt from registration with the Trade and Companies Register (RCS) and the Trades Register (RM)</li>
+        <li><strong>SIRET:</strong> 944 140 995 00019</li>
+        <li><strong>Registered address:</strong> 1 rue de la Charpenterie, 49000 Écouflant, France</li>
+        <li><strong>Phone:</strong> +33 7 45 56 96 42</li>
         <li><strong>Email:</strong> klikia@klikagencies.com</li>
         <li><strong>Activity:</strong> AI-assisted marketing and customer-acquisition services for technical small and medium-sized businesses.</li>
       </ul>
 
-      <p className="text-xs text-piedra">
-        The fields marked as pending must be completed with the owner&apos;s real
-        details before this site goes live in production.
+      <p>
+        <strong>Hosting:</strong> Vercel Inc., 340 S Lemon Ave #4133, Walnut,
+        CA 91789, United States —{" "}
+        <a href="https://vercel.com" target="_blank" rel="noreferrer noopener">vercel.com</a>.
       </p>
 
       <section>
@@ -318,9 +327,9 @@ function ContentEn() {
       <section>
         <h2>6. Applicable law and jurisdiction</h2>
         <p>
-          These conditions are governed by Spanish law. Any dispute arising
-          from access to or use of the site shall be submitted to the courts
-          and tribunals with jurisdiction under the law.
+          These conditions are governed by French law. Any dispute arising
+          from access to or use of the site shall, failing an amicable
+          resolution, be submitted to the competent French courts.
         </p>
       </section>
     </>

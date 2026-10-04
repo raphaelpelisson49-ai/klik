@@ -39,18 +39,19 @@ function ContentEs() {
     <>
       <p>
         En klik tratamos los datos personales conforme al Reglamento (UE)
-        2016/679 (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos
-        Personales y garantía de los derechos digitales (LOPDGDD). Esta
-        página explica qué datos recogemos a través de este sitio, para qué
-        los usamos y qué derechos tienes.
+        2016/679 (RGPD) y a la Ley francesa n.º 78-17, de 6 de enero de 1978,
+        relativa a la informática, los ficheros y las libertades ( &ldquo;Loi
+        Informatique et Libertés&rdquo;). Esta página explica qué datos
+        recogemos a través de este sitio, para qué los usamos y qué derechos
+        tienes.
       </p>
 
       <section>
         <h2>1. Responsable del tratamiento</h2>
         <ul>
-          <li><strong>Titular:</strong> [Nombre completo o razón social de klik]</li>
-          <li><strong>NIF/CIF:</strong> [Pendiente de completar]</li>
-          <li><strong>Domicilio:</strong> [Pendiente de completar]</li>
+          <li><strong>Titular:</strong> Raphaël Pelisson Laurent</li>
+          <li><strong>SIRET:</strong> 944 140 995 00019</li>
+          <li><strong>Domicilio:</strong> 1 rue de la Charpenterie, 49000 Écouflant, Francia</li>
           <li><strong>Contacto para privacidad:</strong> klikia@klikagencies.com</li>
         </ul>
       </section>
@@ -121,9 +122,10 @@ function ContentEs() {
           rectificación, supresión, oposición, limitación del tratamiento y
           portabilidad de tus datos, escribiendo a{" "}
           <a href="mailto:klikia@klikagencies.com">klikia@klikagencies.com</a>. También
-          tienes derecho a presentar una reclamación ante la Agencia Española
-          de Protección de Datos (AEPD) si consideras que el tratamiento de
-          tus datos no se ajusta a la normativa vigente.
+          tienes derecho a presentar una reclamación ante la Comisión
+          Nacional de Informática y Libertades francesa (CNIL) si consideras
+          que el tratamiento de tus datos no se ajusta a la normativa
+          vigente.
         </p>
       </section>
 
@@ -144,18 +146,19 @@ function ContentFr() {
     <>
       <p>
         Chez klik, nous traitons les données personnelles conformément au
-        Règlement (UE) 2016/679 (RGPD) et à la loi espagnole organique 3/2018
-        relative à la protection des données personnelles et à la garantie
-        des droits numériques (LOPDGDD). Cette page explique quelles données
-        nous collectons via ce site, à quelles fins et quels sont vos droits.
+        Règlement (UE) 2016/679 (RGPD) et à la loi n&deg; 78-17 du 6 janvier
+        1978 relative à l&apos;informatique, aux fichiers et aux libertés (&laquo;
+        Loi Informatique et Libertés &raquo;). Cette page explique quelles
+        données nous collectons via ce site, à quelles fins et quels sont vos
+        droits.
       </p>
 
       <section>
         <h2>1. Responsable du traitement</h2>
         <ul>
-          <li><strong>Titulaire :</strong> [Nom complet ou raison sociale de klik]</li>
-          <li><strong>Numéro fiscal (NIF/CIF) :</strong> [À compléter]</li>
-          <li><strong>Adresse :</strong> [À compléter]</li>
+          <li><strong>Titulaire :</strong> Raphaël Pelisson Laurent</li>
+          <li><strong>SIRET :</strong> 944 140 995 00019</li>
+          <li><strong>Adresse :</strong> 1 rue de la Charpenterie, 49000 Écouflant, France</li>
           <li><strong>Contact confidentialité :</strong> klikia@klikagencies.com</li>
         </ul>
       </section>
@@ -227,10 +230,10 @@ function ContentFr() {
           rectification, de suppression, d&apos;opposition, de limitation du
           traitement et de portabilité de vos données, en écrivant à{" "}
           <a href="mailto:klikia@klikagencies.com">klikia@klikagencies.com</a>. Vous avez
-          également le droit de déposer une réclamation auprès de l&apos;Agence
-          espagnole de protection des données (AEPD) si vous estimez que le
-          traitement de vos données n&apos;est pas conforme à la réglementation
-          en vigueur.
+          également le droit de déposer une réclamation auprès de la
+          Commission Nationale de l&apos;Informatique et des Libertés (CNIL) si
+          vous estimez que le traitement de vos données n&apos;est pas conforme à
+          la réglementation en vigueur.
         </p>
       </section>
 
@@ -251,18 +254,19 @@ function ContentEn() {
     <>
       <p>
         At klik, we process personal data in accordance with Regulation (EU)
-        2016/679 (GDPR) and Spanish Organic Law 3/2018 on the Protection of
-        Personal Data and the guarantee of digital rights (LOPDGDD). This page
-        explains what data we collect through this site, what we use it for,
-        and what rights you have.
+        2016/679 (GDPR) and French Law No. 78-17 of 6 January 1978 on
+        information technology, data files and civil liberties (&ldquo;Loi
+        Informatique et Libertés&rdquo;). This page explains what data we
+        collect through this site, what we use it for, and what rights you
+        have.
       </p>
 
       <section>
         <h2>1. Data controller</h2>
         <ul>
-          <li><strong>Owner:</strong> [Full legal name or company name of klik]</li>
-          <li><strong>Tax ID (NIF/CIF):</strong> [Pending]</li>
-          <li><strong>Registered address:</strong> [Pending]</li>
+          <li><strong>Owner:</strong> Raphaël Pelisson Laurent</li>
+          <li><strong>SIRET:</strong> 944 140 995 00019</li>
+          <li><strong>Registered address:</strong> 1 rue de la Charpenterie, 49000 Écouflant, France</li>
           <li><strong>Privacy contact:</strong> klikia@klikagencies.com</li>
         </ul>
       </section>
@@ -331,9 +335,9 @@ function ContentEn() {
           objection, restriction of processing, and data portability at any
           time by writing to{" "}
           <a href="mailto:klikia@klikagencies.com">klikia@klikagencies.com</a>. You also
-          have the right to file a complaint with the Spanish Data Protection
-          Agency (AEPD) if you believe the processing of your data does not
-          comply with current regulations.
+          have the right to file a complaint with the French data protection
+          authority (CNIL) if you believe the processing of your data does
+          not comply with current regulations.
         </p>
       </section>
 

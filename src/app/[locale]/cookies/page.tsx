@@ -64,7 +64,7 @@ function ContentEs() {
           Si en el futuro incorporamos herramientas de analítica, medición de
           campañas u otras cookies no esenciales, actualizaremos esta página y
           solicitaremos tu consentimiento antes de instalarlas, tal como exige
-          la normativa española (LSSI-CE) y europea (RGPD).
+          la normativa francesa (Loi Informatique et Libertés) y europea (RGPD).
         </p>
       </section>
 
@@ -111,8 +111,8 @@ function ContentFr() {
           Si nous intégrons à l&apos;avenir des outils d&apos;analyse, de mesure de
           campagnes ou d&apos;autres cookies non essentiels, nous mettrons à jour
           cette page et demanderons votre consentement avant de les installer,
-          comme l&apos;exigent la réglementation espagnole (LSSI-CE) et
-          européenne (RGPD).
+          comme l&apos;exigent la réglementation française (Loi Informatique et
+          Libertés) et européenne (RGPD).
         </p>
       </section>
 
@@ -158,8 +158,8 @@ function ContentEn() {
         <p>
           If we add analytics tools, campaign measurement, or other
           non-essential cookies in the future, we will update this page and
-          ask for your consent before installing them, as required by Spanish
-          (LSSI-CE) and European (GDPR) regulations.
+          ask for your consent before installing them, as required by French
+          (Loi Informatique et Libertés) and European (GDPR) regulations.
         </p>
       </section>
 
