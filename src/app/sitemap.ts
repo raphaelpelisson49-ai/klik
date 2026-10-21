@@ -2,7 +2,8 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 import { LOCALES } from "@/i18n/locales";
 
-const PATHS = ["", "/calculadora", "/aviso-legal", "/privacidad", "/cookies"];
+const NICHE_PATHS = ["/climatisation", "/plomberie", "/electricite"];
+const PATHS = ["", "/calculadora", ...NICHE_PATHS, "/aviso-legal", "/privacidad", "/cookies"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -18,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${SITE_URL}/${locale}${path}`,
         lastModified,
         changeFrequency: path === "" ? "weekly" : "monthly",
-        priority: path === "" ? 1 : path === "/calculadora" ? 0.9 : 0.5,
+        priority: path === "" ? 1 : path === "/calculadora" ? 0.9 : NICHE_PATHS.includes(path) ? 0.8 : 0.5,
         alternates: { languages },
       });
     }
