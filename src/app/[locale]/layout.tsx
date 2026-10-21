@@ -5,6 +5,7 @@ import { LOCALES, HTML_LANG, isLocale } from "@/i18n/locales";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata, SITE_URL } from "@/lib/seo";
 import { OrganizationSchema } from "@/components/OrganizationSchema";
+import { Analytics } from "@/components/Analytics";
 import "../globals.css";
 
 const lora = Lora({
@@ -53,6 +54,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
       <body className="min-h-full flex flex-col bg-background font-sans text-foreground">
         <OrganizationSchema locale={locale} />
         {children}
+        <Analytics locale={locale} />
       </body>
     </html>
   );

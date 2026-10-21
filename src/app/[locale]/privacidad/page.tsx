@@ -132,8 +132,10 @@ function ContentEs() {
       <section>
         <h2>8. Cookies</h2>
         <p>
-          Este sitio, a día de hoy, no utiliza cookies propias ni de terceros
-          con fines analíticos o publicitarios. Más detalles en nuestra{" "}
+          Este sitio solo utiliza Google Analytics (Google LLC), con la
+          dirección IP anonimizada, si aceptas el aviso de cookies; si lo
+          rechazas no se instala ninguna cookie analítica ni publicitaria. Más
+          detalles en nuestra{" "}
           <a href="../cookies">política de cookies</a>.
         </p>
       </section>
@@ -240,8 +242,10 @@ function ContentFr() {
       <section>
         <h2>8. Cookies</h2>
         <p>
-          Ce site, à ce jour, n&apos;utilise aucun cookie propre ni tiers à des
-          fins analytiques ou publicitaires. Plus de détails dans notre{" "}
+          Ce site n&apos;utilise Google Analytics (Google LLC), avec
+          l&apos;adresse IP anonymisée, que si vous acceptez le bandeau cookies ;
+          si vous refusez, aucun cookie d&apos;analyse ni publicitaire n&apos;est
+          installé. Plus de détails dans notre{" "}
           <a href="../cookies">politique de cookies</a>.
         </p>
       </section>
@@ -344,8 +348,9 @@ function ContentEn() {
       <section>
         <h2>8. Cookies</h2>
         <p>
-          As of today, this site does not use any first-party or third-party
-          cookies for analytics or advertising purposes. More details in our{" "}
+          This site only uses Google Analytics (Google LLC), with anonymized IP
+          addresses, if you accept the cookie banner; if you decline, no
+          analytics or advertising cookie is installed. More details in our{" "}
           <a href="../cookies">cookie policy</a>.
         </p>
       </section>
