@@ -2,9 +2,9 @@ import type { Dictionary } from "./es";
 
 const en: Dictionary = {
   meta: {
-    title: "klik | Your calendar full, no fine print",
+    title: "klik | Customer acquisition, reviews, website & Google listing",
     description:
-      "klik helps owners of technical small businesses keep their calendar full of clients with AI, without losing their weekends to marketing.",
+      "klik fills the calendar of technical small businesses (HVAC, plumbing, electrical) with AI: customer acquisition, Google reviews, website and Google listing.",
   },
 
   nav: {
@@ -235,7 +235,7 @@ const en: Dictionary = {
   },
 
   calculadoraPage: {
-    metaTitle: "Calculator | klik",
+    metaTitle: "Lost appointments calculator | klik – customer acquisition, reviews, website & Google listing",
     metaDescription:
       "Work out, with your own numbers, how much money could be slipping away every month from missed appointments and calls that don't get answered in time.",
     eyebrow: "Calculator",

@@ -2,9 +2,9 @@ import type { Dictionary } from "./es";
 
 const fr: Dictionary = {
   meta: {
-    title: "klik | Votre agenda plein, sans petites lignes",
+    title: "klik | Acquisition de clients, avis, site et fiche Google",
     description:
-      "klik aide les patrons de PME techniques à avoir l'agenda plein de clients grâce à l'IA, sans perdre leurs week-ends dans le marketing.",
+      "klik remplit l'agenda des PME techniques (climatisation, plomberie, électricité) grâce à l'IA : acquisition de clients, avis Google, site et fiche Google.",
   },
 
   nav: {
@@ -236,7 +236,7 @@ const fr: Dictionary = {
   },
 
   calculadoraPage: {
-    metaTitle: "Calculatrice | klik",
+    metaTitle: "Calculatrice de rendez-vous perdus | klik – acquisition de clients, avis, site et fiche Google",
     metaDescription:
       "Calculez, avec vos propres chiffres, combien d'argent peut vous échapper chaque mois à cause de rendez-vous perdus et d'appels sans réponse à temps.",
     eyebrow: "Calculatrice",

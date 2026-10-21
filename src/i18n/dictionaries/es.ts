@@ -1,8 +1,8 @@
 const es = {
   meta: {
-    title: "klik | Tu agenda llena, sin letra pequeña",
+    title: "klik | Captación de clientes, reseñas, web y ficha de Google",
     description:
-      "klik ayuda a dueños de pymes técnicas a tener la agenda llena de clientes con IA, sin perder los fines de semana en marketing.",
+      "klik llena la agenda de pymes técnicas (climatización, fontanería, electricidad) con IA: captación de clientes, reseñas de Google, web y ficha de Google.",
   },
 
   nav: {
@@ -234,7 +234,7 @@ const es = {
   },
 
   calculadoraPage: {
-    metaTitle: "Calculadora | klik",
+    metaTitle: "Calculadora de citas perdidas | klik – captación de clientes, reseñas, web y ficha de Google",
     metaDescription:
       "Calcula, con tus propios números, cuánto dinero se te puede estar escapando cada mes por citas perdidas y llamadas sin contestar a tiempo.",
     eyebrow: "Calculadora",
