@@ -152,14 +152,14 @@ const es = {
 
   servicios: {
     number: "02",
-    title: "Lo que hacemos por tu negocio",
+    title: "Marketing digital para pymes técnicas: lo que hacemos por ti",
     subtitle:
       "Nada de soluciones omnicanal ni growth marketing. Servicios concretos, explicados como se lo explicaríamos a un cliente de toda la vida.",
     items: [
-      { title: "Te llenamos la agenda", description: "Campañas y búsquedas locales que hacen sonar el teléfono, no que suban un gráfico en un informe." },
+      { title: "Te llenamos la agenda", description: "SEO local y campañas para que te encuentren cuando buscan un fontanero, un técnico de climatización o un electricista cerca. Suena el teléfono, no sube un gráfico." },
       { title: "Recuperamos citas perdidas", description: "Seguimiento automático a quien pregunta y no contesta. Ningún cliente se queda esperando." },
-      { title: "Reseñas que te hacen destacar", description: "Pedimos la reseña en el momento justo para que aparezcas primero cuando te buscan en Google." },
-      { title: "Web y ficha que convierten", description: "Una web y una ficha de Google hechas para que te llamen a ti, no al vecino." },
+      { title: "Reseñas que te hacen destacar", description: "Pedimos la reseña de Google en el momento justo para que aparezcas primero cuando buscan un profesional cerca." },
+      { title: "Web y ficha que convierten", description: "Una página web y una ficha de Google (Google Business Profile) hechas para que te llamen a ti, no al vecino." },
       { title: "Reportes de cinco minutos", description: "Cuántos clientes, cuánto cuesta cada uno, qué sigue. Sin jerga, sin relleno." },
       { title: "A tu lado cada semana", description: "Ajustamos la estrategia según lo que funciona de verdad, no según lo que suena bien." },
     ],
