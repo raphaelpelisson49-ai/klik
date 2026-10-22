@@ -14,8 +14,8 @@ function JsonLd({ data }: { data: object }) {
 
 /**
  * Organization + WebSite, mínimo y honesto: solo incluye datos que son ciertos
- * hoy (nombre, URL, email, descripción, idiomas). No inventa dirección, teléfono
- * ni perfiles sociales — añádelos aquí en cuanto existan de verdad.
+ * hoy. No incluye dirección (el negocio no la muestra públicamente). Perfiles
+ * sociales: Instagram de la marca en sameAs; LinkedIn personal del fundador.
  */
 export function OrganizationSchema({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
@@ -27,13 +27,34 @@ export function OrganizationSchema({ locale }: { locale: Locale }) {
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": ["Organization", "ProfessionalService"],
             "@id": orgId,
             name: SITE_NAME,
             url: `${SITE_URL}/${locale}`,
             logo: `${SITE_URL}/apple-icon`,
             description: t.meta.description,
             email: "klikia@klikagencies.com",
+            telephone: "+33745569642",
+            sameAs: ["https://www.instagram.com/klikagencies/"],
+            founder: {
+              "@type": "Person",
+              name: "Raphaël Pelisson",
+              sameAs: ["https://www.linkedin.com/in/raphael-pelisson/"],
+            },
+            areaServed: [
+              { "@type": "Country", name: "France" },
+              { "@type": "Country", name: "España" },
+            ],
+            serviceType: [
+              "Acquisition de clients",
+              "Récupération de rendez-vous perdus",
+              "Avis clients et réputation Google",
+              "Création de site web et fiche Google",
+            ],
+            audience: {
+              "@type": "BusinessAudience",
+              name: "PME techniques : climatisation, plomberie, électricité",
+            },
           },
           {
             "@type": "WebSite",

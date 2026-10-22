@@ -1,8 +1,8 @@
 const es = {
   meta: {
-    title: "klik | Tu agenda llena, sin letra pequeña",
+    title: "klik | Captación de clientes, reseñas, web y ficha de Google",
     description:
-      "klik ayuda a dueños de pymes técnicas a tener la agenda llena de clientes con IA, sin perder los fines de semana en marketing.",
+      "klik llena la agenda de pymes técnicas (climatización, fontanería, electricidad) con IA: captación de clientes, reseñas de Google, web y ficha de Google.",
   },
 
   nav: {
@@ -160,14 +160,14 @@ const es = {
 
   servicios: {
     number: "02",
-    title: "Lo que hacemos por tu negocio",
+    title: "Marketing digital para pymes técnicas: lo que hacemos por ti",
     subtitle:
       "Nada de soluciones omnicanal ni growth marketing. Servicios concretos, explicados como se lo explicaríamos a un cliente de toda la vida.",
     items: [
-      { title: "Te llenamos la agenda", description: "Campañas y búsquedas locales que hacen sonar el teléfono, no que suban un gráfico en un informe." },
+      { title: "Te llenamos la agenda", description: "SEO local y campañas para que te encuentren cuando buscan un fontanero, un técnico de climatización o un electricista cerca. Suena el teléfono, no sube un gráfico." },
       { title: "Recuperamos citas perdidas", description: "Seguimiento automático a quien pregunta y no contesta. Ningún cliente se queda esperando." },
-      { title: "Reseñas que te hacen destacar", description: "Pedimos la reseña en el momento justo para que aparezcas primero cuando te buscan en Google." },
-      { title: "Web y ficha que convierten", description: "Una web y una ficha de Google hechas para que te llamen a ti, no al vecino." },
+      { title: "Reseñas que te hacen destacar", description: "Pedimos la reseña de Google en el momento justo para que aparezcas primero cuando buscan un profesional cerca." },
+      { title: "Web y ficha que convierten", description: "Una página web y una ficha de Google (Google Business Profile) hechas para que te llamen a ti, no al vecino." },
       { title: "Reportes de cinco minutos", description: "Cuántos clientes, cuánto cuesta cada uno, qué sigue. Sin jerga, sin relleno." },
       { title: "A tu lado cada semana", description: "Ajustamos la estrategia según lo que funciona de verdad, no según lo que suena bien." },
     ],
@@ -301,6 +301,9 @@ const es = {
       { label: "Nuestra historia", href: "/#historia" },
       { label: "Cómo trabajamos", href: "/#proceso" },
       { label: "Preguntas", href: "/#preguntas" },
+      { label: "Climatización", href: "/climatisation" },
+      { label: "Fontanería", href: "/plomberie" },
+      { label: "Electricidad", href: "/electricite" },
     ],
     contactTitle: "Contacto",
     copyright: "klik · Tu agenda llena, sin letra pequeña.",
@@ -308,7 +311,7 @@ const es = {
   },
 
   calculadoraPage: {
-    metaTitle: "Calculadora | klik",
+    metaTitle: "Calculadora de citas perdidas | klik – captación de clientes, reseñas, web y ficha de Google",
     metaDescription:
       "Calcula, con tus propios números, cuánto dinero se te puede estar escapando cada mes por citas perdidas y llamadas sin contestar a tiempo.",
     eyebrow: "Calculadora",

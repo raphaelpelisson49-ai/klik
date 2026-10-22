@@ -2,9 +2,9 @@ import type { Dictionary } from "./es";
 
 const fr: Dictionary = {
   meta: {
-    title: "klik | Votre agenda plein, sans petites lignes",
+    title: "klik | Acquisition de clients, avis, site et fiche Google",
     description:
-      "klik aide les patrons de PME techniques à avoir l'agenda plein de clients grâce à l'IA, sans perdre leurs week-ends dans le marketing.",
+      "klik remplit l'agenda des PME techniques (climatisation, plomberie, électricité) grâce à l'IA : acquisition de clients, avis Google, site et fiche Google.",
   },
 
   nav: {
@@ -162,14 +162,14 @@ const fr: Dictionary = {
 
   servicios: {
     number: "02",
-    title: "Ce qu'on fait pour votre entreprise",
+    title: "Marketing digital pour PME techniques : ce qu'on fait pour vous",
     subtitle:
       "Pas de solutions omnicanales ni de growth marketing. Des services concrets, expliqués comme on les expliquerait à un client de toujours.",
     items: [
-      { title: "On remplit votre agenda", description: "Des campagnes et des recherches locales qui font sonner le téléphone, pas qui font monter un graphique dans un rapport." },
+      { title: "On remplit votre agenda", description: "Du référencement local et des campagnes pour qu'on vous trouve quand on cherche un plombier, un chauffagiste ou un installateur de climatisation près de chez soi. Le téléphone sonne, pas un graphique." },
       { title: "On récupère les rendez-vous perdus", description: "Suivi automatique de qui pose une question et ne répond pas. Aucun client n'attend." },
-      { title: "Des avis qui vous font ressortir", description: "On demande l'avis au bon moment pour que vous appariez en premier quand on vous cherche sur Google." },
-      { title: "Un site et une fiche qui convertissent", description: "Un site et une fiche Google conçus pour qu'on vous appelle vous, pas le voisin." },
+      { title: "Des avis qui vous font ressortir", description: "On demande l'avis Google au bon moment pour que vous apparaissiez en premier quand on cherche un artisan près de chez soi." },
+      { title: "Un site et une fiche qui convertissent", description: "Un site web et une fiche Google (Google Business Profile) conçus pour qu'on vous appelle vous, pas le voisin." },
       { title: "Des rapports de cinq minutes", description: "Combien de clients, combien coûte chacun, et la suite. Sans jargon, sans remplissage." },
       { title: "À vos côtés chaque semaine", description: "On ajuste la stratégie selon ce qui marche vraiment, pas selon ce qui sonne bien." },
     ],
@@ -303,6 +303,9 @@ const fr: Dictionary = {
       { label: "Notre histoire", href: "/#historia" },
       { label: "Comment on travaille", href: "/#proceso" },
       { label: "Questions", href: "/#preguntas" },
+      { label: "Climatisation et CVC", href: "/climatisation" },
+      { label: "Plomberie", href: "/plomberie" },
+      { label: "Électricité", href: "/electricite" },
     ],
     contactTitle: "Contact",
     copyright: "klik · Votre agenda plein, sans petites lignes.",
@@ -310,7 +313,7 @@ const fr: Dictionary = {
   },
 
   calculadoraPage: {
-    metaTitle: "Calculatrice | klik",
+    metaTitle: "Calculatrice de rendez-vous perdus | klik – acquisition de clients, avis, site et fiche Google",
     metaDescription:
       "Calculez, avec vos propres chiffres, combien d'argent peut vous échapper chaque mois à cause de rendez-vous perdus et d'appels sans réponse à temps.",
     eyebrow: "Calculatrice",

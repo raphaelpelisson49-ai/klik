@@ -2,9 +2,9 @@ import type { Dictionary } from "./es";
 
 const en: Dictionary = {
   meta: {
-    title: "klik | Your calendar full, no fine print",
+    title: "klik | Customer acquisition, reviews, website & Google listing",
     description:
-      "klik helps owners of technical small businesses keep their calendar full of clients with AI, without losing their weekends to marketing.",
+      "klik fills the calendar of technical small businesses (HVAC, plumbing, electrical) with AI: customer acquisition, Google reviews, website and Google listing.",
   },
 
   nav: {
@@ -161,14 +161,14 @@ const en: Dictionary = {
 
   servicios: {
     number: "02",
-    title: "What we do for your business",
+    title: "Digital marketing for technical small businesses: what we do for you",
     subtitle:
       "No omnichannel solutions or growth-marketing buzzwords. Concrete services, explained the way we'd explain them to a lifelong customer.",
     items: [
-      { title: "We fill your calendar", description: "Campaigns and local search that make the phone ring, not a chart go up in a report." },
+      { title: "We fill your calendar", description: "Local SEO and campaigns so people find you when they search for a plumber, an HVAC technician or an electrician nearby. The phone rings, not a chart." },
       { title: "We recover lost appointments", description: "Automatic follow-up for anyone who asks and doesn't hear back. No customer is left waiting." },
-      { title: "Reviews that make you stand out", description: "We ask for the review at the right moment so you show up first when people search for you on Google." },
-      { title: "A website and listing that convert", description: "A website and a Google listing built so people call you, not your neighbor." },
+      { title: "Reviews that make you stand out", description: "We ask for the Google review at the right moment so you show up first when people search for a tradesperson nearby." },
+      { title: "A website and listing that convert", description: "A website and a Google Business Profile built so people call you, not your neighbor." },
       { title: "Five-minute reports", description: "How many customers, how much each one costs, what's next. No jargon, no filler." },
       { title: "By your side every week", description: "We adjust the strategy based on what actually works, not what sounds good." },
     ],
@@ -302,6 +302,9 @@ const en: Dictionary = {
       { label: "Our story", href: "/#historia" },
       { label: "How we work", href: "/#proceso" },
       { label: "FAQ", href: "/#preguntas" },
+      { label: "HVAC and air conditioning", href: "/climatisation" },
+      { label: "Plumbing", href: "/plomberie" },
+      { label: "Electrical", href: "/electricite" },
     ],
     contactTitle: "Contact",
     copyright: "klik · Your calendar full, no fine print.",
@@ -309,7 +312,7 @@ const en: Dictionary = {
   },
 
   calculadoraPage: {
-    metaTitle: "Calculator | klik",
+    metaTitle: "Lost appointments calculator | klik – customer acquisition, reviews, website & Google listing",
     metaDescription:
       "Work out, with your own numbers, how much money could be slipping away every month from missed appointments and calls that don't get answered in time.",
     eyebrow: "Calculator",

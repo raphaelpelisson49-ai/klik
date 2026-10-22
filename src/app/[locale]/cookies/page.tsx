@@ -1,3 +1,4 @@
+import { CookieChoiceButton } from "@/components/Analytics";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LegalShell } from "@/components/LegalShell";
@@ -9,9 +10,9 @@ export function generateStaticParams() {
 }
 
 const META: Record<Locale, { title: string; description: string }> = {
-  es: { title: "Política de cookies | klik", description: "Qué cookies utiliza el sitio web de klik y cómo gestionarlas." },
-  fr: { title: "Politique de cookies | klik", description: "Quels cookies utilise le site web de klik et comment les gérer." },
-  en: { title: "Cookie policy | klik", description: "What cookies the klik website uses and how to manage them." },
+  es: { title: "Política de cookies | klik – captación de clientes, reseñas, web y ficha de Google", description: "Qué cookies utiliza el sitio web de klik y cómo gestionarlas." },
+  fr: { title: "Politique de cookies | klik – acquisition de clients, avis, site et fiche Google", description: "Quels cookies utilise le site web de klik et comment les gérer." },
+  en: { title: "Cookie policy | klik – customer acquisition, reviews, website & Google listing", description: "What cookies the klik website uses and how to manage them." },
 };
 
 const TITLE: Record<Locale, string> = {
@@ -45,10 +46,13 @@ function ContentEs() {
       <section>
         <h2>1. Cookies que utiliza este sitio</h2>
         <p>
-          <strong>Actualmente, este sitio no instala cookies propias ni de
-          terceros</strong> con fines analíticos, publicitarios o de
-          seguimiento. No usamos Google Analytics, píxeles de redes sociales
-          ni ningún otro sistema de medición.
+          <strong>Este sitio no instala cookies analíticas sin tu
+          consentimiento.</strong> Si aceptas el aviso que aparece al entrar,
+          usamos Google Analytics (Google LLC) para medir cuántas personas
+          visitan el sitio, qué páginas ven y de dónde llegan; la dirección IP
+          se anonimiza. Si rechazas, no se carga ningún script de Google y no
+          se guarda ninguna cookie. No usamos píxeles de redes sociales ni
+          publicidad.
         </p>
         <p>
           Las herramientas interactivas del sitio (el diagnóstico de problemas
@@ -61,10 +65,11 @@ function ContentEs() {
       <section>
         <h2>2. Si eso cambia</h2>
         <p>
-          Si en el futuro incorporamos herramientas de analítica, medición de
-          campañas u otras cookies no esenciales, actualizaremos esta página y
-          solicitaremos tu consentimiento antes de instalarlas, tal como exige
-          la normativa francesa (Loi Informatique et Libertés) y europea (RGPD).
+          Puedes cambiar tu elección cuando quieras con el botón de abajo.
+          Si en el futuro incorporamos otras herramientas de medición o
+          cookies no esenciales, actualizaremos esta página y solicitaremos tu
+          consentimiento antes de instalarlas, tal como exige la normativa
+          francesa (Loi Informatique et Libertés) y europea (RGPD).
         </p>
       </section>
 
@@ -75,6 +80,9 @@ function ContentEs() {
           eliminar en cualquier momento las cookies guardadas por cualquier
           página web desde el menú de configuración o privacidad de tu
           navegador (Chrome, Firefox, Safari, Edge u otro).
+        </p>
+        <p>
+          <CookieChoiceButton label="Cambiar mi elección sobre cookies" />
         </p>
       </section>
     </>
@@ -92,10 +100,13 @@ function ContentFr() {
       <section>
         <h2>1. Cookies utilisés par ce site</h2>
         <p>
-          <strong>Ce site n&apos;installe actuellement aucun cookie propre ni
-          tiers</strong> à des fins analytiques, publicitaires ou de suivi. Nous
-          n&apos;utilisons ni Google Analytics, ni pixels de réseaux sociaux, ni
-          aucun autre système de mesure.
+          <strong>Ce site n&apos;installe aucun cookie d&apos;analyse sans votre
+          consentement.</strong> Si vous acceptez le bandeau affiché à votre
+          arrivée, nous utilisons Google Analytics (Google LLC) pour mesurer le
+          nombre de visiteurs, les pages consultées et la provenance du trafic ;
+          l&apos;adresse IP est anonymisée. Si vous refusez, aucun script Google
+          n&apos;est chargé et aucun cookie n&apos;est enregistré. Nous
+          n&apos;utilisons ni pixels de réseaux sociaux ni publicité.
         </p>
         <p>
           Les outils interactifs du site (le diagnostic de problèmes et la
@@ -108,10 +119,11 @@ function ContentFr() {
       <section>
         <h2>2. Si cela change</h2>
         <p>
-          Si nous intégrons à l&apos;avenir des outils d&apos;analyse, de mesure de
-          campagnes ou d&apos;autres cookies non essentiels, nous mettrons à jour
-          cette page et demanderons votre consentement avant de les installer,
-          comme l&apos;exigent la réglementation française (Loi Informatique et
+          Vous pouvez modifier votre choix à tout moment avec le bouton
+          ci-dessous. Si nous intégrons à l&apos;avenir d&apos;autres outils de mesure
+          ou cookies non essentiels, nous mettrons à jour cette page et
+          demanderons votre consentement avant de les installer, comme
+          l&apos;exigent la réglementation française (Loi Informatique et
           Libertés) et européenne (RGPD).
         </p>
       </section>
@@ -124,6 +136,9 @@ function ContentFr() {
           par n&apos;importe quel site web depuis le menu de paramètres ou de
           confidentialité de votre navigateur (Chrome, Firefox, Safari, Edge
           ou autre).
+        </p>
+        <p>
+          <CookieChoiceButton label="Modifier mon choix sur les cookies" />
         </p>
       </section>
     </>
@@ -141,10 +156,12 @@ function ContentEn() {
       <section>
         <h2>1. Cookies used by this site</h2>
         <p>
-          <strong>This site does not currently install any first-party or
-          third-party cookies</strong> for analytics, advertising, or tracking
-          purposes. We don&apos;t use Google Analytics, social media pixels, or
-          any other measurement system.
+          <strong>This site does not install analytics cookies without your
+          consent.</strong> If you accept the banner shown on arrival, we use
+          Google Analytics (Google LLC) to measure how many people visit, which
+          pages they view and where they come from; IP addresses are
+          anonymized. If you decline, no Google script is loaded and no cookie
+          is stored. We don&apos;t use social media pixels or advertising.
         </p>
         <p>
           The site&apos;s interactive tools (the problem diagnosis and the impact
@@ -156,10 +173,11 @@ function ContentEn() {
       <section>
         <h2>2. If that changes</h2>
         <p>
-          If we add analytics tools, campaign measurement, or other
-          non-essential cookies in the future, we will update this page and
-          ask for your consent before installing them, as required by French
-          (Loi Informatique et Libertés) and European (GDPR) regulations.
+          You can change your choice at any time with the button below. If we
+          add other measurement tools or non-essential cookies in the future,
+          we will update this page and ask for your consent before installing
+          them, as required by French (Loi Informatique et Libertés) and
+          European (GDPR) regulations.
         </p>
       </section>
 
@@ -170,6 +188,9 @@ function ContentEn() {
           can review and delete, at any time, the cookies stored by any
           website from your browser&apos;s settings or privacy menu (Chrome,
           Firefox, Safari, Edge, or another browser).
+        </p>
+        <p>
+          <CookieChoiceButton label="Change my cookie choice" />
         </p>
       </section>
     </>

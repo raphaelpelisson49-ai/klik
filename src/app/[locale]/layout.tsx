@@ -6,6 +6,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata, SITE_URL } from "@/lib/seo";
 import { OrganizationSchema } from "@/components/OrganizationSchema";
 import { MotionLayer } from "@/components/MotionLayer";
+import { Analytics } from "@/components/Analytics";
 import "../globals.css";
 
 const lora = Lora({
@@ -63,6 +64,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
         </noscript>
         <MotionLayer />
         {children}
+        <Analytics locale={locale} />
       </body>
     </html>
   );
