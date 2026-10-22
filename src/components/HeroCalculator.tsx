@@ -1,6 +1,7 @@
 "use client";
 
-import { useId, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { ArrowIcon } from "@/components/ArrowIcon";
 import Link from "next/link";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/locales";
@@ -48,6 +49,30 @@ function Field({
   );
 }
 
+/** Interpola suavemente hacia `target` — el número "cuenta" en vez de saltar. */
+function useTweened(target: number, duration = 650) {
+  const [value, setValue] = useState(target);
+  const fromRef = useRef(target);
+
+  useEffect(() => {
+    const from = fromRef.current;
+    const start = performance.now();
+    let frame = 0;
+    function tick(now: number) {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const next = from + (target - from) * eased;
+      fromRef.current = next;
+      setValue(next);
+      if (t < 1) frame = requestAnimationFrame(tick);
+    }
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [target, duration]);
+
+  return value;
+}
+
 export function HeroCalculator({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const t = dict.calculators;
@@ -66,9 +91,11 @@ export function HeroCalculator({ locale }: { locale: Locale }) {
     const impactoMes = perdidosMes * precio;
     return { impactoMes, impactoAnual: impactoMes * 12 };
   }, [tecnicos, porTecnico, precio, perdida]);
+  const shownMes = useTweened(impactoMes);
+  const shownAnual = useTweened(impactoAnual);
 
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-champagne/25 bg-grafito p-6 shadow-[0_0_60px_-20px_rgba(205,176,122,0.35)] sm:p-8">
+    <div className="relative overflow-hidden rounded-3xl border border-champagne/25 bg-grafito p-6 sm:p-8">
       <div className="rounded-2xl border border-champagne/20 bg-noir px-6 py-6 text-center">
         <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-piedra">
           {m.resultLabel}
@@ -77,11 +104,11 @@ export function HeroCalculator({ locale }: { locale: Locale }) {
           className="mt-2 font-serif text-5xl font-semibold text-champagne sm:text-6xl"
           aria-live="polite"
         >
-          ≈ {formatEUR(impactoMes)} €
+          ≈ <span className="tabular-nums">{formatEUR(shownMes)}</span> €
         </p>
         <p className="mt-1 font-sans text-sm text-piedra">{m.resultLine}</p>
         <p className="mt-1 font-serif text-lg italic text-ivoire/70">
-          ≈ {formatEUR(impactoAnual)} € {t.yearSuffix}
+          ≈ <span className="tabular-nums">{formatEUR(shownAnual)}</span> € {t.yearSuffix}
         </p>
       </div>
 
@@ -97,7 +124,9 @@ export function HeroCalculator({ locale }: { locale: Locale }) {
         className="group mt-6 flex items-center justify-between border-t border-champagne/10 pt-4 font-sans text-sm text-ivoire transition-colors hover:text-champagne"
       >
         <span>{dict.nav.calculadora}</span>
-        <span className="font-serif text-xl text-champagne transition-transform group-hover:translate-x-1">→</span>
+        <span className="text-champagne transition-transform group-hover:translate-x-1">
+          <ArrowIcon className="h-5 w-5" />
+        </span>
       </Link>
     </div>
   );

@@ -10,22 +10,25 @@ export function MobileMenu({
   links,
   ctaLabel,
   ctaHref,
+  labels,
 }: {
   locale: Locale;
   links: { href: string; label: string }[];
   ctaLabel: string;
   ctaHref: string;
+  /** Textos del botón para lectores de pantalla, en el idioma de la página. */
+  labels: { open: string; close: string };
 }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls="klik-mobile-menu"
-        aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+        aria-label={open ? labels.close : labels.open}
         className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-champagne/20"
       >
         <span
@@ -39,7 +42,7 @@ export function MobileMenu({
       {open && (
         <div
           id="klik-mobile-menu"
-          className="absolute inset-x-0 top-full z-50 border-b border-champagne/10 bg-noir px-6 py-6"
+          className="klik-menu-panel absolute inset-x-0 top-full z-50 mt-2 rounded-3xl border border-champagne/15 bg-noir px-6 py-6"
         >
           <nav className="flex flex-col gap-1 font-sans text-base text-ivoire/85">
             {links.map((link) => (

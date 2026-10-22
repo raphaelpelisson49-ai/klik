@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   experimental: {
     globalNotFound: true,
+    // El CSS (Tailwind, ~17 KB) va dentro del HTML: sin petición que bloquee el primer pintado.
+    // Compensa en una web de captación, donde casi todas las visitas son primeras visitas.
+    inlineCss: true,
   },
   async headers() {
     return [

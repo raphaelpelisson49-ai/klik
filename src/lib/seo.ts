@@ -6,8 +6,12 @@ import { LOCALES, DEFAULT_LOCALE, type Locale } from "@/i18n/locales";
  * en el entorno de despliegue (útil para previews/staging) sin tocar código.
  * Todas las URLs canónicas, hreflang, sitemap, robots.txt y Open Graph se
  * generan a partir de aquí.
+ *
+ * Es la versión con www porque es la que sirve Vercel: klikagencies.com responde
+ * con un 308 hacia www. Un canónico que redirige es un error en Search Console
+ * ("Página con redirección"), así que el canónico debe ser la URL final.
  */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://klikagencies.com").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.klikagencies.com").replace(/\/$/, "");
 
 export const SITE_NAME = "klik";
 
