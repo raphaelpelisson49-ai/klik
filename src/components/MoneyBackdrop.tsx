@@ -14,8 +14,6 @@ const SYMBOLS = [
 export function MoneyBackdrop() {
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden>
-      <div className="klik-aurora klik-aurora-a -left-24 -top-24 h-96 w-96" />
-      <div className="klik-aurora klik-aurora-b -bottom-24 -right-16 h-[26rem] w-[26rem]" />
       {SYMBOLS.map((s, i) => (
         <span
           key={i}

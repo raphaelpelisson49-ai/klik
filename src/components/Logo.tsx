@@ -1,33 +1,41 @@
 type LogoProps = {
-  /** Fondo sobre el que se coloca el logo. En oscuro: ivoire + punto champagne. En claro: noir + punto oro. */
-  on?: "dark" | "light";
+  /**
+   * Fondo sobre el que se coloca el logo. Por defecto ("auto") toma los colores
+   * del tema del bloque (tinta = --ivoire, punto = --champagne), así sirve igual
+   * en secciones claras y oscuras. "dark"/"light" fuerzan los colores del kit.
+   */
+  on?: "auto" | "dark" | "light";
   withTagline?: boolean;
   tagline?: string;
   className?: string;
 };
 
+const KIT = {
+  dark: { ink: "#F4F0E8", dot: "#CDB07A", tagline: "#A9B0C2" },
+  light: { ink: "#001F54", dot: "#B08D52", tagline: "#4C5468" },
+  auto: { ink: "var(--ivoire)", dot: "var(--champagne)", tagline: "var(--piedra)" },
+};
+
 export function Logo({
-  on = "dark",
+  on = "auto",
   withTagline = false,
   tagline = "Tu agenda llena, sin letra pequeña.",
   className,
 }: LogoProps) {
-  const ink = on === "dark" ? "#F4F0E8" : "#0E0E10";
-  const dot = on === "dark" ? "#CDB07A" : "#B08D52";
-  const taglineColor = on === "dark" ? "#8C877E" : "#8C877E";
+  const { ink, dot, tagline: taglineColor } = KIT[on];
 
   return (
     <span className={`inline-flex items-center gap-2.5 ${className ?? ""}`}>
       <svg viewBox="0 0 64 64" className="h-8 w-8 shrink-0" aria-hidden>
-        <circle cx="32" cy="34" r="21" fill="none" stroke={ink} strokeWidth="3" />
-        <circle cx="48" cy="16" r="4" fill={dot} />
+        <circle cx="32" cy="34" r="21" fill="none" style={{ stroke: ink }} strokeWidth="3" />
+        <circle cx="48" cy="16" r="4" style={{ fill: dot }} />
         <text
           x="32"
           y="43"
           textAnchor="middle"
           fontFamily="var(--font-lora), Georgia, serif"
           fontSize="27"
-          fill={ink}
+          style={{ fill: ink }}
         >
           k
         </text>

@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/seo";
 import { LOCALES } from "@/i18n/locales";
 
 const NICHE_PATHS = ["/climatisation", "/plomberie", "/electricite"];
-const PATHS = ["", "/calculadora", ...NICHE_PATHS, "/aviso-legal", "/privacidad", "/cookies"];
+const PATHS = ["", "/calculadora", "/contacto", ...NICHE_PATHS, "/aviso-legal", "/privacidad", "/cookies"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
