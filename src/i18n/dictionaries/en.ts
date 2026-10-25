@@ -312,7 +312,7 @@ const en: Dictionary = {
   },
 
   calculadoraPage: {
-    metaTitle: "Lost appointments calculator | klik – customer acquisition, reviews, website & Google listing",
+    metaTitle: "Lost appointments calculator | klik",
     metaDescription:
       "Work out, with your own numbers, how much money could be slipping away every month from missed appointments and calls that don't get answered in time.",
     eyebrow: "Calculator",

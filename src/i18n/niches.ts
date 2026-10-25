@@ -21,12 +21,8 @@ export type NicheContent = {
   calculatorLink: string;
 };
 
-/** Sufijo común con el nombre del negocio y los servicios, para los títulos. */
-const SUFFIX: Record<Locale, string> = {
-  fr: "klik – acquisition de clients, avis, site et fiche Google",
-  es: "klik – captación de clientes, reseñas, web y ficha de Google",
-  en: "klik – customer acquisition, reviews, website & Google listing",
-};
+/** Sufijo de marca para los títulos: corto, para que Google no corte el título (~60 caracteres). */
+const SUFFIX = "klik";
 
 export const NICHE_FOOTER_LABEL: Record<Locale, Record<Niche, string>> = {
   fr: { climatisation: "Climatisation et CVC", plomberie: "Plomberie", electricite: "Électricité" },
@@ -36,7 +32,7 @@ export const NICHE_FOOTER_LABEL: Record<Locale, Record<Niche, string>> = {
 
 const fr: Record<Niche, NicheContent> = {
   climatisation: {
-    metaTitle: `Marketing pour installateurs de climatisation et CVC | ${SUFFIX.fr}`,
+    metaTitle: `Marketing climatisation et CVC : plus de clients | ${SUFFIX}`,
     metaDescription:
       "klik aide les installateurs, dépanneurs et chauffagistes (climatisation, CVC) à trouver des clients en local : appels récupérés, avis Google, site et fiche Google.",
     eyebrow: "Climatisation et CVC",
@@ -68,7 +64,7 @@ const fr: Record<Niche, NicheContent> = {
     calculatorLink: "Calculez ce qui vous échappe chaque mois",
   },
   plomberie: {
-    metaTitle: `Marketing pour plombiers et entreprises de plomberie | ${SUFFIX.fr}`,
+    metaTitle: `Marketing pour plombiers : plus de clients | ${SUFFIX}`,
     metaDescription:
       "klik aide les plombiers à trouver des clients près de chez eux : appels manqués récupérés, avis Google, site et fiche Google qui font sonner le téléphone.",
     eyebrow: "Plomberie",
@@ -100,7 +96,7 @@ const fr: Record<Niche, NicheContent> = {
     calculatorLink: "Calculez ce qui vous échappe chaque mois",
   },
   electricite: {
-    metaTitle: `Marketing pour électriciens et entreprises d'électricité | ${SUFFIX.fr}`,
+    metaTitle: `Marketing pour électriciens : plus de clients | ${SUFFIX}`,
     metaDescription:
       "klik aide les électriciens et entreprises d'électricité à trouver des clients en local : devis relancés, avis Google, site et fiche Google qui convertissent.",
     eyebrow: "Électricité",
@@ -135,7 +131,7 @@ const fr: Record<Niche, NicheContent> = {
 
 const es: Record<Niche, NicheContent> = {
   climatisation: {
-    metaTitle: `Marketing para empresas de climatización y aire acondicionado | ${SUFFIX.es}`,
+    metaTitle: `Marketing para climatización: más clientes | ${SUFFIX}`,
     metaDescription:
       "klik ayuda a instaladores y técnicos de climatización a conseguir clientes cerca: llamadas recuperadas, reseñas de Google, web y ficha de Google que convierten.",
     eyebrow: "Climatización",
@@ -167,7 +163,7 @@ const es: Record<Niche, NicheContent> = {
     calculatorLink: "Calcula cuánto se te escapa al mes",
   },
   plomberie: {
-    metaTitle: `Marketing para fontaneros y empresas de fontanería | ${SUFFIX.es}`,
+    metaTitle: `Marketing para fontaneros: más clientes | ${SUFFIX}`,
     metaDescription:
       "klik ayuda a fontaneros a conseguir clientes cerca de ellos: llamadas perdidas recuperadas, reseñas de Google, web y ficha de Google que hacen sonar el teléfono.",
     eyebrow: "Fontanería",
@@ -199,7 +195,7 @@ const es: Record<Niche, NicheContent> = {
     calculatorLink: "Calcula cuánto se te escapa al mes",
   },
   electricite: {
-    metaTitle: `Marketing para electricistas y empresas de electricidad | ${SUFFIX.es}`,
+    metaTitle: `Marketing para electricistas: más clientes | ${SUFFIX}`,
     metaDescription:
       "klik ayuda a electricistas y empresas de electricidad a conseguir clientes cerca: presupuestos con seguimiento, reseñas de Google, web y ficha de Google.",
     eyebrow: "Electricidad",
@@ -234,7 +230,7 @@ const es: Record<Niche, NicheContent> = {
 
 const en: Record<Niche, NicheContent> = {
   climatisation: {
-    metaTitle: `Marketing for HVAC and air conditioning companies | ${SUFFIX.en}`,
+    metaTitle: `HVAC marketing: more customers | ${SUFFIX}`,
     metaDescription:
       "klik helps HVAC and air conditioning installers find local customers: recovered calls, Google reviews, and a website and Google listing that convert.",
     eyebrow: "HVAC and air conditioning",
@@ -266,7 +262,7 @@ const en: Record<Niche, NicheContent> = {
     calculatorLink: "Work out what's slipping away every month",
   },
   plomberie: {
-    metaTitle: `Marketing for plumbers and plumbing companies | ${SUFFIX.en}`,
+    metaTitle: `Marketing for plumbers: more customers | ${SUFFIX}`,
     metaDescription:
       "klik helps plumbers find customers nearby: recovered missed calls, Google reviews, and a website and Google listing that make the phone ring.",
     eyebrow: "Plumbing",
@@ -298,7 +294,7 @@ const en: Record<Niche, NicheContent> = {
     calculatorLink: "Work out what's slipping away every month",
   },
   electricite: {
-    metaTitle: `Marketing for electricians and electrical companies | ${SUFFIX.en}`,
+    metaTitle: `Marketing for electricians: more customers | ${SUFFIX}`,
     metaDescription:
       "klik helps electricians and electrical companies find local customers: followed-up quotes, Google reviews, and a website and Google listing that convert.",
     eyebrow: "Electrical",

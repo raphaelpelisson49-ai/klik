@@ -100,12 +100,12 @@ export function NichePage({ locale, niche }: { locale: Locale; niche: Niche }) {
                 {c.ctaSubtitle}
               </p>
               <MagneticButton className="mt-7">
-                <a
-                  href="mailto:klikia@klikagencies.com"
+                <Link
+                  href={`/${locale}/contacto`}
                   className="block rounded-full bg-champagne px-7 py-3 font-sans text-sm font-medium text-noir transition-opacity hover:opacity-90"
                 >
                   {c.ctaButton}
-                </a>
+                </Link>
               </MagneticButton>
             </div>
           </Reveal>

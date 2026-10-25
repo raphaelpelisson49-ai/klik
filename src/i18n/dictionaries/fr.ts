@@ -313,7 +313,7 @@ const fr: Dictionary = {
   },
 
   calculadoraPage: {
-    metaTitle: "Calculatrice de rendez-vous perdus | klik – acquisition de clients, avis, site et fiche Google",
+    metaTitle: "Calculatrice de rendez-vous perdus | klik",
     metaDescription:
       "Calculez, avec vos propres chiffres, combien d'argent peut vous échapper chaque mois à cause de rendez-vous perdus et d'appels sans réponse à temps.",
     eyebrow: "Calculatrice",
