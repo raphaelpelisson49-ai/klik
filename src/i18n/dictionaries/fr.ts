@@ -2,9 +2,9 @@ import type { Dictionary } from "./es";
 
 const fr: Dictionary = {
   meta: {
-    title: "klik | Acquisition de clients, avis, site et fiche Google",
+    title: "Marketing pour plombiers, climaticiens, électriciens | klik",
     description:
-      "klik remplit l'agenda des PME techniques (climatisation, plomberie, électricité) grâce à l'IA : acquisition de clients, avis Google, site et fiche Google.",
+      "klik remplit l'agenda des plombiers, climaticiens et électriciens grâce à l'IA : acquisition de clients, avis Google, site et fiche Google.",
   },
 
   nav: {

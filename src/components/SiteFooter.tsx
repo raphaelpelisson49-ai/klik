@@ -4,6 +4,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import MurmurationWordmark from "@/components/ui/murmuration-wordmark";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/locales";
+import { localHref } from "@/i18n/routes";
 
 export function SiteFooter({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
@@ -30,7 +31,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             <ul className="mt-3 space-y-2 text-piedra">
               {t.footer.siteLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={`/${locale}${link.href}`} className="hover:text-champagne">
+                  <Link href={localHref(locale, link.href)} className="hover:text-champagne">
                     {link.label}
                   </Link>
                 </li>
@@ -59,9 +60,9 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 font-sans text-xs text-piedra sm:flex-row">
           <span>© {new Date().getFullYear()} {t.footer.copyright}</span>
           <div className="flex items-center gap-5">
-            <Link href={`/${locale}/aviso-legal`} className="hover:text-champagne">{t.footer.legal.avisoLegal}</Link>
-            <Link href={`/${locale}/privacidad`} className="hover:text-champagne">{t.footer.legal.privacidad}</Link>
-            <Link href={`/${locale}/cookies`} className="hover:text-champagne">{t.footer.legal.cookies}</Link>
+            <Link href={localHref(locale, "/aviso-legal")} className="hover:text-champagne">{t.footer.legal.avisoLegal}</Link>
+            <Link href={localHref(locale, "/privacidad")} className="hover:text-champagne">{t.footer.legal.privacidad}</Link>
+            <Link href={localHref(locale, "/cookies")} className="hover:text-champagne">{t.footer.legal.cookies}</Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "@/i18n/locales";
+import { ROUTES, routeForSlug, slugFor, type Route } from "@/i18n/routes";
 
 function detectLocale(request: NextRequest): Locale {
   const header = request.headers.get("accept-language");
@@ -22,10 +23,27 @@ function detectLocale(request: NextRequest): Locale {
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const pathnameHasLocale = LOCALES.some(
+  const pathLocale = LOCALES.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );
-  if (pathnameHasLocale) return NextResponse.next();
+  if (pathLocale) {
+    // Slugs traducidos: /fr/calculatrice se sirve desde la carpeta calculadora, y la URL
+    // interna (/fr/calculadora) redirige a la traducida para que solo exista una.
+    const segments = pathname.split("/");
+    if (segments.length !== 3 || !segments[2]) return NextResponse.next();
+    const slug = segments[2];
+    const route = routeForSlug(pathLocale, slug);
+    const url = request.nextUrl.clone();
+    if (route && route !== slug) {
+      url.pathname = `/${pathLocale}/${route}`;
+      return NextResponse.rewrite(url);
+    }
+    if (!route && (ROUTES as readonly string[]).includes(slug)) {
+      url.pathname = `/${pathLocale}${slugFor(pathLocale, slug as Route)}`;
+      return NextResponse.redirect(url, 308);
+    }
+    return NextResponse.next();
+  }
 
   const locale = detectLocale(request);
   const url = request.nextUrl.clone();

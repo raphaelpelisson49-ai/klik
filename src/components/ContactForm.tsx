@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/locales";
+import { localHref } from "@/i18n/routes";
 
 const EMAIL = "klikia@klikagencies.com";
 const WORKING_DAYS = 10; // días laborables que se ofrecen para la llamada
@@ -372,7 +373,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
               />
               <span>
                 {t.privacyBefore}{" "}
-                <Link href={`/${locale}/privacidad`} className="underline decoration-champagne/50 underline-offset-4 hover:text-champagne">
+                <Link href={localHref(locale, "/privacidad")} className="underline decoration-champagne/50 underline-offset-4 hover:text-champagne">
                   {t.privacyLink}
                 </Link>
                 {t.privacyAfter}

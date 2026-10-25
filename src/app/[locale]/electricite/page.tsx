@@ -15,7 +15,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const c = getNicheContent(locale, "electricite");
-  return buildMetadata({ locale, path: "/electricite", title: c.metaTitle, description: c.metaDescription });
+  return buildMetadata({ locale, route: "electricite", title: c.metaTitle, description: c.metaDescription });
 }
 
 export default async function Page({ params }: PageProps<"/[locale]/electricite">) {

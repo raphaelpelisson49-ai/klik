@@ -19,7 +19,7 @@ export async function generateMetadata({
   const t = getDictionary(locale);
   return buildMetadata({
     locale,
-    path: "/contacto",
+    route: "contacto",
     title: t.contacto.metaTitle,
     description: t.contacto.metaDescription,
   });

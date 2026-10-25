@@ -5,12 +5,13 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileMenu } from "@/components/MobileMenu";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/locales";
+import { localHref } from "@/i18n/routes";
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
 
   const navLinks = [
-    { href: `/${locale}/calculadora`, label: t.nav.calculadora },
+    { href: localHref(locale, "/calculadora"), label: t.nav.calculadora },
     { href: `/${locale}/#diagnostico`, label: t.nav.diagnostico },
     { href: `/${locale}/#servicios`, label: t.nav.servicios },
     { href: `/${locale}/#proceso`, label: t.nav.proceso },

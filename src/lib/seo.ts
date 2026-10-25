@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "@/i18n/locales";
+import { slugFor, type Route } from "@/i18n/routes";
 
 /**
  * Dominio real de producción. Se puede sobrescribir con NEXT_PUBLIC_SITE_URL
@@ -26,21 +27,21 @@ const OG_LOCALE: Record<Locale, string> = { fr: "fr_FR", es: "es_ES", en: "en_US
 
 export function buildMetadata({
   locale,
-  path,
+  route,
   title,
   description,
 }: {
   locale: Locale;
-  /** Ruta sin el prefijo de idioma, ej. "" para home, "/calculadora" para la calculadora. */
-  path: string;
+  /** Ruta interna (carpeta en app/[locale]), "" para la home. El slug se traduce por idioma. */
+  route: Route | "";
   title: string;
   description: string;
 }): Metadata {
-  const url = `${SITE_URL}/${locale}${path}`;
+  const url = `${SITE_URL}/${locale}${slugFor(locale, route)}`;
 
   const languages: Record<string, string> = {};
-  for (const l of LOCALES) languages[l] = `${SITE_URL}/${l}${path}`;
-  languages["x-default"] = `${SITE_URL}/${DEFAULT_LOCALE}${path}`;
+  for (const l of LOCALES) languages[l] = `${SITE_URL}/${l}${slugFor(l, route)}`;
+  languages["x-default"] = `${SITE_URL}/${DEFAULT_LOCALE}${slugFor(DEFAULT_LOCALE, route)}`;
 
   return {
     title,

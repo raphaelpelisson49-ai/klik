@@ -20,6 +20,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale } from "@/i18n/locales";
 import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
+import { localHref } from "@/i18n/routes";
 
 export async function generateMetadata({
   params,
@@ -27,7 +28,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const dict = getDictionary(locale);
-  return buildMetadata({ locale, path: "", title: dict.meta.title, description: dict.meta.description });
+  return buildMetadata({ locale, route: "", title: dict.meta.title, description: dict.meta.description });
 }
 
 type IconProps = { className?: string };
@@ -475,7 +476,7 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
                 <div className="flex shrink-0 flex-col items-start gap-3 md:items-end">
                   <MagneticButton>
                     <Link
-                      href={`/${locale}/contacto`}
+                      href={localHref(locale, "/contacto")}
                       className="group/cta flex items-center gap-3 rounded-full bg-champagne py-2.5 pl-6 pr-2.5 font-sans text-sm font-medium text-noir transition-colors hover:bg-ivoire"
                     >
                       {t.ctaFinal.button}
