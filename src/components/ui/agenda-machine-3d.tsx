@@ -210,6 +210,20 @@ const NAVY_DEEP = '#061230'
 const NAVY_SOFT = '#16295a'
 const SLATE = '#9aa6c0'
 
+/**
+ * Sin aceleración por hardware (Chrome con la aceleración gráfica apagada, máquinas virtuales…)
+ * WebGL se dibuja por software y la escena completa va a pocos fps. Se mira con un contexto de
+ * prueba, antes de crear el renderer, para poder quitar el antialiasing (lo más caro ahí).
+ */
+function isSoftwareGpu(): boolean {
+  const probe = document.createElement('canvas').getContext('webgl')
+  if (!probe) return false
+  const info = probe.getExtension('WEBGL_debug_renderer_info')
+  const name = info ? String(probe.getParameter(info.UNMASKED_RENDERER_WEBGL)) : ''
+  probe.getExtension('WEBGL_lose_context')?.loseContext()
+  return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(name)
+}
+
 function initMachineScene(
   root: HTMLElement,
   fontFamily: string,
@@ -245,28 +259,24 @@ function initMachineScene(
     const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(33, frameWidth() / frameHeight(), 0.1, 150)
+    // Por software, sin antialiasing y a 1x: nítida y lo más ligera posible (bajar la resolución
+    // apenas gana fluidez ahí y la deja borrosa).
+    const softwareGpu = isSoftwareGpu()
     let renderer: THREE.WebGLRenderer
     try {
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' })
+      renderer = new THREE.WebGLRenderer({ antialias: !softwareGpu, alpha: true, powerPreference: 'high-performance' })
     } catch (e) {
       showError(copy.errorWebgl)
       throw e
     }
     renderer.setClearColor(0x000000, 0)
-    // Sin aceleración por hardware (Chrome con la aceleración gráfica apagada, máquinas virtuales…)
-    // WebGL se dibuja por software y a resolución normal va a 1-2 fps: parece quieta. Ahí se
-    // dibuja a media resolución y sin sombras para que siga moviéndose.
-    const gl = renderer.getContext()
-    const gpuInfo = gl.getExtension('WEBGL_debug_renderer_info')
-    const gpuName = gpuInfo ? String(gl.getParameter(gpuInfo.UNMASKED_RENDERER_WEBGL)) : ''
-    const softwareGpu = /swiftshader|llvmpipe|softpipe|software|basic render/i.test(gpuName)
     // Nítida: hasta 1,25x en escritorio y 1x en móvil (si el equipo no va fluido, baja sola)
-    renderer.setPixelRatio(softwareGpu ? 0.5 : Math.min(devicePixelRatio, frameWidth() < 900 ? 1 : 1.25))
+    renderer.setPixelRatio(softwareGpu ? 1 : Math.min(devicePixelRatio, frameWidth() < 900 ? 1 : 1.25))
     renderer.setSize(frameWidth(), frameHeight())
     renderer.outputColorSpace = THREE.SRGBColorSpace
     renderer.toneMapping = THREE.ACESFilmicToneMapping
     renderer.toneMappingExposure = 1.12
-    renderer.shadowMap.enabled = !softwareGpu
+    renderer.shadowMap.enabled = true
     renderer.shadowMap.type = THREE.PCFShadowMap
     // Sombras horneadas: solo se recalculan cuando las estaciones se mueven (modos)
     renderer.shadowMap.autoUpdate = false
@@ -1488,15 +1498,12 @@ function initMachineScene(
       // Animada siempre mientras está en pantalla; el bucle solo se apaga fuera de ella
       // (ver IntersectionObserver), donde no se ve.
       root.dataset.state = 'running'
-      // Si el equipo no llega a ~50 fps, baja solo la resolución (nunca el ritmo); por debajo
-      // de ~24 fps puede bajar hasta media resolución.
+      // Si el equipo no llega a ~50 fps, baja solo la resolución (nunca el ritmo), sin pasar de 1x.
       frameCount++
       measureTime += elapsed
       if (measureTime > 2) {
-        const fps = frameCount / measureTime
-        const floor = fps < 24 ? 0.5 : 1
-        if (fps < 50 && pixelRatio > floor) {
-          pixelRatio = Math.max(floor, pixelRatio - 0.25)
+        if (frameCount / measureTime < 50 && pixelRatio > 1) {
+          pixelRatio = Math.max(1, pixelRatio - 0.25)
           renderer.setPixelRatio(pixelRatio)
         }
         frameCount = 0
