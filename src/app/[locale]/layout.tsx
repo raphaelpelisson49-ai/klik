@@ -39,7 +39,7 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     ...buildMetadata({
       locale,
-      path: "",
+      route: "",
       title: dict.meta.title,
       description: dict.meta.description,
     }),

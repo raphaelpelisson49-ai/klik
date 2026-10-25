@@ -31,7 +31,7 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/aviso-legal">): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return buildMetadata({ locale, path: "/aviso-legal", ...META[locale] });
+  return buildMetadata({ locale, route: "aviso-legal", ...META[locale] });
 }
 
 function ContentEs() {

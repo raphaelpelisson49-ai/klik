@@ -5,6 +5,7 @@ import { ArrowIcon } from "@/components/ArrowIcon";
 import Link from "next/link";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/locales";
+import { localHref } from "@/i18n/routes";
 
 function Field({
   label,
@@ -120,7 +121,7 @@ export function HeroCalculator({ locale }: { locale: Locale }) {
       </div>
 
       <Link
-        href={`/${locale}/calculadora`}
+        href={localHref(locale, "/calculadora")}
         className="group mt-6 flex items-center justify-between border-t border-champagne/10 pt-4 font-sans text-sm text-ivoire transition-colors hover:text-champagne"
       >
         <span>{dict.nav.calculadora}</span>

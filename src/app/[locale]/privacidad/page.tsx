@@ -31,7 +31,7 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/privacidad">): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return buildMetadata({ locale, path: "/privacidad", ...META[locale] });
+  return buildMetadata({ locale, route: "privacidad", ...META[locale] });
 }
 
 function ContentEs() {

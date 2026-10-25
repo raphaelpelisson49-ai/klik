@@ -3,17 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LOCALES, LOCALE_LABELS, type Locale } from "@/i18n/locales";
+import { switchLocale } from "@/i18n/routes";
 
 export function LanguageSwitcher({ locale, className }: { locale: Locale; className?: string }) {
   const pathname = usePathname() || "/";
-  const rest = pathname.replace(/^\/(fr|es|en)/, "");
 
   return (
     <div className={`flex items-center gap-2 font-sans text-xs ${className ?? ""}`}>
       {LOCALES.map((l, i) => (
         <span key={l} className="flex items-center gap-2">
           <Link
-            href={`/${l}${rest}`}
+            href={switchLocale(pathname, locale, l)}
             aria-current={l === locale ? "true" : undefined}
             className={
               l === locale

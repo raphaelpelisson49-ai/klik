@@ -1,6 +1,6 @@
 const es = {
   meta: {
-    title: "klik | Captación de clientes, reseñas, web y ficha de Google",
+    title: "Marketing para fontaneros, electricistas y climatización | klik",
     description:
       "klik llena la agenda de pymes técnicas (climatización, fontanería, electricidad) con IA: captación de clientes, reseñas de Google, web y ficha de Google.",
   },

@@ -2,7 +2,7 @@ import type { Dictionary } from "./es";
 
 const en: Dictionary = {
   meta: {
-    title: "klik | Customer acquisition, reviews, website & Google listing",
+    title: "Marketing for plumbers, electricians and HVAC | klik",
     description:
       "klik fills the calendar of technical small businesses (HVAC, plumbing, electrical) with AI: customer acquisition, Google reviews, website and Google listing.",
   },

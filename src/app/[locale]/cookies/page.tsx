@@ -32,7 +32,7 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/cookies">): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return buildMetadata({ locale, path: "/cookies", ...META[locale] });
+  return buildMetadata({ locale, route: "cookies", ...META[locale] });
 }
 
 function ContentEs() {

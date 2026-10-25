@@ -3,6 +3,7 @@ import { Logo } from "@/components/Logo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/locales";
+import { localHref } from "@/i18n/routes";
 
 export function LegalShell({
   locale,
@@ -49,9 +50,9 @@ export function LegalShell({
         <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-3 px-6 py-8 font-sans text-xs text-piedra sm:flex-row">
           <span>© {new Date().getFullYear()} klik</span>
           <div className="flex items-center gap-5">
-            <Link href={`/${locale}/aviso-legal`} className="hover:text-champagne">{t.footer.legal.avisoLegal}</Link>
-            <Link href={`/${locale}/privacidad`} className="hover:text-champagne">{t.footer.legal.privacidad}</Link>
-            <Link href={`/${locale}/cookies`} className="hover:text-champagne">{t.footer.legal.cookies}</Link>
+            <Link href={localHref(locale, "/aviso-legal")} className="hover:text-champagne">{t.footer.legal.avisoLegal}</Link>
+            <Link href={localHref(locale, "/privacidad")} className="hover:text-champagne">{t.footer.legal.privacidad}</Link>
+            <Link href={localHref(locale, "/cookies")} className="hover:text-champagne">{t.footer.legal.cookies}</Link>
           </div>
         </div>
       </footer>
