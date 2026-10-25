@@ -253,13 +253,20 @@ function initMachineScene(
       throw e
     }
     renderer.setClearColor(0x000000, 0)
-    // Nítida: hasta 1,5x en escritorio y 1,25x en móvil (si el equipo no llega a ~50 fps, baja sola)
-    renderer.setPixelRatio(Math.min(devicePixelRatio, frameWidth() < 900 ? 1 : 1.25))
+    // Sin aceleración por hardware (Chrome con la aceleración gráfica apagada, máquinas virtuales…)
+    // WebGL se dibuja por software y a resolución normal va a 1-2 fps: parece quieta. Ahí se
+    // dibuja a media resolución y sin sombras para que siga moviéndose.
+    const gl = renderer.getContext()
+    const gpuInfo = gl.getExtension('WEBGL_debug_renderer_info')
+    const gpuName = gpuInfo ? String(gl.getParameter(gpuInfo.UNMASKED_RENDERER_WEBGL)) : ''
+    const softwareGpu = /swiftshader|llvmpipe|softpipe|software|basic render/i.test(gpuName)
+    // Nítida: hasta 1,25x en escritorio y 1x en móvil (si el equipo no va fluido, baja sola)
+    renderer.setPixelRatio(softwareGpu ? 0.5 : Math.min(devicePixelRatio, frameWidth() < 900 ? 1 : 1.25))
     renderer.setSize(frameWidth(), frameHeight())
     renderer.outputColorSpace = THREE.SRGBColorSpace
     renderer.toneMapping = THREE.ACESFilmicToneMapping
     renderer.toneMappingExposure = 1.12
-    renderer.shadowMap.enabled = true
+    renderer.shadowMap.enabled = !softwareGpu
     renderer.shadowMap.type = THREE.PCFShadowMap
     // Sombras horneadas: solo se recalculan cuando las estaciones se mueven (modos)
     renderer.shadowMap.autoUpdate = false
@@ -1342,7 +1349,10 @@ function initMachineScene(
       }
       // 60 fps: un fotograma por cada refresco de pantalla mientras está activa.
       rafId = requestAnimationFrame(animate)
-      const dt = Math.max(0, Math.min((now - lastFrame) / 1000, 0.05))
+      // Con fotogramas lentos el tiempo avanza igual (hasta 0,25 s por fotograma): a pocos fps
+      // la máquina va a saltos, pero se mueve.
+      const elapsed = Math.max(0, (now - lastFrame) / 1000)
+      const dt = Math.min(elapsed, 0.25)
       lastFrame = now
       if (playing) simTime += dt
       const t = simTime,
@@ -1478,12 +1488,15 @@ function initMachineScene(
       // Animada siempre mientras está en pantalla; el bucle solo se apaga fuera de ella
       // (ver IntersectionObserver), donde no se ve.
       root.dataset.state = 'running'
-      // Si el equipo no llega a ~50 fps, baja solo la resolución (nunca el ritmo).
+      // Si el equipo no llega a ~50 fps, baja solo la resolución (nunca el ritmo); por debajo
+      // de ~24 fps puede bajar hasta media resolución.
       frameCount++
-      measureTime += dt
+      measureTime += elapsed
       if (measureTime > 2) {
-        if (frameCount / measureTime < 50 && pixelRatio > 1) {
-          pixelRatio = Math.max(1, pixelRatio - 0.25)
+        const fps = frameCount / measureTime
+        const floor = fps < 24 ? 0.5 : 1
+        if (fps < 50 && pixelRatio > floor) {
+          pixelRatio = Math.max(floor, pixelRatio - 0.25)
           renderer.setPixelRatio(pixelRatio)
         }
         frameCount = 0
