@@ -311,7 +311,7 @@ const es = {
   },
 
   calculadoraPage: {
-    metaTitle: "Calculadora de citas perdidas | klik – captación de clientes, reseñas, web y ficha de Google",
+    metaTitle: "Calculadora de citas perdidas | klik",
     metaDescription:
       "Calcula, con tus propios números, cuánto dinero se te puede estar escapando cada mes por citas perdidas y llamadas sin contestar a tiempo.",
     eyebrow: "Calculadora",

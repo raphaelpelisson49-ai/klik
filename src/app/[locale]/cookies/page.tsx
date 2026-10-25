@@ -10,9 +10,9 @@ export function generateStaticParams() {
 }
 
 const META: Record<Locale, { title: string; description: string }> = {
-  es: { title: "Política de cookies | klik – captación de clientes, reseñas, web y ficha de Google", description: "Qué cookies utiliza el sitio web de klik y cómo gestionarlas." },
-  fr: { title: "Politique de cookies | klik – acquisition de clients, avis, site et fiche Google", description: "Quels cookies utilise le site web de klik et comment les gérer." },
-  en: { title: "Cookie policy | klik – customer acquisition, reviews, website & Google listing", description: "What cookies the klik website uses and how to manage them." },
+  es: { title: "Política de cookies | klik", description: "Qué cookies utiliza el sitio web de klik y cómo gestionarlas." },
+  fr: { title: "Politique de cookies | klik", description: "Quels cookies utilise le site web de klik et comment les gérer." },
+  en: { title: "Cookie policy | klik", description: "What cookies the klik website uses and how to manage them." },
 };
 
 const TITLE: Record<Locale, string> = {

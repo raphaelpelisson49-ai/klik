@@ -9,9 +9,9 @@ export function generateStaticParams() {
 }
 
 const META: Record<Locale, { title: string; description: string }> = {
-  es: { title: "Política de privacidad | klik – captación de clientes, reseñas, web y ficha de Google", description: "Cómo trata klik los datos personales de quienes visitan y contactan a través de este sitio." },
-  fr: { title: "Politique de confidentialité | klik – acquisition de clients, avis, site et fiche Google", description: "Comment klik traite les données personnelles des personnes qui visitent le site et nous contactent." },
-  en: { title: "Privacy policy | klik – customer acquisition, reviews, website & Google listing", description: "How klik handles the personal data of people who visit and contact us through this site." },
+  es: { title: "Política de privacidad | klik", description: "Cómo trata klik los datos personales de quienes visitan y contactan a través de este sitio." },
+  fr: { title: "Politique de confidentialité | klik", description: "Comment klik traite les données personnelles des personnes qui visitent le site et nous contactent." },
+  en: { title: "Privacy policy | klik", description: "How klik handles the personal data of people who visit and contact us through this site." },
 };
 
 const TITLE: Record<Locale, string> = {

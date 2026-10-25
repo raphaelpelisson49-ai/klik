@@ -10,8 +10,15 @@ import { LOCALES, DEFAULT_LOCALE, type Locale } from "@/i18n/locales";
  * Es la versión con www porque es la que sirve Vercel: klikagencies.com responde
  * con un 308 hacia www. Un canónico que redirige es un error en Search Console
  * ("Página con redirección"), así que el canónico debe ser la URL final.
+ * Por eso, aunque NEXT_PUBLIC_SITE_URL apunte al dominio sin www, se corrige a www.
  */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.klikagencies.com").replace(/\/$/, "");
+function siteOrigin(raw: string): string {
+  const url = new URL(raw);
+  if (url.hostname === "klikagencies.com") url.hostname = "www.klikagencies.com";
+  return url.origin;
+}
+
+export const SITE_URL = siteOrigin(process.env.NEXT_PUBLIC_SITE_URL || "https://www.klikagencies.com");
 
 export const SITE_NAME = "klik";
 

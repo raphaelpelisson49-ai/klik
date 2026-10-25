@@ -9,9 +9,9 @@ export function generateStaticParams() {
 }
 
 const META: Record<Locale, { title: string; description: string }> = {
-  es: { title: "Aviso legal | klik – captación de clientes, reseñas, web y ficha de Google", description: "Aviso legal y condiciones de uso del sitio web de klik." },
-  fr: { title: "Mentions légales | klik – acquisition de clients, avis, site et fiche Google", description: "Mentions légales et conditions d'utilisation du site web de klik." },
-  en: { title: "Legal notice | klik – customer acquisition, reviews, website & Google listing", description: "Legal notice and terms of use for the klik website." },
+  es: { title: "Aviso legal | klik", description: "Aviso legal y condiciones de uso del sitio web de klik." },
+  fr: { title: "Mentions légales | klik", description: "Mentions légales et conditions d'utilisation du site web de klik." },
+  en: { title: "Legal notice | klik", description: "Legal notice and terms of use for the klik website." },
 };
 
 const TITLE: Record<Locale, string> = {
