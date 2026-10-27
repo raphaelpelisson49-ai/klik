@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { MagneticButton } from "@/components/MagneticButton";
 import { getNicheContent, type Niche } from "@/i18n/niches";
+import { SITE_URL, SITE_NAME } from "@/lib/seo";
 import type { Locale } from "@/i18n/locales";
 
 export function NichePage({ locale, niche }: { locale: Locale; niche: Niche }) {
@@ -17,6 +18,33 @@ export function NichePage({ locale, niche }: { locale: Locale; niche: Niche }) {
       name: item.q,
       acceptedAnswer: { "@type": "Answer", text: item.a },
     })),
+  };
+
+  const pageUrl = `${SITE_URL}/${locale}/${niche}`;
+  const homeLabel = locale === "fr" ? "Accueil" : locale === "es" ? "Inicio" : "Home";
+
+  const breadcrumbJson = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: homeLabel, item: `${SITE_URL}/${locale}` },
+      { "@type": "ListItem", position: 2, name: c.eyebrow, item: pageUrl },
+    ],
+  };
+
+  const serviceJson = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: c.h1,
+    description: c.metaDescription,
+    url: pageUrl,
+    inLanguage: locale,
+    provider: { "@type": "Organization", name: SITE_NAME, url: `${SITE_URL}/${locale}` },
+    areaServed: [
+      { "@type": "Country", name: "France" },
+      { "@type": "Country", name: "España" },
+    ],
+    audience: { "@type": "BusinessAudience", name: c.eyebrow },
   };
 
   return (
@@ -118,6 +146,16 @@ export function NichePage({ locale, niche }: { locale: Locale; niche: Niche }) {
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJson) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJson) }}
       />
     </div>
   );
