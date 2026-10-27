@@ -1,6 +1,6 @@
 "use client";
 
-import { Lora, Poppins } from "next/font/google";
+import { Instrument_Sans, Lora } from "next/font/google";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/Logo";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -14,10 +14,10 @@ const lora = Lora({
   style: ["normal", "italic"],
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const grotesk = Instrument_Sans({
+  variable: "--font-grotesk",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: "variable",
 });
 
 export default function GlobalNotFound() {
@@ -27,7 +27,7 @@ export default function GlobalNotFound() {
   const t = getDictionary(locale);
 
   return (
-    <html lang={HTML_LANG[locale]} className={`${lora.variable} ${poppins.variable} h-full antialiased`}>
+    <html lang={HTML_LANG[locale]} className={`${lora.variable} ${grotesk.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-noir font-sans text-foreground">
         <div className="flex flex-1 flex-col items-center justify-center px-6 py-24 text-center">
           <a href={`/${locale}`} aria-label="klik" className="mb-10">

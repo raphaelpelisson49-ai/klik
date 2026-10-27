@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowIcon } from "@/components/ArrowIcon";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -10,6 +11,7 @@ import { MagneticButton } from "@/components/MagneticButton";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, LOCALES } from "@/i18n/locales";
 import { buildMetadata } from "@/lib/seo";
+import { localHref } from "@/i18n/routes";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -23,7 +25,7 @@ export async function generateMetadata({
   const t = getDictionary(locale);
   return buildMetadata({
     locale,
-    path: "/calculadora",
+    route: "calculadora",
     title: t.calculadoraPage.metaTitle,
     description: t.calculadoraPage.metaDescription,
   });
@@ -75,12 +77,13 @@ export default async function CalculadoraPage({ params }: PageProps<"/[locale]/c
                   {t.calculadoraPage.closingSubtitle}
                 </p>
                 <MagneticButton className="mt-7">
-                  <a
-                    href="mailto:klikia@klikagencies.com"
-                    className="block rounded-full bg-champagne px-7 py-3 font-sans text-sm font-medium text-noir transition-opacity hover:opacity-90"
+                  <Link
+                    href={localHref(locale, "/contacto")}
+                    className="flex items-center gap-2 rounded-full bg-champagne px-7 py-3 font-sans text-sm font-medium text-noir transition-colors hover:bg-ivoire"
                   >
                     {t.calculadoraPage.closingButton}
-                  </a>
+                    <ArrowIcon />
+                  </Link>
                 </MagneticButton>
                 <Link
                   href={`/${locale}/#diagnostico`}

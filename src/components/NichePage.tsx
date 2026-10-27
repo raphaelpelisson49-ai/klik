@@ -6,6 +6,7 @@ import { MagneticButton } from "@/components/MagneticButton";
 import { getNicheContent, type Niche } from "@/i18n/niches";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
 import type { Locale } from "@/i18n/locales";
+import { localHref } from "@/i18n/routes";
 
 export function NichePage({ locale, niche }: { locale: Locale; niche: Niche }) {
   const c = getNicheContent(locale, niche);
@@ -20,7 +21,7 @@ export function NichePage({ locale, niche }: { locale: Locale; niche: Niche }) {
     })),
   };
 
-  const pageUrl = `${SITE_URL}/${locale}/${niche}`;
+  const pageUrl = `${SITE_URL}${localHref(locale, `/${niche}`)}`;
   const homeLabel = locale === "fr" ? "Accueil" : locale === "es" ? "Inicio" : "Home";
 
   const breadcrumbJson = {
@@ -98,7 +99,7 @@ export function NichePage({ locale, niche }: { locale: Locale; niche: Niche }) {
               ))}
             </div>
             <Link
-              href={`/${locale}/calculadora`}
+              href={localHref(locale, "/calculadora")}
               className="mt-8 inline-block font-sans text-sm text-champagne underline decoration-champagne/30 underline-offset-4 transition-colors hover:decoration-champagne"
             >
               {c.calculatorLink}
@@ -128,12 +129,12 @@ export function NichePage({ locale, niche }: { locale: Locale; niche: Niche }) {
                 {c.ctaSubtitle}
               </p>
               <MagneticButton className="mt-7">
-                <a
-                  href="mailto:klikia@klikagencies.com"
+                <Link
+                  href={localHref(locale, "/contacto")}
                   className="block rounded-full bg-champagne px-7 py-3 font-sans text-sm font-medium text-noir transition-opacity hover:opacity-90"
                 >
                   {c.ctaButton}
-                </a>
+                </Link>
               </MagneticButton>
             </div>
           </Reveal>
@@ -144,7 +145,6 @@ export function NichePage({ locale, niche }: { locale: Locale; niche: Niche }) {
 
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }}
       />
       <script

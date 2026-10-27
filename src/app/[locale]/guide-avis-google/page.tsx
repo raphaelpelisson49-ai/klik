@@ -15,7 +15,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const c = getContentPage(locale, "guide-avis-google");
-  return buildMetadata({ locale, path: "/guide-avis-google", title: c.metaTitle, description: c.metaDescription });
+  return buildMetadata({ locale, route: "guide-avis-google", title: c.metaTitle, description: c.metaDescription });
 }
 
 export default async function Page({ params }: PageProps<"/[locale]/guide-avis-google">) {

@@ -25,7 +25,7 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0E0E10",
+          backgroundColor: "#001F54",
           position: "relative",
         }}
       >

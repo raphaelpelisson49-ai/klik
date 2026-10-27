@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import type { Locale } from "@/i18n/locales";
+import { localHref } from "@/i18n/routes";
 
 /**
  * Google Analytics 4, cargado SOLO si la persona acepta. Sin consentimiento
@@ -94,7 +95,7 @@ gtag('config', '${GA_ID}', { anonymize_ip: true });`}
         >
           <p className="font-sans text-sm leading-relaxed text-ivoire/80">
             {t.text}{" "}
-            <a href={`/${locale}/cookies`} className="text-champagne underline underline-offset-4">
+            <a href={localHref(locale, "/cookies")} className="text-champagne underline underline-offset-4">
               {t.more}
             </a>
           </p>

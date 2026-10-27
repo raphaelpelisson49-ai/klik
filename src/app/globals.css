@@ -1,13 +1,20 @@
 @import "tailwindcss";
+@import "./motion.css";
 
 :root {
-  /* klik — kit de logo v1.0 (paleta noir · champagne · ivoire) */
-  --noir: #0e0e10;
-  --grafito: #1a1a1d;
-  --ivoire: #f4f0e8;
-  --champagne: #cdb07a; /* acento sobre fondos oscuros */
-  --oro: #b08d52; /* champagne oscurecido — acento sobre fondos claros */
-  --piedra: #8c877e; /* texto secundario / muted */
+  /* klik — paleta v3: marfil de base + lienzos azul noche con degradado.
+     Los tokens son de ROL, no de color: "noir" = fondo, "grafito" = superficies,
+     "ivoire" = texto, "champagne" = acento. Por defecto el tema es claro;
+     dentro de .klik-dark los mismos roles toman los valores oscuros. */
+  --marine: #001f54;
+  --abismo: #020a1c; /* azul noche: base de los lienzos oscuros */
+
+  --noir: #f4f0e8; /* papel marfil */
+  --grafito: #fbf9f4; /* tarjetas, un punto más claras que el papel */
+  --ivoire: var(--marine); /* tinta */
+  --champagne: #7a5c28; /* dorado oscurecido: AA sobre marfil */
+  --oro: #7a5c28;
+  --piedra: #4c5468;
 
   --background: var(--noir);
   --foreground: var(--ivoire);
@@ -16,6 +23,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-marine: var(--marine);
+  --color-abismo: var(--abismo);
   --color-noir: var(--noir);
   --color-grafito: var(--grafito);
   --color-ivoire: var(--ivoire);
@@ -23,12 +32,35 @@
   --color-oro: var(--oro);
   --color-piedra: var(--piedra);
   --font-serif: var(--font-lora);
-  --font-sans: var(--font-poppins);
+  --font-sans: var(--font-grotesk);
 }
 
 html {
   scroll-behavior: smooth;
+  /* Los saltos a #anclas quedan por debajo del dock flotante */
+  scroll-padding-top: 5.5rem;
+  color-scheme: light;
+}
+
+/* Tema oscuro por bloque: mismos roles, valores de noche */
+.klik-dark {
+  --noir: var(--abismo);
+  --grafito: #0a1b40;
+  --ivoire: #f4f0e8;
+  --champagne: #cdb07a;
+  --oro: #b08d52;
+  --piedra: #a9b0c2;
+  color: var(--ivoire);
   color-scheme: dark;
+}
+
+/* Lienzo oscuro con degradado luminoso (estilo Apple): brillo azul arriba
+   a la derecha, reflejo frío abajo a la izquierda y fondo azul noche */
+.klik-canvas {
+  background:
+    radial-gradient(90% 70% at 85% -10%, rgb(46 108 255 / 0.38) 0%, transparent 60%),
+    radial-gradient(70% 60% at -5% 105%, rgb(0 140 255 / 0.16) 0%, transparent 60%),
+    linear-gradient(165deg, #0a2a6e 0%, var(--marine) 35%, #010b24 75%, var(--abismo) 100%);
 }
 
 body {
@@ -45,8 +77,8 @@ body::before {
   inset: 0;
   z-index: 30;
   pointer-events: none;
-  opacity: 0.045;
-  mix-blend-mode: overlay;
+  /* Sin mix-blend-mode: fusionar una capa fija con toda la página fuerza a recomponerla en cada fotograma */
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
 }
@@ -62,51 +94,84 @@ body::before {
   }
 }
 
-/* Calendario animado — "tu agenda llena" */
-@keyframes klik-chip {
-  0%,
-  100% {
-    opacity: 0;
-    transform: scaleX(0.15);
-  }
-  10%,
-  68% {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-  84% {
-    opacity: 0;
-    transform: scaleX(0.15);
-  }
-}
-
-@keyframes klik-day-glow {
-  0%,
-  100% {
-    border-color: color-mix(in srgb, var(--linea, var(--piedra)) 35%, transparent);
-  }
-  10%,
-  70% {
-    border-color: color-mix(in srgb, var(--champagne) 55%, transparent);
-  }
-}
-
-.klik-chip {
-  animation: klik-chip 9s ease-in-out infinite;
-  transform-origin: left center;
-}
-
+/* Mini-juego "Llena tu agenda" — solo transform y opacidad */
 .klik-day {
-  animation: klik-day-glow 9s ease-in-out infinite;
+  position: relative;
+  border-color: color-mix(in srgb, var(--piedra) 35%, transparent);
 }
 
+.klik-day:not(:disabled):hover,
+.klik-day.is-booked,
+.klik-agenda.is-full .klik-day:not(:disabled) {
+  border-color: color-mix(in srgb, var(--champagne) 50%, transparent);
+}
+
+.klik-day-closed {
+  opacity: 0.45;
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--piedra) 18%, transparent) 0 1px,
+    transparent 1px 6px
+  );
+}
+
+@keyframes klik-hint {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.klik-day-hint::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid var(--champagne);
+  pointer-events: none;
+  animation: klik-hint 1.6s ease-in-out infinite;
+}
+
+@keyframes klik-slot-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-160%) scaleX(0.4);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(18%) scaleX(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.klik-slot-drop {
+  animation: klik-slot-drop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes klik-slot-wave {
+  50% {
+    transform: scaleY(1.8);
+  }
+}
+
+.klik-agenda.is-full .klik-slot {
+  animation: klik-slot-wave 0.6s ease-in-out both;
+  animation-delay: calc(var(--i) * 25ms);
+}
+
+/* Entradas del contenido visible al cargar: sin opacidad 0, para que Google cuente
+   el LCP desde el primer pintado (un elemento invisible no es "contenido pintado"). */
 @keyframes klik-hero-in {
   from {
-    opacity: 0;
     transform: translateY(14px) scale(0.98);
   }
   to {
-    opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
@@ -115,36 +180,49 @@ body::before {
   animation: klik-hero-in 0.7s ease-out both;
 }
 
-/* Revelado al hacer scroll */
+/* Revelado al hacer scroll — sube y aparece (sin blur: es caro en bloques grandes) */
 .klik-reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(28px);
   transition:
-    opacity 0.7s ease-out,
-    transform 0.7s ease-out;
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .klik-reveal.klik-in {
   opacity: 1;
   transform: translateY(0);
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
-/* Titular — revelado palabra a palabra */
+/* Titular — revelado palabra a palabra, desde el desenfoque */
+/* Solo transform: un filter: blur por palabra crea capas y repinta texto grande */
 @keyframes klik-word-in {
   from {
-    opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(0.35em) rotate(2deg);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) rotate(0);
   }
 }
 
 .klik-word {
   display: inline-block;
-  opacity: 0;
-  animation: klik-word-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: klik-word-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+
+@keyframes klik-fade-up {
+  from {
+    transform: translateY(16px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.klik-fade-up {
+  animation: klik-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Marquee — cinta continua */
@@ -177,7 +255,7 @@ body::before {
   border-radius: inherit;
   background: radial-gradient(
     240px circle at var(--spot-x, 50%) var(--spot-y, 50%),
-    color-mix(in srgb, var(--champagne) 16%, transparent),
+    color-mix(in srgb, var(--champagne) 8%, transparent),
     transparent 72%
   );
   opacity: 0;
@@ -248,58 +326,31 @@ body::before {
   animation: klik-result-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* CTA destacado — brillo pulsante para la llamada principal de la calculadora */
+/* CTA destacado — anillo pulsante (escala + opacidad, sin animar box-shadow) */
 @keyframes klik-glow-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--champagne) 45%, transparent);
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
   }
-  50% {
-    box-shadow: 0 0 0 10px color-mix(in srgb, var(--champagne) 0%, transparent);
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.12, 1.35);
   }
 }
 
 .klik-cta-glow {
-  animation: klik-glow-pulse 2.4s ease-out infinite;
+  position: relative;
 }
 
-/* Aurora — resplandor de fondo que deriva lentamente */
-@keyframes klik-aurora-a {
-  0%,
-  100% {
-    transform: translate(-8%, -6%) scale(1);
-  }
-  50% {
-    transform: translate(10%, 8%) scale(1.2);
-  }
-}
-
-@keyframes klik-aurora-b {
-  0%,
-  100% {
-    transform: translate(6%, 8%) scale(1.1);
-  }
-  50% {
-    transform: translate(-10%, -6%) scale(0.92);
-  }
-}
-
-.klik-aurora {
+.klik-cta-glow::before {
+  content: "";
   position: absolute;
-  border-radius: 9999px;
-  filter: blur(90px);
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--champagne);
   pointer-events: none;
-  opacity: 0.28;
-}
-
-.klik-aurora-a {
-  animation: klik-aurora-a 24s ease-in-out infinite;
-  background: radial-gradient(circle, var(--champagne), transparent 70%);
-}
-
-.klik-aurora-b {
-  animation: klik-aurora-b 28s ease-in-out infinite;
-  background: radial-gradient(circle, var(--oro), transparent 70%);
+  animation: klik-glow-pulse 2.4s ease-out infinite;
 }
 
 /* Símbolos que se "escapan" — refuerzo visual de la calculadora */
@@ -340,7 +391,7 @@ body::before {
 }
 
 .klik-legal h3 {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-grotesk), sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--ivoire);

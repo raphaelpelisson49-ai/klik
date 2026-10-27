@@ -5,6 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { MagneticButton } from "@/components/MagneticButton";
 import { CONTENT_DATES, getContentPage, type ContentSlug } from "@/i18n/pages";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
+import { localHref } from "@/i18n/routes";
 import type { Locale } from "@/i18n/locales";
 
 const HOME_LABEL: Record<Locale, string> = { fr: "Accueil", es: "Inicio", en: "Home" };
@@ -12,7 +13,7 @@ const HOME_LABEL: Record<Locale, string> = { fr: "Accueil", es: "Inicio", en: "H
 export function ContentPage({ locale, slug }: { locale: Locale; slug: ContentSlug }) {
   const c = getContentPage(locale, slug);
   const dates = CONTENT_DATES[slug];
-  const url = `${SITE_URL}/${locale}/${slug}`;
+  const url = `${SITE_URL}${localHref(locale, `/${slug}`)}`;
 
   const breadcrumbJson = {
     "@context": "https://schema.org",
@@ -129,7 +130,7 @@ export function ContentPage({ locale, slug }: { locale: Locale; slug: ContentSlu
               {c.links.map((l) => (
                 <li key={l.href}>
                   <Link
-                    href={`/${locale}${l.href}`}
+                    href={localHref(locale, l.href)}
                     className="text-champagne underline decoration-champagne/30 underline-offset-4 transition-colors hover:decoration-champagne"
                   >
                     {l.label}
@@ -148,12 +149,12 @@ export function ContentPage({ locale, slug }: { locale: Locale; slug: ContentSlu
                 {c.ctaSubtitle}
               </p>
               <MagneticButton className="mt-7">
-                <a
-                  href="mailto:klikia@klikagencies.com"
+                <Link
+                  href={localHref(locale, "/contacto")}
                   className="block rounded-full bg-champagne px-7 py-3 font-sans text-sm font-medium text-noir transition-opacity hover:opacity-90"
                 >
                   {c.ctaButton}
-                </a>
+                </Link>
               </MagneticButton>
             </div>
           </Reveal>
