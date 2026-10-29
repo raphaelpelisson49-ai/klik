@@ -17,6 +17,7 @@ export const ROUTES = [
   "a-propos",
   "guide-appels-manques",
   "guide-avis-google",
+  "agence-marketing-ia-angers",
 ] as const;
 export type Route = (typeof ROUTES)[number];
 
@@ -33,6 +34,7 @@ const SLUGS: Record<Locale, Record<Route, string>> = {
     "a-propos": "a-propos",
     "guide-appels-manques": "guide-appels-manques",
     "guide-avis-google": "guide-avis-google",
+    "agence-marketing-ia-angers": "agence-marketing-ia-angers",
   },
   es: {
     calculadora: "calculadora",
@@ -46,6 +48,7 @@ const SLUGS: Record<Locale, Record<Route, string>> = {
     "a-propos": "sobre-klik",
     "guide-appels-manques": "guia-llamadas-perdidas",
     "guide-avis-google": "guia-resenas-google",
+    "agence-marketing-ia-angers": "agencia-marketing-ia-angers",
   },
   en: {
     calculadora: "calculator",
@@ -59,6 +62,7 @@ const SLUGS: Record<Locale, Record<Route, string>> = {
     "a-propos": "about",
     "guide-appels-manques": "guide-missed-calls",
     "guide-avis-google": "guide-google-reviews",
+    "agence-marketing-ia-angers": "ai-marketing-agency-angers",
   },
 };
 

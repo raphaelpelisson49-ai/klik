@@ -1,11 +1,11 @@
 import type { Locale } from "./locales";
 
 /** Páginas de contenido (À propos y guías). Una por slug y por idioma. */
-export const CONTENT_SLUGS = ["a-propos", "guide-appels-manques", "guide-avis-google"] as const;
+export const CONTENT_SLUGS = ["a-propos", "guide-appels-manques", "guide-avis-google", "agence-marketing-ia-angers"] as const;
 export type ContentSlug = (typeof CONTENT_SLUGS)[number];
 
 export type ContentPageData = {
-  kind: "about" | "article";
+  kind: "about" | "article" | "service";
   metaTitle: string;
   metaDescription: string;
   breadcrumb: string;
@@ -26,6 +26,7 @@ export const CONTENT_DATES: Record<ContentSlug, { published: string; modified: s
   "a-propos": { published: "2026-10-27", modified: "2026-10-27" },
   "guide-appels-manques": { published: "2026-10-27", modified: "2026-10-27" },
   "guide-avis-google": { published: "2026-10-27", modified: "2026-10-27" },
+  "agence-marketing-ia-angers": { published: "2026-10-29", modified: "2026-10-29" },
 };
 
 const SUFFIX: Record<Locale, string> = {
@@ -226,6 +227,72 @@ const fr: Record<ContentSlug, ContentPageData> = {
     ctaSubtitle: "On regarde votre fiche ensemble pendant un diagnostic gratuit de 20 minutes.",
     ctaButton: "Demandez votre audit",
   },
+  "agence-marketing-ia-angers": {
+    kind: "service",
+    metaTitle: `Agence marketing IA à Angers et en Maine-et-Loire | ${SUFFIX.fr}`,
+    metaDescription:
+      "klik, agence marketing IA à Angers et dans le Maine-et-Loire : acquisition de clients, rendez-vous récupérés, avis Google, site et fiche Google pour les PME et entreprises techniques.",
+    breadcrumb: "Agence marketing IA à Angers",
+    eyebrow: "Angers et Maine-et-Loire",
+    h1: "Agence marketing IA à Angers et en Maine-et-Loire",
+    intro:
+      "klik aide les PME d'Angers et du Maine-et-Loire à trouver plus de clients : réponse immédiate aux demandes, relance des devis, avis Google et visibilité locale. Des outils d'IA simples, construits autour de votre façon de travailler.",
+    sections: [
+      {
+        title: "Ce que fait klik pour les entreprises angevines",
+        paras: ["Quatre services concrets, pensés pour les entreprises de 10 à 40 salariés :"],
+        bullets: [
+          "Acquisition de clients : un parcours clair du premier contact jusqu'au rendez-vous.",
+          "Récupération des rendez-vous perdus : appels manqués, demandes sans réponse, devis non relancés.",
+          "Avis Google et réputation : plus d'avis, au bon moment, et une fiche Google qui travaille pour vous.",
+          "Site web et fiche Google : visibles quand on vous cherche à Angers ou autour.",
+        ],
+      },
+      {
+        title: "Une agence marketing IA, concrètement",
+        paras: [
+          "L'intelligence artificielle ne remplace pas votre savoir-faire : elle s'occupe de ce qui vous prend du temps et que vous n'avez pas le temps de faire. Répondre tout de suite à un client qui appelle ou écrit, relancer un devis, demander un avis après un chantier, trier les demandes.",
+          "Résultat : moins de rendez-vous perdus, plus de clients qui vous trouvent et vous choisissent, sans ajouter de charge à vos équipes.",
+        ],
+      },
+      {
+        title: "Pour quelles entreprises",
+        paras: [
+          "Nous travaillons surtout avec les entreprises techniques : climatisation, chauffage, plomberie, électricité. Si vous dirigez une PME de services avec une équipe et un agenda à remplir, parlons-en.",
+        ],
+      },
+      {
+        title: "Où nous intervenons",
+        paras: [
+          "À Angers, et partout en Maine-et-Loire : Cholet, Saumur, Segré, les Mauges, la couronne angevine. À distance, nous accompagnons aussi des entreprises dans toute la France.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Qu'est-ce qu'une agence marketing IA ?",
+        a: "C'est une agence qui utilise l'intelligence artificielle pour automatiser les tâches commerciales : réponse aux demandes, relances, collecte d'avis, suivi des prospects. Le but est de vous apporter plus de clients avec moins de travail manuel.",
+      },
+      {
+        q: "Travaillez-vous avec des entreprises de Maine-et-Loire en dehors d'Angers ?",
+        a: "Oui. Nous accompagnons les entreprises d'Angers et de tout le Maine-et-Loire, ainsi que des entreprises dans le reste de la France, la plupart du travail se faisant à distance.",
+      },
+      {
+        q: "Comment démarrer ?",
+        a: "Par un diagnostic gratuit de 20 minutes : nous regardons ensemble où vous perdez des rendez-vous aujourd'hui, puis nous vous proposons un plan chiffré.",
+      },
+    ],
+    linksTitle: "Pour aller plus loin",
+    links: [
+      { label: "Calculatrice de rendez-vous perdus", href: "/calculadora" },
+      { label: "Marketing pour les entreprises de climatisation", href: "/climatisation" },
+      { label: "Guide : ne plus perdre d'appels", href: "/guide-appels-manques" },
+      { label: "À propos de klik", href: "/a-propos" },
+    ],
+    ctaTitle: "Parlons de votre entreprise à Angers",
+    ctaSubtitle: "Un diagnostic gratuit de 20 minutes pour voir où vous perdez des rendez-vous.",
+    ctaButton: "Demandez votre audit",
+  },
 };
 
 const es: Record<ContentSlug, ContentPageData> = {
@@ -420,6 +487,72 @@ const es: Record<ContentSlug, ContentPageData> = {
     ctaSubtitle: "Miramos tu ficha juntos en un diagnóstico gratuito de 20 minutos.",
     ctaButton: "Pide tu auditoría",
   },
+  "agence-marketing-ia-angers": {
+    kind: "service",
+    metaTitle: `Agencia de marketing con IA en Angers y Maine-et-Loire | ${SUFFIX.es}`,
+    metaDescription:
+      "klik, agencia de marketing con IA en Angers y Maine-et-Loire: captación de clientes, citas recuperadas, reseñas en Google, web y ficha de Google para pymes y empresas técnicas.",
+    breadcrumb: "Agencia de marketing IA en Angers",
+    eyebrow: "Angers y Maine-et-Loire",
+    h1: "Agencia de marketing con IA en Angers y Maine-et-Loire",
+    intro:
+      "klik ayuda a las pymes de Angers y del Maine-et-Loire a conseguir más clientes: respuesta inmediata a las peticiones, seguimiento de presupuestos, reseñas en Google y visibilidad local. Herramientas de IA sencillas, construidas alrededor de tu forma de trabajar.",
+    sections: [
+      {
+        title: "Qué hace klik por las empresas de Angers",
+        paras: ["Cuatro servicios concretos, pensados para empresas de 10 a 40 empleados:"],
+        bullets: [
+          "Captación de clientes: un recorrido claro desde el primer contacto hasta la cita.",
+          "Recuperación de citas perdidas: llamadas sin atender, peticiones sin respuesta y presupuestos sin seguimiento.",
+          "Reseñas en Google y reputación: más reseñas, en el momento adecuado, y una ficha de Google que trabaje por ti.",
+          "Web y ficha de Google: visibles cuando te buscan en Angers y alrededores.",
+        ],
+      },
+      {
+        title: "Una agencia de marketing con IA, en la práctica",
+        paras: [
+          "La inteligencia artificial no sustituye tu oficio: se ocupa de lo que te quita tiempo y para lo que no tienes tiempo. Responder al momento a quien llama o escribe, retomar un presupuesto, pedir una reseña tras un trabajo, ordenar las peticiones.",
+          "Resultado: menos citas perdidas y más clientes que te encuentran y te eligen, sin cargar a tus equipos.",
+        ],
+      },
+      {
+        title: "Para qué empresas",
+        paras: [
+          "Trabajamos sobre todo con empresas técnicas: climatización, calefacción, fontanería, electricidad. Si diriges una pyme de servicios con un equipo y una agenda que llenar, hablemos.",
+        ],
+      },
+      {
+        title: "Dónde intervenimos",
+        paras: [
+          "En Angers y en todo el Maine-et-Loire: Cholet, Saumur, Segré, los Mauges y la periferia angevina. A distancia, también acompañamos a empresas de toda Francia.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "¿Qué es una agencia de marketing con IA?",
+        a: "Es una agencia que usa inteligencia artificial para automatizar tareas comerciales: responder peticiones, hacer seguimientos, recoger reseñas y seguir a los prospectos. El objetivo es traerte más clientes con menos trabajo manual.",
+      },
+      {
+        q: "¿Trabajáis con empresas del Maine-et-Loire fuera de Angers?",
+        a: "Sí. Acompañamos a empresas de Angers y de todo el Maine-et-Loire, y también al resto de Francia; la mayor parte del trabajo se hace a distancia.",
+      },
+      {
+        q: "¿Cómo se empieza?",
+        a: "Con un diagnóstico gratuito de 20 minutos: miramos juntos dónde pierdes citas hoy y te proponemos un plan con precio.",
+      },
+    ],
+    linksTitle: "Para ir más lejos",
+    links: [
+      { label: "Calculadora de citas perdidas", href: "/calculadora" },
+      { label: "Marketing para empresas de climatización", href: "/climatisation" },
+      { label: "Guía: no perder más llamadas", href: "/guide-appels-manques" },
+      { label: "Sobre klik", href: "/a-propos" },
+    ],
+    ctaTitle: "Hablemos de tu empresa en Angers",
+    ctaSubtitle: "Un diagnóstico gratuito de 20 minutos para ver dónde pierdes citas.",
+    ctaButton: "Pide tu auditoría",
+  },
 };
 
 const en: Record<ContentSlug, ContentPageData> = {
@@ -612,6 +745,72 @@ const en: Record<ContentSlug, ContentPageData> = {
     ],
     ctaTitle: "A Google listing that works for you",
     ctaSubtitle: "We look at your listing together in a free 20-minute diagnostic.",
+    ctaButton: "Request your audit",
+  },
+  "agence-marketing-ia-angers": {
+    kind: "service",
+    metaTitle: `AI marketing agency in Angers and Maine-et-Loire | ${SUFFIX.en}`,
+    metaDescription:
+      "klik, AI marketing agency in Angers and Maine-et-Loire: customer acquisition, recovered appointments, Google reviews, website and Google listing for small businesses and technical trades.",
+    breadcrumb: "AI marketing agency in Angers",
+    eyebrow: "Angers and Maine-et-Loire",
+    h1: "AI marketing agency in Angers and Maine-et-Loire",
+    intro:
+      "klik helps small businesses in Angers and Maine-et-Loire win more customers: instant replies to enquiries, quote follow-ups, Google reviews and local visibility. Simple AI tools built around the way you work.",
+    sections: [
+      {
+        title: "What klik does for Angers businesses",
+        paras: ["Four concrete services, designed for businesses with 10 to 40 employees:"],
+        bullets: [
+          "Customer acquisition: a clear path from first contact to appointment.",
+          "Recovering lost appointments: missed calls, unanswered requests, quotes never followed up.",
+          "Google reviews and reputation: more reviews, at the right time, and a Google listing that works for you.",
+          "Website and Google listing: visible when people look for you in and around Angers.",
+        ],
+      },
+      {
+        title: "An AI marketing agency, in practice",
+        paras: [
+          "Artificial intelligence does not replace your craft: it handles what eats your time and what you never get round to. Replying straight away to someone who calls or writes, following up a quote, asking for a review after a job, sorting enquiries.",
+          "The result: fewer lost appointments and more customers who find you and choose you, without adding work for your teams.",
+        ],
+      },
+      {
+        title: "Which businesses",
+        paras: [
+          "We mostly work with technical businesses: air conditioning, heating, plumbing, electrical. If you run a service business with a team and a calendar to fill, let's talk.",
+        ],
+      },
+      {
+        title: "Where we work",
+        paras: [
+          "In Angers and across Maine-et-Loire: Cholet, Saumur, Segré, the Mauges and the Angers area. Remotely, we also support businesses all over France.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is an AI marketing agency?",
+        a: "It is an agency that uses artificial intelligence to automate sales tasks: replying to enquiries, follow-ups, collecting reviews, tracking prospects. The aim is to bring you more customers with less manual work.",
+      },
+      {
+        q: "Do you work with Maine-et-Loire businesses outside Angers?",
+        a: "Yes. We support businesses in Angers and across Maine-et-Loire, as well as the rest of France; most of the work is done remotely.",
+      },
+      {
+        q: "How do we start?",
+        a: "With a free 20-minute diagnostic: we look together at where you lose appointments today, then propose a priced plan.",
+      },
+    ],
+    linksTitle: "Go further",
+    links: [
+      { label: "Lost appointments calculator", href: "/calculadora" },
+      { label: "Marketing for HVAC businesses", href: "/climatisation" },
+      { label: "Guide: stop losing calls", href: "/guide-appels-manques" },
+      { label: "About klik", href: "/a-propos" },
+    ],
+    ctaTitle: "Let's talk about your business in Angers",
+    ctaSubtitle: "A free 20-minute diagnostic to see where you lose appointments.",
     ctaButton: "Request your audit",
   },
 };

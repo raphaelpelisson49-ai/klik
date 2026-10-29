@@ -42,6 +42,8 @@ export function OrganizationSchema({ locale }: { locale: Locale }) {
               sameAs: ["https://www.linkedin.com/in/raphael-pelisson/"],
             },
             areaServed: [
+              { "@type": "City", name: "Angers" },
+              { "@type": "AdministrativeArea", name: "Maine-et-Loire" },
               { "@type": "Country", name: "France" },
               { "@type": "Country", name: "España" },
             ],

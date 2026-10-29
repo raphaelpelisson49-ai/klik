@@ -45,6 +45,22 @@ export function ContentPage({ locale, slug }: { locale: Locale; slug: ContentSlu
           author,
           publisher: organization,
         }
+      : c.kind === "service"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: c.h1,
+          description: c.metaDescription,
+          url,
+          inLanguage: locale,
+          serviceType: c.breadcrumb,
+          provider: organization,
+          areaServed: [
+            { "@type": "City", name: "Angers" },
+            { "@type": "AdministrativeArea", name: "Maine-et-Loire" },
+            { "@type": "Country", name: "France" },
+          ],
+        }
       : {
           "@context": "https://schema.org",
           "@type": "AboutPage",

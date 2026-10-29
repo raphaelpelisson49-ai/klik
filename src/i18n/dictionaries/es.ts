@@ -307,6 +307,7 @@ const es = {
       { label: "Sobre klik", href: "/a-propos" },
       { label: "Guía: llamadas perdidas", href: "/guide-appels-manques" },
       { label: "Guía: reseñas en Google", href: "/guide-avis-google" },
+      { label: "Agencia marketing IA en Angers", href: "/agence-marketing-ia-angers" },
     ],
     contactTitle: "Contacto",
     copyright: "klik · Tu agenda llena, sin letra pequeña.",

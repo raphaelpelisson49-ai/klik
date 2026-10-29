@@ -308,6 +308,7 @@ const en: Dictionary = {
       { label: "About klik", href: "/a-propos" },
       { label: "Guide: missed calls", href: "/guide-appels-manques" },
       { label: "Guide: Google reviews", href: "/guide-avis-google" },
+      { label: "AI marketing agency in Angers", href: "/agence-marketing-ia-angers" },
     ],
     contactTitle: "Contact",
     copyright: "klik · Your calendar full, no fine print.",

@@ -309,6 +309,7 @@ const fr: Dictionary = {
       { label: "À propos", href: "/a-propos" },
       { label: "Guide : appels manqués", href: "/guide-appels-manques" },
       { label: "Guide : avis Google", href: "/guide-avis-google" },
+      { label: "Agence marketing IA à Angers", href: "/agence-marketing-ia-angers" },
     ],
     contactTitle: "Contact",
     copyright: "klik · Votre agenda plein, sans petites lignes.",
