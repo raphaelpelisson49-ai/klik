@@ -10,9 +10,29 @@ import type { Locale } from "@/i18n/locales";
 
 const HOME_LABEL: Record<Locale, string> = { fr: "Accueil", es: "Inicio", en: "Home" };
 
+/** Les guides renvoient toujours vers les pages hub (métiers et services). */
+const HUB_LINKS: Record<Locale, { label: string; href: string }[]> = {
+  fr: [
+    { label: "Tous nos métiers du bâtiment", href: "/metiers" },
+    { label: "Nos services", href: "/services" },
+  ],
+  es: [
+    { label: "Todos nuestros oficios de la construcción", href: "/metiers" },
+    { label: "Nuestros servicios", href: "/services" },
+  ],
+  en: [
+    { label: "All our building trades", href: "/metiers" },
+    { label: "Our services", href: "/services" },
+  ],
+};
+
 export function ContentPage({ locale, slug }: { locale: Locale; slug: ContentSlug }) {
   const c = getContentPage(locale, slug);
   const dates = CONTENT_DATES[slug];
+  const links =
+    c.kind === "article"
+      ? [...c.links, ...HUB_LINKS[locale].filter((h) => !c.links.some((l) => l.href === h.href))]
+      : c.links;
   const url = `${SITE_URL}${localHref(locale, `/${slug}`)}`;
 
   const breadcrumbJson = {
@@ -163,7 +183,7 @@ export function ContentPage({ locale, slug }: { locale: Locale; slug: ContentSlu
           <section>
             <h2 className="font-serif text-xl font-semibold text-ivoire">{c.linksTitle}</h2>
             <ul className="mt-4 space-y-2 font-sans text-sm">
-              {c.links.map((l) => (
+              {links.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={localHref(locale, l.href)}
