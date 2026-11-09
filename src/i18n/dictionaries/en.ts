@@ -305,6 +305,8 @@ const en: Dictionary = {
       { label: "HVAC and air conditioning", href: "/climatisation" },
       { label: "Plumbing", href: "/plomberie" },
       { label: "Electrical", href: "/electricite" },
+      { label: "Roofing", href: "/couvreur" },
+      { label: "Energy renovation", href: "/renovation-energetique" },
       { label: "About klik", href: "/a-propos" },
       { label: "Guide: missed calls", href: "/guide-appels-manques" },
       { label: "Guide: Google reviews", href: "/guide-avis-google" },

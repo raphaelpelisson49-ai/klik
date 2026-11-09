@@ -306,6 +306,8 @@ const fr: Dictionary = {
       { label: "Climatisation et CVC", href: "/climatisation" },
       { label: "Plomberie", href: "/plomberie" },
       { label: "Électricité", href: "/electricite" },
+      { label: "Couverture et toiture", href: "/couvreur" },
+      { label: "Rénovation énergétique", href: "/renovation-energetique" },
       { label: "À propos", href: "/a-propos" },
       { label: "Guide : appels manqués", href: "/guide-appels-manques" },
       { label: "Guide : avis Google", href: "/guide-avis-google" },
