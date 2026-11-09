@@ -55,7 +55,7 @@ export function OrganizationSchema({ locale }: { locale: Locale }) {
             ],
             audience: {
               "@type": "BusinessAudience",
-              name: "PME techniques : climatisation, plomberie, électricité",
+              name: "Entreprises du bâtiment : plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique, maçonnerie, peinture",
             },
           },
           {
