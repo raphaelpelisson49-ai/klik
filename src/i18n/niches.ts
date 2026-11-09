@@ -1,6 +1,6 @@
 import type { Locale } from "./locales";
 
-export const NICHES = ["climatisation", "plomberie", "electricite", "couvreur", "renovation-energetique"] as const;
+export const NICHES = ["climatisation", "plomberie", "electricite", "couvreur", "renovation-energetique", "chauffagiste", "macon", "peintre-batiment"] as const;
 export type Niche = (typeof NICHES)[number];
 
 export type NicheContent = {
@@ -25,9 +25,9 @@ export type NicheContent = {
 const SUFFIX = "klik";
 
 export const NICHE_FOOTER_LABEL: Record<Locale, Record<Niche, string>> = {
-  fr: { climatisation: "Climatisation et CVC", plomberie: "Plomberie", electricite: "Électricité", couvreur: "Couverture et toiture", "renovation-energetique": "Rénovation énergétique" },
-  es: { climatisation: "Climatización", plomberie: "Fontanería", electricite: "Electricidad", couvreur: "Cubiertas y tejados", "renovation-energetique": "Rehabilitación energética" },
-  en: { climatisation: "HVAC and air conditioning", plomberie: "Plumbing", electricite: "Electrical", couvreur: "Roofing", "renovation-energetique": "Energy renovation" },
+  fr: { climatisation: "Climatisation et CVC", plomberie: "Plomberie", electricite: "Électricité", couvreur: "Couverture et toiture", "renovation-energetique": "Rénovation énergétique", chauffagiste: "Chauffage", macon: "Maçonnerie et gros œuvre", "peintre-batiment": "Peinture en bâtiment" },
+  es: { climatisation: "Climatización", plomberie: "Fontanería", electricite: "Electricidad", couvreur: "Cubiertas y tejados", "renovation-energetique": "Rehabilitación energética", chauffagiste: "Calefacción", macon: "Albañilería y obra", "peintre-batiment": "Pintura de obra" },
+  en: { climatisation: "HVAC and air conditioning", plomberie: "Plumbing", electricite: "Electrical", couvreur: "Roofing", "renovation-energetique": "Energy renovation", chauffagiste: "Heating", macon: "Masonry and building", "peintre-batiment": "Painting and decorating" },
 };
 
 const fr: Record<Niche, NicheContent> = {
@@ -179,6 +179,102 @@ const fr: Record<Niche, NicheContent> = {
       { title: "On récupère les rendez-vous perdus", text: "Suivi automatique des appels manqués et des devis restés sans réponse." },
       { title: "Des avis qui vous font ressortir", text: "On demande l'avis Google au bon moment, juste après un chantier réussi." },
       { title: "Un site et une fiche qui convertissent", text: "Une page par type de travaux, une fiche Google complète et un parcours clair vers le devis." },
+    ],
+    faqTitle: "Questions fréquentes",
+    faq: [
+      { q: "Faut-il s'y connaître en marketing ?", a: "Non. On vous explique chaque action en termes simples, sans jargon." },
+      { q: "En combien de temps voit-on des résultats ?", a: "On mesure sur 3 semaines et c'est vous qui décidez si on continue. Le référencement local demande en général plus de temps. On ne promet jamais de résultats garantis." },
+      { q: "Que se passe-t-il si je veux arrêter ?", a: "Vous nous le dites et on arrête, sans engagement de durée." },
+    ],
+    ctaTitle: "On parle de votre entreprise ?",
+    ctaSubtitle: "Racontez-nous votre situation et on vous dit, franchement, comment on s'y prendrait.",
+    ctaButton: "Demander un diagnostic gratuit",
+    calculatorLink: "Calculez ce qui vous échappe chaque mois",
+  },
+  "chauffagiste": {
+    metaTitle: `Agence marketing chauffagiste : plus de clients | klik`,
+    metaDescription:
+      "klik aide les chauffagistes à être trouvés sur Google, à ne plus perdre d'appels de panne ni de devis, et à récolter des avis. Diagnostic gratuit.",
+    eyebrow: "Chauffage",
+    h1: "Agence marketing pour chauffagistes",
+    intro:
+      "Une agence marketing pour chauffagistes aide votre entreprise à être trouvée quand quelqu'un cherche une installation, un entretien ou un dépannage de chaudière ou de pompe à chaleur près de chez lui. En cas de panne, le client appelle souvent parmi les premières entreprises qu'il trouve sur Google. On met en place ce qu'il faut pour que ce soit la vôtre.",
+    problemsTitle: "Ce qu'on voit chez les chauffagistes",
+    problems: [
+      { title: "La panne qui part chez un autre", text: "Vos techniciens sont chez un client, le téléphone sonne dans le vide, et la personne en panne appelle l'entreprise suivante." },
+      { title: "Des entretiens jamais reprogrammés", text: "Sans relance régulière, l'entretien annuel n'est pas replanifié et le chiffre d'affaires s'échappe sans bruit." },
+      { title: "Une fiche Google peu convaincante", text: "Peu d'avis, des horaires ou des services mal renseignés : on vous trouve moins et on vous fait moins confiance." },
+    ],
+    helpTitle: "Ce qu'on fait pour vous",
+    help: [
+      { title: "On remplit votre agenda", text: "Référencement local et campagnes ciblées pour qu'on vous trouve quand on cherche une installation, un entretien ou un dépannage de chauffage dans votre zone." },
+      { title: "On récupère les rendez-vous perdus", text: "Suivi automatique des appels manqués, des devis restés sans réponse et des entretiens à reprogrammer." },
+      { title: "Des avis qui vous font ressortir", text: "On demande l'avis Google au bon moment, juste après une intervention réussie." },
+      { title: "Un site et une fiche qui convertissent", text: "Un site clair, une page par prestation et une fiche Google complète, pensés pour qu'on vous appelle vous." },
+    ],
+    faqTitle: "Questions fréquentes",
+    faq: [
+      { q: "Travaillez-vous aussi avec la climatisation ?", a: "Oui. La climatisation et le CVC ont leur propre page. Si vous faites les deux, on s'occupe de l'ensemble de votre activité." },
+      { q: "Comment ne pas rater un appel de panne ?", a: "On met en place un suivi qui relance rapidement les appels manqués, pour que la demande ne parte pas chez un concurrent." },
+      { q: "En combien de temps voit-on des résultats ?", a: "On mesure sur 3 semaines et c'est vous qui décidez si on continue. Le référencement local demande en général plus de temps. On ne promet jamais de résultats garantis." },
+    ],
+    ctaTitle: "On parle de votre entreprise ?",
+    ctaSubtitle: "Racontez-nous votre situation et on vous dit, franchement, comment on s'y prendrait.",
+    ctaButton: "Demander un diagnostic gratuit",
+    calculatorLink: "Calculez ce qui vous échappe chaque mois",
+  },
+  "macon": {
+    metaTitle: `Agence marketing maçon : plus de chantiers | klik`,
+    metaDescription:
+      "klik aide les maçons et entreprises de gros œuvre à être trouvés sur Google, à relancer leurs devis et à récolter des avis. Diagnostic gratuit.",
+    eyebrow: "Maçonnerie et gros œuvre",
+    h1: "Agence marketing pour maçons et entreprises de gros œuvre",
+    intro:
+      "Une agence marketing pour maçons aide votre entreprise à être trouvée quand quelqu'un prépare une extension, une rénovation ou une construction près de chez lui. Ces projets sont longs à décider : le client compare, hésite, revient. On met en place ce qu'il faut pour que vous restiez la première entreprise à laquelle il pense.",
+    problemsTitle: "Ce qu'on voit chez les maçons",
+    problems: [
+      { title: "Des devis qui traînent", text: "Un chantier de maçonnerie se décide lentement. Sans relance, le devis reste sans réponse et le client choisit une autre entreprise." },
+      { title: "Des réalisations qu'on ne voit pas", text: "Sans photos de chantiers et sans page dédiée, le futur client a du mal à juger la qualité de votre travail." },
+      { title: "Des appels pendant le chantier", text: "Quand toute l'équipe est sur place, le téléphone sonne dans le vide et la demande part ailleurs." },
+    ],
+    helpTitle: "Ce qu'on fait pour vous",
+    help: [
+      { title: "On remplit votre agenda", text: "Référencement local et campagnes ciblées pour qu'on vous trouve quand on cherche un maçon pour une extension, une rénovation ou une construction dans votre zone." },
+      { title: "On récupère les rendez-vous perdus", text: "Suivi automatique des appels manqués et des devis restés sans réponse." },
+      { title: "Des avis qui vous font ressortir", text: "On demande l'avis Google au bon moment, juste après un chantier terminé." },
+      { title: "Un site et une fiche qui convertissent", text: "Un site clair avec vos réalisations, une page par type de travaux et une fiche Google complète." },
+    ],
+    faqTitle: "Questions fréquentes",
+    faq: [
+      { q: "Un gros chantier se décide-t-il vraiment sur Google ?", a: "Souvent, le client cherche une entreprise près de chez lui et compare les premiers résultats et leurs avis. Être visible et rassurer augmente vos chances d'être appelé, sans garantie." },
+      { q: "Comment relancer un devis sans paraître insistant ?", a: "Un message court, quelques jours après l'envoi, qui demande si le client a des questions. Le but est d'aider, pas de forcer la décision." },
+      { q: "En combien de temps voit-on des résultats ?", a: "On mesure sur 3 semaines et c'est vous qui décidez si on continue. Le référencement local demande en général plus de temps. On ne promet jamais de résultats garantis." },
+    ],
+    ctaTitle: "On parle de votre entreprise ?",
+    ctaSubtitle: "Racontez-nous votre situation et on vous dit, franchement, comment on s'y prendrait.",
+    ctaButton: "Demander un diagnostic gratuit",
+    calculatorLink: "Calculez ce qui vous échappe chaque mois",
+  },
+  "peintre-batiment": {
+    metaTitle: `Agence marketing peintre en bâtiment | klik`,
+    metaDescription:
+      "klik aide les peintres en bâtiment à être trouvés sur Google, à relancer leurs devis et à récolter des avis. Diagnostic gratuit.",
+    eyebrow: "Peinture en bâtiment",
+    h1: "Agence marketing pour peintres en bâtiment",
+    intro:
+      "Une agence marketing pour peintres en bâtiment aide votre entreprise à être trouvée quand quelqu'un cherche un peintre pour son logement ou ses locaux. Le client compare des devis et regarde les réalisations avant de choisir. On met en place ce qu'il faut pour que votre travail soit visible et que chaque demande reçoive une réponse.",
+    problemsTitle: "Ce qu'on voit chez les peintres en bâtiment",
+    problems: [
+      { title: "Des devis à relancer", text: "Le client demande plusieurs devis. Sans relance, le vôtre se perd parmi les autres." },
+      { title: "Des réalisations qui ne se voient pas", text: "Sans photos avant/après et sans page dédiée, difficile de montrer la qualité de vos finitions." },
+      { title: "Des avis trop rares", text: "Un client satisfait pense rarement à laisser un avis tout seul, alors que les prochains les liront avant d'appeler." },
+    ],
+    helpTitle: "Ce qu'on fait pour vous",
+    help: [
+      { title: "On remplit votre agenda", text: "Référencement local et campagnes ciblées pour qu'on vous trouve quand on cherche un peintre en bâtiment dans votre zone." },
+      { title: "On récupère les rendez-vous perdus", text: "Suivi automatique des appels manqués et des devis restés sans réponse." },
+      { title: "Des avis qui vous font ressortir", text: "On demande l'avis Google au bon moment, juste après un chantier réussi." },
+      { title: "Un site et une fiche qui convertissent", text: "Un site clair avec vos réalisations avant/après et une fiche Google complète." },
     ],
     faqTitle: "Questions fréquentes",
     faq: [
@@ -354,6 +450,102 @@ const es: Record<Niche, NicheContent> = {
     ctaButton: "Pedir un diagnóstico gratuito",
     calculatorLink: "Calcula lo que se te escapa cada mes",
   },
+  "chauffagiste": {
+    metaTitle: `Agencia de marketing para empresas de calefacción | klik`,
+    metaDescription:
+      "klik ayuda a las empresas de calefacción a aparecer en Google, a no perder llamadas de avería ni presupuestos y a conseguir reseñas. Diagnóstico gratuito.",
+    eyebrow: "Calefacción",
+    h1: "Agencia de marketing para empresas de calefacción",
+    intro:
+      "Una agencia de marketing para empresas de calefacción te ayuda a aparecer cuando alguien busca una instalación, un mantenimiento o una reparación de caldera o aerotermia cerca de casa. Ante una avería, el cliente suele llamar a una de las primeras empresas que encuentra en Google. Montamos lo necesario para que sea la tuya.",
+    problemsTitle: "Lo que vemos en las empresas de calefacción",
+    problems: [
+      { title: "La avería que se va a otro", text: "Tus técnicos están en casa de un cliente, el teléfono suena en el vacío y quien tiene la avería llama a la siguiente empresa." },
+      { title: "Mantenimientos que nadie reprograma", text: "Sin recordatorios, el mantenimiento anual no se vuelve a planificar y la facturación se escapa sin ruido." },
+      { title: "Una ficha de Google poco convincente", text: "Pocas reseñas, horarios o servicios mal indicados: te encuentran menos y confían menos en ti." },
+    ],
+    helpTitle: "Lo que hacemos por ti",
+    help: [
+      { title: "Llenamos tu agenda", text: "SEO local y campañas para que te encuentren cuando buscan una instalación, un mantenimiento o una reparación de calefacción en tu zona." },
+      { title: "Recuperamos las citas perdidas", text: "Seguimiento automático de las llamadas perdidas, de los presupuestos sin respuesta y de los mantenimientos por reprogramar." },
+      { title: "Reseñas que te hacen destacar", text: "Pedimos la reseña de Google en el momento adecuado, justo después de una intervención bien hecha." },
+      { title: "Una web y una ficha que convierten", text: "Una web clara, una página por servicio y una ficha de Google completa, pensadas para que te llamen a ti." },
+    ],
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      { q: "¿Trabajáis también con climatización?", a: "Sí. La climatización tiene su propia página. Si haces las dos cosas, nos ocupamos de toda tu actividad." },
+      { q: "¿Cómo no perder una llamada de avería?", a: "Montamos un seguimiento que retoma rápido las llamadas perdidas, para que la solicitud no se vaya a la competencia." },
+      { q: "¿En cuánto tiempo se ven resultados?", a: "Medimos durante 3 semanas y tú decides si seguimos. El SEO local suele necesitar más tiempo. Nunca prometemos resultados garantizados." },
+    ],
+    ctaTitle: "¿Hablamos de tu empresa?",
+    ctaSubtitle: "Cuéntanos tu situación y te decimos, con franqueza, cómo la abordaríamos.",
+    ctaButton: "Pedir un diagnóstico gratuito",
+    calculatorLink: "Calcula lo que se te escapa cada mes",
+  },
+  "macon": {
+    metaTitle: `Agencia de marketing para albañiles y obra | klik`,
+    metaDescription:
+      "klik ayuda a los albañiles y empresas de obra a aparecer en Google, a retomar sus presupuestos y a conseguir reseñas. Diagnóstico gratuito.",
+    eyebrow: "Albañilería y obra",
+    h1: "Agencia de marketing para albañiles y empresas de obra",
+    intro:
+      "Una agencia de marketing para albañiles te ayuda a aparecer cuando alguien prepara una ampliación, una reforma o una construcción cerca de casa. Son proyectos que se deciden despacio: el cliente compara, duda y vuelve. Montamos lo necesario para que sigas siendo la primera empresa en la que piense.",
+    problemsTitle: "Lo que vemos en las empresas de albañilería",
+    problems: [
+      { title: "Presupuestos que se eternizan", text: "Una obra de albañilería se decide despacio. Sin seguimiento, el presupuesto se queda sin respuesta y el cliente elige otra empresa." },
+      { title: "Trabajos que no se ven", text: "Sin fotos de obras ni una página dedicada, al futuro cliente le cuesta juzgar la calidad de tu trabajo." },
+      { title: "Llamadas durante la obra", text: "Cuando todo el equipo está en obra, el teléfono suena en el vacío y la solicitud se va a otro." },
+    ],
+    helpTitle: "Lo que hacemos por ti",
+    help: [
+      { title: "Llenamos tu agenda", text: "SEO local y campañas para que te encuentren cuando buscan un albañil para una ampliación, una reforma o una construcción en tu zona." },
+      { title: "Recuperamos las citas perdidas", text: "Seguimiento automático de las llamadas perdidas y de los presupuestos sin respuesta." },
+      { title: "Reseñas que te hacen destacar", text: "Pedimos la reseña de Google en el momento adecuado, justo después de terminar una obra." },
+      { title: "Una web y una ficha que convierten", text: "Una web clara con tus trabajos, una página por tipo de obra y una ficha de Google completa." },
+    ],
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      { q: "¿De verdad se decide una obra grande en Google?", a: "A menudo, el cliente busca una empresa cerca de casa y compara los primeros resultados y sus reseñas. Ser visible y transmitir confianza aumenta tus opciones de recibir la llamada, sin garantías." },
+      { q: "¿Cómo retomar un presupuesto sin parecer pesado?", a: "Un mensaje corto, unos días después de enviarlo, preguntando si el cliente tiene dudas. El objetivo es ayudar, no forzar la decisión." },
+      { q: "¿En cuánto tiempo se ven resultados?", a: "Medimos durante 3 semanas y tú decides si seguimos. El SEO local suele necesitar más tiempo. Nunca prometemos resultados garantizados." },
+    ],
+    ctaTitle: "¿Hablamos de tu empresa?",
+    ctaSubtitle: "Cuéntanos tu situación y te decimos, con franqueza, cómo la abordaríamos.",
+    ctaButton: "Pedir un diagnóstico gratuito",
+    calculatorLink: "Calcula lo que se te escapa cada mes",
+  },
+  "peintre-batiment": {
+    metaTitle: `Agencia de marketing para pintores de obra | klik`,
+    metaDescription:
+      "klik ayuda a los pintores de obra a aparecer en Google, a retomar sus presupuestos y a conseguir reseñas. Diagnóstico gratuito.",
+    eyebrow: "Pintura de obra",
+    h1: "Agencia de marketing para pintores de obra",
+    intro:
+      "Una agencia de marketing para pintores te ayuda a aparecer cuando alguien busca un pintor para su vivienda o su local. El cliente compara presupuestos y mira los trabajos antes de elegir. Montamos lo necesario para que tu trabajo se vea y para que cada solicitud reciba respuesta.",
+    problemsTitle: "Lo que vemos en los pintores de obra",
+    problems: [
+      { title: "Presupuestos que retomar", text: "El cliente pide varios presupuestos. Sin seguimiento, el tuyo se pierde entre los demás." },
+      { title: "Trabajos que no se ven", text: "Sin fotos antes/después ni una página dedicada, es difícil mostrar la calidad de tus acabados." },
+      { title: "Reseñas demasiado escasas", text: "Un cliente satisfecho rara vez piensa en dejar una reseña por sí solo, y los siguientes las leerán antes de llamar." },
+    ],
+    helpTitle: "Lo que hacemos por ti",
+    help: [
+      { title: "Llenamos tu agenda", text: "SEO local y campañas para que te encuentren cuando buscan un pintor de obra en tu zona." },
+      { title: "Recuperamos las citas perdidas", text: "Seguimiento automático de las llamadas perdidas y de los presupuestos sin respuesta." },
+      { title: "Reseñas que te hacen destacar", text: "Pedimos la reseña de Google en el momento adecuado, justo después de un trabajo bien hecho." },
+      { title: "Una web y una ficha que convierten", text: "Una web clara con tus trabajos antes/después y una ficha de Google completa." },
+    ],
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      { q: "¿Hace falta saber de marketing?", a: "No. Te explicamos cada acción con palabras sencillas, sin jerga." },
+      { q: "¿En cuánto tiempo se ven resultados?", a: "Medimos durante 3 semanas y tú decides si seguimos. El SEO local suele necesitar más tiempo. Nunca prometemos resultados garantizados." },
+      { q: "¿Qué pasa si quiero parar?", a: "Nos lo dices y paramos, sin permanencia." },
+    ],
+    ctaTitle: "¿Hablamos de tu empresa?",
+    ctaSubtitle: "Cuéntanos tu situación y te decimos, con franqueza, cómo la abordaríamos.",
+    ctaButton: "Pedir un diagnóstico gratuito",
+    calculatorLink: "Calcula lo que se te escapa cada mes",
+  },
 };
 
 const en: Record<Niche, NicheContent> = {
@@ -505,6 +697,102 @@ const en: Record<Niche, NicheContent> = {
       { title: "We recover lost appointments", text: "Automatic follow-up on missed calls and quotes left unanswered." },
       { title: "Reviews that make you stand out", text: "We ask for the Google review at the right moment, right after a successful job." },
       { title: "A website and listing that convert", text: "One page per type of work, a complete Google listing and a clear path to the quote." },
+    ],
+    faqTitle: "Frequently asked questions",
+    faq: [
+      { q: "Do I need to know about marketing?", a: "No. We explain each action in plain terms, with no jargon." },
+      { q: "How long before we see results?", a: "We measure over 3 weeks and you decide if we continue. Local SEO usually takes longer. We never promise guaranteed results." },
+      { q: "What if I want to cancel?", a: "You tell us and we stop. No lock-in contract." },
+    ],
+    ctaTitle: "Shall we talk about your business?",
+    ctaSubtitle: "Tell us your situation and we'll tell you, straight up, how we'd approach it.",
+    ctaButton: "Request a free diagnosis",
+    calculatorLink: "Work out what's slipping away every month",
+  },
+  "chauffagiste": {
+    metaTitle: `Marketing agency for heating companies | klik`,
+    metaDescription:
+      "klik helps heating companies get found on Google, stop losing breakdown calls and quotes, and collect reviews. Free diagnosis.",
+    eyebrow: "Heating",
+    h1: "Marketing agency for heating companies",
+    intro:
+      "A marketing agency for heating companies helps your business show up when someone searches for a boiler or heat pump installation, service or repair nearby. When something breaks, the customer often calls one of the first companies they find on Google. We set up what it takes for that to be yours.",
+    problemsTitle: "What we see at heating companies",
+    problems: [
+      { title: "The breakdown that goes to someone else", text: "Your engineers are at a customer's, the phone rings out, and the person with no heating calls the next company." },
+      { title: "Servicing visits that are never rebooked", text: "Without regular follow-up, the annual service isn't rescheduled and revenue quietly slips away." },
+      { title: "A Google listing that doesn't convince", text: "Few reviews, hours or services badly filled in: you're harder to find and harder to trust." },
+    ],
+    helpTitle: "What we do for you",
+    help: [
+      { title: "We fill your calendar", text: "Local SEO and targeted campaigns so you show up when people search for heating installation, servicing or repair in your area." },
+      { title: "We recover lost appointments", text: "Automatic follow-up on missed calls, unanswered quotes and servicing visits to rebook." },
+      { title: "Reviews that make you stand out", text: "We ask for the Google review at the right moment, right after a successful visit." },
+      { title: "A website and listing that convert", text: "A clear website, one page per service and a complete Google listing, built so people call you." },
+    ],
+    faqTitle: "Frequently asked questions",
+    faq: [
+      { q: "Do you also work with air conditioning?", a: "Yes. Air conditioning and HVAC have their own page. If you do both, we take care of your whole activity." },
+      { q: "How do I avoid missing a breakdown call?", a: "We set up a follow-up that quickly picks up missed calls, so the request doesn't go to a competitor." },
+      { q: "How long before we see results?", a: "We measure over 3 weeks and you decide if we continue. Local SEO usually takes longer. We never promise guaranteed results." },
+    ],
+    ctaTitle: "Shall we talk about your business?",
+    ctaSubtitle: "Tell us your situation and we'll tell you, straight up, how we'd approach it.",
+    ctaButton: "Request a free diagnosis",
+    calculatorLink: "Work out what's slipping away every month",
+  },
+  "macon": {
+    metaTitle: `Marketing agency for masons and builders | klik`,
+    metaDescription:
+      "klik helps masons and building companies get found on Google, follow up their quotes and collect reviews. Free diagnosis.",
+    eyebrow: "Masonry and building",
+    h1: "Marketing agency for masons and building companies",
+    intro:
+      "A marketing agency for masons helps your business show up when someone plans an extension, a renovation or a new build nearby. These projects take time to decide: the customer compares, hesitates and comes back. We set up what it takes for you to stay the first company they think of.",
+    problemsTitle: "What we see at masonry companies",
+    problems: [
+      { title: "Quotes that drag on", text: "A masonry job is decided slowly. Without follow-up, the quote goes unanswered and the customer picks another company." },
+      { title: "Work nobody can see", text: "Without site photos and a dedicated page, a future customer struggles to judge the quality of your work." },
+      { title: "Calls that come in during the job", text: "When the whole team is on site, the phone rings out and the request goes elsewhere." },
+    ],
+    helpTitle: "What we do for you",
+    help: [
+      { title: "We fill your calendar", text: "Local SEO and targeted campaigns so you show up when people search for a mason for an extension, renovation or new build in your area." },
+      { title: "We recover lost appointments", text: "Automatic follow-up on missed calls and quotes left unanswered." },
+      { title: "Reviews that make you stand out", text: "We ask for the Google review at the right moment, right after a finished job." },
+      { title: "A website and listing that convert", text: "A clear website showing your work, one page per type of job and a complete Google listing." },
+    ],
+    faqTitle: "Frequently asked questions",
+    faq: [
+      { q: "Is a big job really decided on Google?", a: "Often, the customer searches for a company nearby and compares the first results and their reviews. Being visible and reassuring improves your chances of getting the call, with no guarantee." },
+      { q: "How do I follow up a quote without seeming pushy?", a: "A short message a few days after sending, asking whether the customer has questions. The aim is to help, not to force the decision." },
+      { q: "How long before we see results?", a: "We measure over 3 weeks and you decide if we continue. Local SEO usually takes longer. We never promise guaranteed results." },
+    ],
+    ctaTitle: "Shall we talk about your business?",
+    ctaSubtitle: "Tell us your situation and we'll tell you, straight up, how we'd approach it.",
+    ctaButton: "Request a free diagnosis",
+    calculatorLink: "Work out what's slipping away every month",
+  },
+  "peintre-batiment": {
+    metaTitle: `Marketing agency for painters and decorators | klik`,
+    metaDescription:
+      "klik helps painters and decorators get found on Google, follow up their quotes and collect reviews. Free diagnosis.",
+    eyebrow: "Painting and decorating",
+    h1: "Marketing agency for painters and decorators",
+    intro:
+      "A marketing agency for painters and decorators helps your business show up when someone searches for a painter for their home or premises. The customer compares quotes and looks at past work before choosing. We set up what it takes for your work to be seen and for every request to get an answer.",
+    problemsTitle: "What we see at painting companies",
+    problems: [
+      { title: "Quotes to follow up", text: "The customer asks for several quotes. Without follow-up, yours gets lost among the others." },
+      { title: "Work that doesn't show", text: "Without before/after photos and a dedicated page, it's hard to show the quality of your finish." },
+      { title: "Too few reviews", text: "A happy customer rarely thinks to leave a review on their own, yet the next ones will read them before calling." },
+    ],
+    helpTitle: "What we do for you",
+    help: [
+      { title: "We fill your calendar", text: "Local SEO and targeted campaigns so you show up when people search for a painter in your area." },
+      { title: "We recover lost appointments", text: "Automatic follow-up on missed calls and quotes left unanswered." },
+      { title: "Reviews that make you stand out", text: "We ask for the Google review at the right moment, right after a successful job." },
+      { title: "A website and listing that convert", text: "A clear website with your before/after work and a complete Google listing." },
     ],
     faqTitle: "Frequently asked questions",
     faq: [

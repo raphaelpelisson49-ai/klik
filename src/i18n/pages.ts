@@ -1,11 +1,11 @@
 import type { Locale } from "./locales";
 
 /** Páginas de contenido (À propos y guías). Una por slug y por idioma. */
-export const CONTENT_SLUGS = ["a-propos", "guide-appels-manques", "guide-avis-google", "agence-marketing-ia-angers"] as const;
+export const CONTENT_SLUGS = ["a-propos", "guide-appels-manques", "guide-avis-google", "agence-marketing-ia-angers", "guide-relance-devis", "metiers", "services"] as const;
 export type ContentSlug = (typeof CONTENT_SLUGS)[number];
 
 export type ContentPageData = {
-  kind: "about" | "article" | "service";
+  kind: "about" | "article" | "service" | "hub";
   metaTitle: string;
   metaDescription: string;
   breadcrumb: string;
@@ -27,12 +27,15 @@ export const CONTENT_DATES: Record<ContentSlug, { published: string; modified: s
   "guide-appels-manques": { published: "2026-10-27", modified: "2026-10-27" },
   "guide-avis-google": { published: "2026-10-27", modified: "2026-10-27" },
   "agence-marketing-ia-angers": { published: "2026-10-29", modified: "2026-10-29" },
+  "guide-relance-devis": { published: "2026-11-09", modified: "2026-11-09" },
+  metiers: { published: "2026-11-09", modified: "2026-11-09" },
+  services: { published: "2026-11-09", modified: "2026-11-09" },
 };
 
 const SUFFIX: Record<Locale, string> = {
-  fr: "klik – acquisition de clients, avis, site et fiche Google",
-  es: "klik – captación de clientes, reseñas, web y ficha de Google",
-  en: "klik – customer acquisition, reviews, website & Google listing",
+  fr: "klik",
+  es: "klik",
+  en: "klik",
 };
 
 const fr: Record<ContentSlug, ContentPageData> = {
@@ -292,6 +295,159 @@ const fr: Record<ContentSlug, ContentPageData> = {
     ctaTitle: "Parlons de votre entreprise à Angers",
     ctaSubtitle: "Un diagnostic gratuit de 20 minutes pour voir où vous perdez des rendez-vous.",
     ctaButton: "Demandez votre audit",
+  },
+  "guide-relance-devis": {
+    kind: "article",
+    metaTitle: `Relancer un devis : comment faire quand on est artisan | klik`,
+    metaDescription:
+      "Pourquoi un devis reste sans réponse, quand et comment le relancer sans paraître insistant, et ce qu'un artisan du bâtiment peut automatiser.",
+    breadcrumb: "Relancer ses devis",
+    eyebrow: "Guide",
+    h1: "Relancer ses devis quand on est artisan du bâtiment",
+    intro:
+      "Un devis envoyé sans relance reste souvent sans réponse : le client compare, hésite ou oublie. Voici quand et comment relancer sans paraître insistant, et ce qu'on peut automatiser pour ne plus y penser pendant que vous êtes sur le chantier.",
+    sections: [
+      {
+        title: "Pourquoi un devis reste sans réponse",
+        paras: ["Ce n'est pas forcément un refus. Dans le bâtiment, plusieurs raisons reviennent :"],
+        bullets: [
+          "le client compare plusieurs entreprises avant de décider",
+          "le projet n'est pas urgent et passe après le reste",
+          "le devis est perdu parmi d'autres emails",
+          "il a une question mais n'ose pas appeler",
+        ],
+      },
+      {
+        title: "Quand relancer",
+        paras: ["Il n'y a pas de règle unique, mais une logique simple : relancer assez tôt pour que le projet reste frais, assez peu pour ne pas gêner. À titre de repères, à adapter à la taille du chantier :"],
+        bullets: [
+          "quelques jours après l'envoi : un message court pour vérifier que le devis est bien reçu et répondre aux questions",
+          "environ une semaine plus tard : un message qui apporte quelque chose d'utile (une précision, une disponibilité)",
+          "deux semaines plus tard : un dernier message poli, qui laisse la porte ouverte",
+        ],
+      },
+      {
+        title: "Que dire dans la relance",
+        paras: ["Le ton compte plus que la longueur. Une relance efficace est courte, utile et facile à répondre :"],
+        bullets: [
+          "rappeler le chantier en une phrase (« votre projet de toiture à … »)",
+          "demander s'il y a des questions sur le devis",
+          "proposer un appel ou une visite si besoin",
+          "ne jamais mettre la pression sur la décision",
+        ],
+      },
+      {
+        title: "Ce qu'on peut automatiser",
+        paras: ["Le but n'est pas d'envoyer des messages froids, mais de ne plus oublier de relancer :"],
+        bullets: [
+          "un rappel dans l'agenda à chaque devis envoyé",
+          "un message prérempli que vous validez en un clic",
+          "un suivi du statut de chaque devis (envoyé, relancé, signé, refusé)",
+          "une alerte quand un devis important reste sans réponse",
+        ],
+      },
+      {
+        title: "Ce qui reste à faire à la main",
+        paras: ["Répondre aux questions techniques, ajuster un prix, appeler quand le chantier est important : la relation reste entre vous et le client. L'outil sert à ne rien laisser passer, pas à remplacer votre jugement."],
+      },
+    ],
+    faq: [
+      { q: "Combien de fois faut-il relancer un devis ?", a: "Une ou deux relances suffisent en général. Au-delà, on risque de gêner le client. La dernière relance doit laisser la porte ouverte." },
+      { q: "Une relance automatique paraît-elle impersonnelle ?", a: "Pas si le message est court, relié au chantier du client et validé par vous. L'automatisation sert à ne pas oublier, pas à écrire à votre place." },
+      { q: "Que faire si le client ne répond jamais ?", a: "Après deux relances, classez le devis comme sans suite, en gardant une note pour reprendre contact plus tard si le contexte change." },
+    ],
+    linksTitle: "Pour aller plus loin",
+    links: [
+      { label: "Calculatrice de rendez-vous perdus", href: "/calculadora" },
+      { label: "Guide : appels manqués", href: "/guide-appels-manques" },
+      { label: "Guide : obtenir plus d'avis Google", href: "/guide-avis-google" },
+      { label: "Tous nos métiers du bâtiment", href: "/metiers" },
+      { label: "Nos services", href: "/services" },
+    ],
+    ctaTitle: "Parlons de vos devis",
+    ctaSubtitle: "Racontez-nous comment vous suivez vos devis aujourd'hui, et on vous dit comment on s'y prendrait.",
+    ctaButton: "Demander un diagnostic gratuit",
+  },
+  "metiers": {
+    kind: "hub",
+    metaTitle: `Marketing pour les entreprises du bâtiment, par métier | klik`,
+    metaDescription:
+      "Toutes les pages klik par métier du bâtiment : plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique, maçonnerie, peinture.",
+    breadcrumb: "Métiers",
+    eyebrow: "Métiers",
+    h1: "Marketing pour les entreprises du bâtiment, métier par métier",
+    intro:
+      "klik accompagne les entreprises du bâtiment qui veulent plus de chantiers sans courir après les clients. Choisissez votre métier pour voir ce qu'on fait concrètement pour vous.",
+    sections: [
+      {
+        title: "Ce qui revient dans tous les métiers",
+        paras: ["Quel que soit le métier, on retrouve presque toujours les mêmes pertes :"],
+        bullets: [
+          "des appels manqués pendant les chantiers",
+          "des devis envoyés puis jamais relancés",
+          "trop peu d'avis Google",
+          "un site et une fiche Google qui n'expliquent pas clairement ce que vous faites",
+        ],
+      },
+      {
+        title: "Comment on travaille",
+        paras: ["On commence par un diagnostic gratuit de 20 minutes : on regarde votre entreprise, votre zone et ce qui vous fait perdre des clients. Si ça vous convient, on met en place un plan clair, avec ce qu'on fait et à quoi s'attendre. Sans engagement de durée."],
+      },
+    ],
+    linksTitle: "Nos pages par métier",
+    links: [
+      { label: "Marketing pour les entreprises de plomberie", href: "/plomberie" },
+      { label: "Marketing pour les entreprises de climatisation et de CVC", href: "/climatisation" },
+      { label: "Marketing pour les entreprises d'électricité", href: "/electricite" },
+      { label: "Agence marketing pour couvreurs", href: "/couvreur" },
+      { label: "Agence marketing pour la rénovation énergétique", href: "/renovation-energetique" },
+      { label: "Agence marketing pour chauffagistes", href: "/chauffagiste" },
+      { label: "Agence marketing pour maçons", href: "/macon" },
+      { label: "Agence marketing pour peintres en bâtiment", href: "/peintre-batiment" },
+    ],
+    ctaTitle: "On parle de votre métier ?",
+    ctaSubtitle: "Dites-nous ce que vous faites et où vous intervenez, on vous répond avec la façon dont on s'y prendrait.",
+    ctaButton: "Demander un diagnostic gratuit",
+  },
+  "services": {
+    kind: "hub",
+    metaTitle: `Nos services pour les entreprises du bâtiment | klik`,
+    metaDescription:
+      "Acquisition de clients, récupération des rendez-vous perdus, avis Google, site et fiche Google : ce que klik fait pour les entreprises du bâtiment.",
+    breadcrumb: "Services",
+    eyebrow: "Services",
+    h1: "Nos services pour les entreprises du bâtiment",
+    intro:
+      "Quatre services, un même objectif : que votre agenda se remplisse sans que vous perdiez des chantiers à cause d'un appel manqué, d'un devis oublié ou d'une fiche Google vide.",
+    sections: [
+      {
+        title: "Acquisition de clients",
+        paras: ["Référencement local et campagnes ciblées pour qu'on vous trouve quand quelqu'un cherche votre métier près de chez lui."],
+      },
+      {
+        title: "Récupération des rendez-vous perdus",
+        paras: ["Suivi automatique des appels manqués et des devis sans réponse, pour qu'aucune demande n'attende."],
+      },
+      {
+        title: "Avis et réputation",
+        paras: ["On demande l'avis Google au bon moment, juste après un chantier réussi, pour que vous apparaissiez avec des avis récents."],
+      },
+      {
+        title: "Site et fiche Google",
+        paras: ["Un site clair, une page par prestation et une fiche Google complète, pensés pour qu'on vous appelle vous."],
+      },
+    ],
+    linksTitle: "Pour aller plus loin",
+    links: [
+      { label: "Calculatrice de rendez-vous perdus", href: "/calculadora" },
+      { label: "Guide : appels manqués", href: "/guide-appels-manques" },
+      { label: "Guide : relancer ses devis", href: "/guide-relance-devis" },
+      { label: "Guide : obtenir plus d'avis Google", href: "/guide-avis-google" },
+      { label: "Tous nos métiers du bâtiment", href: "/metiers" },
+    ],
+    ctaTitle: "Quel service vous manque le plus ?",
+    ctaSubtitle: "Racontez-nous votre situation, on vous dit par où on commencerait.",
+    ctaButton: "Demander un diagnostic gratuit",
   },
 };
 
@@ -553,6 +709,159 @@ const es: Record<ContentSlug, ContentPageData> = {
     ctaSubtitle: "Un diagnóstico gratuito de 20 minutos para ver dónde pierdes citas.",
     ctaButton: "Pide tu auditoría",
   },
+  "guide-relance-devis": {
+    kind: "article",
+    metaTitle: `Hacer seguimiento de un presupuesto: guía para empresas de obra | klik`,
+    metaDescription:
+      "Por qué un presupuesto se queda sin respuesta, cuándo y cómo retomarlo sin agobiar, y qué puede automatizar una empresa del sector de la construcción.",
+    breadcrumb: "Seguimiento de presupuestos",
+    eyebrow: "Guía",
+    h1: "Hacer seguimiento de tus presupuestos si trabajas en la construcción",
+    intro:
+      "Un presupuesto enviado sin seguimiento suele quedarse sin respuesta: el cliente compara, duda o se olvida. Esto es cuándo y cómo retomarlo sin agobiar, y qué se puede automatizar para no tener que pensar en ello mientras estás en obra.",
+    sections: [
+      {
+        title: "Por qué un presupuesto se queda sin respuesta",
+        paras: ["No siempre es un no. En la construcción se repiten varios motivos:"],
+        bullets: [
+          "el cliente compara varias empresas antes de decidir",
+          "el proyecto no es urgente y pasa a segundo plano",
+          "el presupuesto se pierde entre otros correos",
+          "tiene una duda pero no se atreve a llamar",
+        ],
+      },
+      {
+        title: "Cuándo retomarlo",
+        paras: ["No hay una regla única, pero sí una lógica sencilla: retomarlo pronto para que el proyecto siga fresco, y no tanto como para molestar. Como referencia, a adaptar al tamaño de la obra:"],
+        bullets: [
+          "unos días después del envío: un mensaje corto para comprobar que llegó y resolver dudas",
+          "una semana más tarde, aproximadamente: un mensaje que aporte algo útil (una precisión, una disponibilidad)",
+          "dos semanas más tarde: un último mensaje amable que deje la puerta abierta",
+        ],
+      },
+      {
+        title: "Qué decir en el seguimiento",
+        paras: ["El tono importa más que la longitud. Un buen seguimiento es corto, útil y fácil de contestar:"],
+        bullets: [
+          "recordar la obra en una frase (« tu proyecto de cubierta en … »)",
+          "preguntar si hay dudas sobre el presupuesto",
+          "proponer una llamada o una visita si hace falta",
+          "no presionar nunca para decidir",
+        ],
+      },
+      {
+        title: "Qué se puede automatizar",
+        paras: ["El objetivo no es enviar mensajes fríos, sino no olvidarse de retomar:"],
+        bullets: [
+          "un recordatorio en la agenda con cada presupuesto enviado",
+          "un mensaje preparado que validas con un clic",
+          "un seguimiento del estado de cada presupuesto (enviado, retomado, firmado, rechazado)",
+          "una alerta cuando un presupuesto importante sigue sin respuesta",
+        ],
+      },
+      {
+        title: "Lo que sigue haciéndose a mano",
+        paras: ["Responder dudas técnicas, ajustar un precio, llamar cuando la obra es importante: la relación sigue siendo entre tú y el cliente. La herramienta sirve para que no se escape nada, no para sustituir tu criterio."],
+      },
+    ],
+    faq: [
+      { q: "¿Cuántas veces hay que retomar un presupuesto?", a: "Con uno o dos seguimientos suele bastar. Más allá, se corre el riesgo de molestar. El último debe dejar la puerta abierta." },
+      { q: "¿Un seguimiento automático resulta impersonal?", a: "No, si el mensaje es corto, está ligado a la obra del cliente y lo validas tú. La automatización sirve para no olvidar, no para escribir en tu lugar." },
+      { q: "¿Qué hacer si el cliente nunca contesta?", a: "Tras dos seguimientos, archiva el presupuesto como sin respuesta, anotando que puedes volver a contactar más adelante si cambia el contexto." },
+    ],
+    linksTitle: "Para ir más lejos",
+    links: [
+      { label: "Calculadora de citas perdidas", href: "/calculadora" },
+      { label: "Guía: llamadas perdidas", href: "/guide-appels-manques" },
+      { label: "Guía: conseguir más reseñas en Google", href: "/guide-avis-google" },
+      { label: "Todos nuestros oficios de la construcción", href: "/metiers" },
+      { label: "Nuestros servicios", href: "/services" },
+    ],
+    ctaTitle: "Hablemos de tus presupuestos",
+    ctaSubtitle: "Cuéntanos cómo haces el seguimiento hoy y te decimos cómo lo abordaríamos.",
+    ctaButton: "Pedir un diagnóstico gratuito",
+  },
+  "metiers": {
+    kind: "hub",
+    metaTitle: `Marketing para empresas de la construcción, por oficio | klik`,
+    metaDescription:
+      "Todas las páginas de klik por oficio: fontanería, calefacción, climatización, electricidad, cubiertas, rehabilitación energética, albañilería, pintura.",
+    breadcrumb: "Oficios",
+    eyebrow: "Oficios",
+    h1: "Marketing para empresas de la construcción, oficio por oficio",
+    intro:
+      "klik acompaña a las empresas de la construcción que quieren más obras sin perseguir a los clientes. Elige tu oficio para ver qué hacemos concretamente por ti.",
+    sections: [
+      {
+        title: "Lo que se repite en todos los oficios",
+        paras: ["Sea cual sea el oficio, casi siempre se repiten las mismas pérdidas:"],
+        bullets: [
+          "llamadas perdidas durante las obras",
+          "presupuestos enviados y nunca retomados",
+          "muy pocas reseñas en Google",
+          "una web y una ficha de Google que no explican con claridad lo que haces",
+        ],
+      },
+      {
+        title: "Cómo trabajamos",
+        paras: ["Empezamos con un diagnóstico gratuito de 20 minutos: miramos tu empresa, tu zona y lo que te hace perder clientes. Si te encaja, montamos un plan claro, con lo que hacemos y qué esperar. Sin permanencia."],
+      },
+    ],
+    linksTitle: "Nuestras páginas por oficio",
+    links: [
+      { label: "Marketing para empresas de fontanería", href: "/plomberie" },
+      { label: "Marketing para empresas de climatización", href: "/climatisation" },
+      { label: "Marketing para empresas de electricidad", href: "/electricite" },
+      { label: "Agencia de marketing para empresas de tejados", href: "/couvreur" },
+      { label: "Agencia de marketing para rehabilitación energética", href: "/renovation-energetique" },
+      { label: "Agencia de marketing para empresas de calefacción", href: "/chauffagiste" },
+      { label: "Agencia de marketing para albañiles", href: "/macon" },
+      { label: "Agencia de marketing para pintores de obra", href: "/peintre-batiment" },
+    ],
+    ctaTitle: "¿Hablamos de tu oficio?",
+    ctaSubtitle: "Dinos qué haces y dónde trabajas, y te respondemos cómo lo abordaríamos.",
+    ctaButton: "Pedir un diagnóstico gratuito",
+  },
+  "services": {
+    kind: "hub",
+    metaTitle: `Nuestros servicios para empresas de la construcción | klik`,
+    metaDescription:
+      "Captación de clientes, recuperación de citas perdidas, reseñas de Google, web y ficha de Google: lo que hace klik por las empresas de la construcción.",
+    breadcrumb: "Servicios",
+    eyebrow: "Servicios",
+    h1: "Nuestros servicios para empresas de la construcción",
+    intro:
+      "Cuatro servicios, un mismo objetivo: que tu agenda se llene sin que pierdas obras por una llamada perdida, un presupuesto olvidado o una ficha de Google vacía.",
+    sections: [
+      {
+        title: "Captación de clientes",
+        paras: ["SEO local y campañas para que te encuentren cuando alguien busca tu oficio cerca de casa."],
+      },
+      {
+        title: "Recuperación de citas perdidas",
+        paras: ["Seguimiento automático de las llamadas perdidas y de los presupuestos sin respuesta, para que ninguna solicitud espere."],
+      },
+      {
+        title: "Reseñas y reputación",
+        paras: ["Pedimos la reseña de Google en el momento adecuado, justo después de una obra bien hecha, para que aparezcas con reseñas recientes."],
+      },
+      {
+        title: "Web y ficha de Google",
+        paras: ["Una web clara, una página por servicio y una ficha de Google completa, pensadas para que te llamen a ti."],
+      },
+    ],
+    linksTitle: "Para ir más lejos",
+    links: [
+      { label: "Calculadora de citas perdidas", href: "/calculadora" },
+      { label: "Guía: llamadas perdidas", href: "/guide-appels-manques" },
+      { label: "Guía: hacer seguimiento de presupuestos", href: "/guide-relance-devis" },
+      { label: "Guía: conseguir más reseñas en Google", href: "/guide-avis-google" },
+      { label: "Todos nuestros oficios de la construcción", href: "/metiers" },
+    ],
+    ctaTitle: "¿Qué servicio te hace más falta?",
+    ctaSubtitle: "Cuéntanos tu situación y te decimos por dónde empezaríamos.",
+    ctaButton: "Pedir un diagnóstico gratuito",
+  },
 };
 
 const en: Record<ContentSlug, ContentPageData> = {
@@ -812,6 +1121,159 @@ const en: Record<ContentSlug, ContentPageData> = {
     ctaTitle: "Let's talk about your business in Angers",
     ctaSubtitle: "A free 20-minute diagnostic to see where you lose appointments.",
     ctaButton: "Request your audit",
+  },
+  "guide-relance-devis": {
+    kind: "article",
+    metaTitle: `Following up a quote: a guide for building trades | klik`,
+    metaDescription:
+      "Why a quote goes unanswered, when and how to follow it up without being pushy, and what a building business can automate.",
+    breadcrumb: "Following up quotes",
+    eyebrow: "Guide",
+    h1: "Following up your quotes when you work in the building trades",
+    intro:
+      "A quote sent without follow-up often goes unanswered: the customer compares, hesitates or forgets. Here is when and how to follow up without being pushy, and what you can automate so you don't have to think about it while you're on site.",
+    sections: [
+      {
+        title: "Why a quote goes unanswered",
+        paras: ["It isn't necessarily a no. In the building trades, a few reasons come up again and again:"],
+        bullets: [
+          "the customer is comparing several companies before deciding",
+          "the project isn't urgent and slips down the list",
+          "the quote gets lost among other emails",
+          "they have a question but don't like to call",
+        ],
+      },
+      {
+        title: "When to follow up",
+        paras: ["There's no single rule, but a simple logic: follow up early enough to keep the project fresh, and not so often that it gets annoying. As a rough guide, to adapt to the size of the job:"],
+        bullets: [
+          "a few days after sending: a short message to check the quote arrived and to answer questions",
+          "about a week later: a message that adds something useful (a detail, an availability)",
+          "two weeks later: a last polite message that leaves the door open",
+        ],
+      },
+      {
+        title: "What to say in the follow-up",
+        paras: ["Tone matters more than length. A good follow-up is short, useful and easy to answer:"],
+        bullets: [
+          "recall the job in one sentence (\"your roofing project at …\")",
+          "ask whether there are questions about the quote",
+          "offer a call or a visit if needed",
+          "never pressure the decision",
+        ],
+      },
+      {
+        title: "What you can automate",
+        paras: ["The goal isn't to send cold messages, but to stop forgetting to follow up:"],
+        bullets: [
+          "a calendar reminder for every quote sent",
+          "a pre-written message you approve in one click",
+          "a status tracker for each quote (sent, followed up, signed, declined)",
+          "an alert when an important quote stays unanswered",
+        ],
+      },
+      {
+        title: "What stays manual",
+        paras: ["Answering technical questions, adjusting a price, calling when the job is large: the relationship stays between you and the customer. The tool is there so nothing slips through, not to replace your judgment."],
+      },
+    ],
+    faq: [
+      { q: "How many times should I follow up a quote?", a: "One or two follow-ups are usually enough. Beyond that, you risk annoying the customer. The last one should leave the door open." },
+      { q: "Does an automatic follow-up feel impersonal?", a: "Not if the message is short, tied to the customer's job and approved by you. Automation is there so you don't forget, not to write in your place." },
+      { q: "What if the customer never replies?", a: "After two follow-ups, mark the quote as closed, keeping a note so you can get back in touch later if circumstances change." },
+    ],
+    linksTitle: "Going further",
+    links: [
+      { label: "Missed-appointments calculator", href: "/calculadora" },
+      { label: "Guide: missed calls", href: "/guide-appels-manques" },
+      { label: "Guide: getting more Google reviews", href: "/guide-avis-google" },
+      { label: "All our building trades", href: "/metiers" },
+      { label: "Our services", href: "/services" },
+    ],
+    ctaTitle: "Let's talk about your quotes",
+    ctaSubtitle: "Tell us how you follow up quotes today, and we'll tell you how we'd approach it.",
+    ctaButton: "Request a free diagnosis",
+  },
+  "metiers": {
+    kind: "hub",
+    metaTitle: `Marketing for building businesses, trade by trade | klik`,
+    metaDescription:
+      "All klik pages by trade: plumbing, heating, air conditioning, electrical, roofing, energy renovation, masonry, painting.",
+    breadcrumb: "Trades",
+    eyebrow: "Trades",
+    h1: "Marketing for building businesses, trade by trade",
+    intro:
+      "klik works with building businesses that want more jobs without chasing customers. Pick your trade to see what we concretely do for you.",
+    sections: [
+      {
+        title: "What comes up in every trade",
+        paras: ["Whatever the trade, the same losses nearly always appear:"],
+        bullets: [
+          "missed calls while on site",
+          "quotes sent and never followed up",
+          "too few Google reviews",
+          "a website and Google listing that don't clearly explain what you do",
+        ],
+      },
+      {
+        title: "How we work",
+        paras: ["We start with a free 20-minute diagnosis: we look at your business, your area and what's losing you customers. If it suits you, we set up a clear plan with what we do and what to expect. No lock-in."],
+      },
+    ],
+    linksTitle: "Our pages by trade",
+    links: [
+      { label: "Marketing for plumbing businesses", href: "/plomberie" },
+      { label: "Marketing for HVAC and air conditioning businesses", href: "/climatisation" },
+      { label: "Marketing for electrical businesses", href: "/electricite" },
+      { label: "Marketing agency for roofing companies", href: "/couvreur" },
+      { label: "Marketing agency for energy renovation", href: "/renovation-energetique" },
+      { label: "Marketing agency for heating companies", href: "/chauffagiste" },
+      { label: "Marketing agency for masons", href: "/macon" },
+      { label: "Marketing agency for painters and decorators", href: "/peintre-batiment" },
+    ],
+    ctaTitle: "Shall we talk about your trade?",
+    ctaSubtitle: "Tell us what you do and where you work, and we'll tell you how we'd approach it.",
+    ctaButton: "Request a free diagnosis",
+  },
+  "services": {
+    kind: "hub",
+    metaTitle: `Our services for building businesses | klik`,
+    metaDescription:
+      "Customer acquisition, recovering lost appointments, Google reviews, website and Google listing: what klik does for building businesses.",
+    breadcrumb: "Services",
+    eyebrow: "Services",
+    h1: "Our services for building businesses",
+    intro:
+      "Four services, one goal: a calendar that fills up without you losing jobs to a missed call, a forgotten quote or an empty Google listing.",
+    sections: [
+      {
+        title: "Customer acquisition",
+        paras: ["Local SEO and targeted campaigns so you show up when someone searches for your trade nearby."],
+      },
+      {
+        title: "Recovering lost appointments",
+        paras: ["Automatic follow-up on missed calls and unanswered quotes, so no request waits."],
+      },
+      {
+        title: "Reviews and reputation",
+        paras: ["We ask for the Google review at the right moment, right after a successful job, so you appear with recent reviews."],
+      },
+      {
+        title: "Website and Google listing",
+        paras: ["A clear website, one page per service and a complete Google listing, built so people call you."],
+      },
+    ],
+    linksTitle: "Going further",
+    links: [
+      { label: "Missed-appointments calculator", href: "/calculadora" },
+      { label: "Guide: missed calls", href: "/guide-appels-manques" },
+      { label: "Guide: following up quotes", href: "/guide-relance-devis" },
+      { label: "Guide: getting more Google reviews", href: "/guide-avis-google" },
+      { label: "All our building trades", href: "/metiers" },
+    ],
+    ctaTitle: "Which service do you need most?",
+    ctaSubtitle: "Tell us your situation and we'll tell you where we'd start.",
+    ctaButton: "Request a free diagnosis",
   },
 };
 

@@ -61,6 +61,26 @@ export function ContentPage({ locale, slug }: { locale: Locale; slug: ContentSlu
             { "@type": "Country", name: "France" },
           ],
         }
+      : c.kind === "hub"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: c.h1,
+          description: c.metaDescription,
+          inLanguage: locale,
+          url,
+          isPartOf: { "@type": "WebSite", name: SITE_NAME, url: `${SITE_URL}/${locale}` },
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: c.links.map((l, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: l.label,
+              url: `${SITE_URL}${localHref(locale, l.href)}`,
+            })),
+          },
+          dateModified: dates.modified,
+        }
       : {
           "@context": "https://schema.org",
           "@type": "AboutPage",
