@@ -1,6 +1,6 @@
 import type { Locale } from "./locales";
 
-export const NICHES = ["climatisation", "plomberie", "electricite"] as const;
+export const NICHES = ["climatisation", "plomberie", "electricite", "couvreur", "renovation-energetique"] as const;
 export type Niche = (typeof NICHES)[number];
 
 export type NicheContent = {
@@ -25,9 +25,9 @@ export type NicheContent = {
 const SUFFIX = "klik";
 
 export const NICHE_FOOTER_LABEL: Record<Locale, Record<Niche, string>> = {
-  fr: { climatisation: "Climatisation et CVC", plomberie: "Plomberie", electricite: "Électricité" },
-  es: { climatisation: "Climatización", plomberie: "Fontanería", electricite: "Electricidad" },
-  en: { climatisation: "HVAC and air conditioning", plomberie: "Plumbing", electricite: "Electrical" },
+  fr: { climatisation: "Climatisation et CVC", plomberie: "Plomberie", electricite: "Électricité", couvreur: "Couverture et toiture", "renovation-energetique": "Rénovation énergétique" },
+  es: { climatisation: "Climatización", plomberie: "Fontanería", electricite: "Electricidad", couvreur: "Cubiertas y tejados", "renovation-energetique": "Rehabilitación energética" },
+  en: { climatisation: "HVAC and air conditioning", plomberie: "Plumbing", electricite: "Electrical", couvreur: "Roofing", "renovation-energetique": "Energy renovation" },
 };
 
 const fr: Record<Niche, NicheContent> = {
@@ -124,6 +124,70 @@ const fr: Record<Niche, NicheContent> = {
     ],
     ctaTitle: "On parle de votre entreprise ?",
     ctaSubtitle: "Racontez-nous votre situation et on vous dit, sans détour, comment on y penserait.",
+    ctaButton: "Demander un diagnostic gratuit",
+    calculatorLink: "Calculez ce qui vous échappe chaque mois",
+  },
+  "couvreur": {
+    metaTitle: `Agence marketing couvreur : plus de chantiers | klik`,
+    metaDescription:
+      "klik aide les couvreurs à être trouvés sur Google, à ne plus perdre de demandes de devis ni d'urgences, et à récolter des avis. Diagnostic gratuit.",
+    eyebrow: "Couverture et toiture",
+    h1: "Agence marketing pour couvreurs : plus de chantiers de toiture",
+    intro:
+      "Une agence marketing pour couvreurs aide votre entreprise à apparaître quand quelqu'un cherche une réparation ou une rénovation de toiture près de chez lui. Fuite, tuiles cassées, isolation : le client appelle souvent parmi les premières entreprises qu'il trouve sur Google. On met en place ce qu'il faut pour que ce soit la vôtre.",
+    problemsTitle: "Ce qu'on voit chez les couvreurs",
+    problems: [
+      { title: "La fuite qui part chez un autre", text: "Vous êtes sur un toit, le téléphone sonne dans le vide, et le client appelle l'entreprise suivante dans la liste." },
+      { title: "Des devis de toiture jamais relancés", text: "Un gros chantier se décide en réfléchissant. Sans relance, le devis reste sans réponse et le client signe ailleurs." },
+      { title: "Des avis qui rassurent trop peu", text: "Avant un gros chantier, le client regarde les avis. Une fiche Google peu fournie fait hésiter." },
+    ],
+    helpTitle: "Ce qu'on fait pour vous",
+    help: [
+      { title: "On remplit votre agenda", text: "Référencement local et campagnes ciblées pour qu'on vous trouve quand on cherche une réparation ou une rénovation de toiture dans votre zone." },
+      { title: "On récupère les rendez-vous perdus", text: "Suivi automatique des appels manqués et des devis restés sans réponse, pour qu'aucune demande n'attende." },
+      { title: "Des avis qui vous font ressortir", text: "On demande l'avis Google au bon moment, juste après un chantier terminé." },
+      { title: "Un site et une fiche qui convertissent", text: "Un site clair, une page par prestation et une fiche Google complète, pensés pour qu'on vous appelle vous." },
+    ],
+    faqTitle: "Questions fréquentes",
+    faq: [
+      { q: "Un chantier de toiture se décide-t-il vraiment sur Google ?", a: "Souvent, oui : le client cherche un couvreur près de chez lui et appelle parmi les premiers résultats. Être visible et rassurer avec des avis augmente vos chances d'être appelé, sans garantie." },
+      { q: "Et si je ne peux pas répondre pendant une urgence ?", a: "On met en place un suivi qui relance rapidement les appels manqués, pour que la demande ne parte pas chez un concurrent." },
+      { q: "En combien de temps voit-on des résultats ?", a: "On mesure sur 3 semaines et c'est vous qui décidez si on continue. Le référencement local demande en général plus de temps. On ne promet jamais de résultats garantis." },
+    ],
+    ctaTitle: "On parle de votre entreprise ?",
+    ctaSubtitle: "Racontez-nous votre situation et on vous dit, franchement, comment on s'y prendrait.",
+    ctaButton: "Demander un diagnostic gratuit",
+    calculatorLink: "Calculez ce qui vous échappe chaque mois",
+  },
+  "renovation-energetique": {
+    metaTitle: `Agence marketing rénovation énergétique | klik`,
+    metaDescription:
+      "klik aide les entreprises de rénovation énergétique à être trouvées sur Google, à relancer chaque demande de devis et à récolter des avis. Diagnostic gratuit.",
+    eyebrow: "Rénovation énergétique",
+    h1: "Agence marketing pour entreprises de rénovation énergétique",
+    intro:
+      "Isolation, pompe à chaleur, fenêtres, ventilation : un propriétaire qui prépare des travaux compare plusieurs entreprises avant de signer. Une agence marketing pour la rénovation énergétique s'occupe de votre visibilité locale, de vos demandes de devis et de vos avis, pour que vos prospects vous appellent vous plutôt qu'un concurrent.",
+    problemsTitle: "Ce qu'on voit chez les entreprises de rénovation énergétique",
+    problems: [
+      { title: "Des demandes de devis qui s'éteignent", text: "Un projet de rénovation se mûrit. Sans relance, la demande reste sans réponse et le client choisit une autre entreprise." },
+      { title: "Des appels pendant les chantiers", text: "Vos équipes sont sur place, le téléphone sonne dans le vide, et la demande part ailleurs." },
+      { title: "Un site qui n'explique pas vos prestations", text: "Si le site ne détaille pas chaque travaux et chaque zone d'intervention, on vous trouve moins et on vous fait moins confiance." },
+    ],
+    helpTitle: "Ce qu'on fait pour vous",
+    help: [
+      { title: "On remplit votre agenda", text: "Référencement local et campagnes ciblées pour qu'on vous trouve quand on cherche des travaux d'isolation, de chauffage ou de fenêtres dans votre zone." },
+      { title: "On récupère les rendez-vous perdus", text: "Suivi automatique des appels manqués et des devis restés sans réponse." },
+      { title: "Des avis qui vous font ressortir", text: "On demande l'avis Google au bon moment, juste après un chantier réussi." },
+      { title: "Un site et une fiche qui convertissent", text: "Une page par type de travaux, une fiche Google complète et un parcours clair vers le devis." },
+    ],
+    faqTitle: "Questions fréquentes",
+    faq: [
+      { q: "Faut-il s'y connaître en marketing ?", a: "Non. On vous explique chaque action en termes simples, sans jargon." },
+      { q: "En combien de temps voit-on des résultats ?", a: "On mesure sur 3 semaines et c'est vous qui décidez si on continue. Le référencement local demande en général plus de temps. On ne promet jamais de résultats garantis." },
+      { q: "Que se passe-t-il si je veux arrêter ?", a: "Vous nous le dites et on arrête, sans engagement de durée." },
+    ],
+    ctaTitle: "On parle de votre entreprise ?",
+    ctaSubtitle: "Racontez-nous votre situation et on vous dit, franchement, comment on s'y prendrait.",
     ctaButton: "Demander un diagnostic gratuit",
     calculatorLink: "Calculez ce qui vous échappe chaque mois",
   },
@@ -226,6 +290,70 @@ const es: Record<Niche, NicheContent> = {
     ctaButton: "Pedir un diagnóstico gratuito",
     calculatorLink: "Calcula cuánto se te escapa al mes",
   },
+  "couvreur": {
+    metaTitle: `Agencia de marketing para empresas de tejados | klik`,
+    metaDescription:
+      "klik ayuda a las empresas de tejados y cubiertas a aparecer en Google, a no perder presupuestos ni urgencias y a conseguir reseñas. Diagnóstico gratuito.",
+    eyebrow: "Cubiertas y tejados",
+    h1: "Agencia de marketing para empresas de cubiertas y tejados",
+    intro:
+      "Una agencia de marketing para empresas de tejados te ayuda a aparecer cuando alguien busca una reparación o una rehabilitación de cubierta cerca de casa. Una gotera, tejas rotas, aislamiento: el cliente suele llamar a una de las primeras empresas que encuentra en Google. Montamos lo necesario para que sea la tuya.",
+    problemsTitle: "Lo que vemos en las empresas de cubiertas",
+    problems: [
+      { title: "La gotera que se va a otro", text: "Estás subido a un tejado, el teléfono suena en el vacío y el cliente llama a la siguiente empresa de la lista." },
+      { title: "Presupuestos de cubierta que nadie retoma", text: "Una obra grande se decide pensándolo. Sin seguimiento, el presupuesto se queda sin respuesta y el cliente firma con otro." },
+      { title: "Reseñas que tranquilizan poco", text: "Antes de una obra importante, el cliente mira las reseñas. Una ficha de Google poco trabajada genera dudas." },
+    ],
+    helpTitle: "Lo que hacemos por ti",
+    help: [
+      { title: "Llenamos tu agenda", text: "SEO local y campañas para que te encuentren cuando buscan una reparación o rehabilitación de cubierta en tu zona." },
+      { title: "Recuperamos las citas perdidas", text: "Seguimiento automático de las llamadas perdidas y de los presupuestos sin respuesta, para que ninguna solicitud espere." },
+      { title: "Reseñas que te hacen destacar", text: "Pedimos la reseña de Google en el momento adecuado, justo después de terminar una obra." },
+      { title: "Una web y una ficha que convierten", text: "Una web clara, una página por servicio y una ficha de Google completa, pensadas para que te llamen a ti." },
+    ],
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      { q: "¿De verdad se decide una obra de tejado en Google?", a: "A menudo, sí: el cliente busca una empresa de tejados cerca de casa y llama a uno de los primeros resultados. Ser visible y transmitir confianza con reseñas aumenta tus opciones de recibir la llamada, sin garantías." },
+      { q: "¿Y si no puedo contestar durante una urgencia?", a: "Montamos un seguimiento que retoma rápido las llamadas perdidas, para que la solicitud no se vaya a la competencia." },
+      { q: "¿En cuánto tiempo se ven resultados?", a: "Medimos durante 3 semanas y tú decides si seguimos. El SEO local suele necesitar más tiempo. Nunca prometemos resultados garantizados." },
+    ],
+    ctaTitle: "¿Hablamos de tu empresa?",
+    ctaSubtitle: "Cuéntanos tu situación y te decimos, con franqueza, cómo la abordaríamos.",
+    ctaButton: "Pedir un diagnóstico gratuito",
+    calculatorLink: "Calcula lo que se te escapa cada mes",
+  },
+  "renovation-energetique": {
+    metaTitle: `Agencia de marketing para rehabilitación energética | klik`,
+    metaDescription:
+      "klik ayuda a las empresas de rehabilitación energética a aparecer en Google, a retomar cada solicitud de presupuesto y a conseguir reseñas. Diagnóstico gratuito.",
+    eyebrow: "Rehabilitación energética",
+    h1: "Agencia de marketing para empresas de rehabilitación energética",
+    intro:
+      "Aislamiento, aerotermia, ventanas, ventilación: quien prepara una reforma compara varias empresas antes de firmar. Una agencia de marketing para rehabilitación energética se ocupa de tu visibilidad local, de tus solicitudes de presupuesto y de tus reseñas, para que te llamen a ti y no a la competencia.",
+    problemsTitle: "Lo que vemos en las empresas de rehabilitación energética",
+    problems: [
+      { title: "Solicitudes de presupuesto que se apagan", text: "Un proyecto de reforma se piensa con calma. Sin seguimiento, la solicitud se queda sin respuesta y el cliente elige otra empresa." },
+      { title: "Llamadas durante las obras", text: "Tus equipos están en obra, el teléfono suena en el vacío y la solicitud se va a otro." },
+      { title: "Una web que no explica tus servicios", text: "Si la web no detalla cada tipo de obra ni tu zona de trabajo, te encuentran menos y confían menos en ti." },
+    ],
+    helpTitle: "Lo que hacemos por ti",
+    help: [
+      { title: "Llenamos tu agenda", text: "SEO local y campañas para que te encuentren cuando buscan obras de aislamiento, calefacción o ventanas en tu zona." },
+      { title: "Recuperamos las citas perdidas", text: "Seguimiento automático de las llamadas perdidas y de los presupuestos sin respuesta." },
+      { title: "Reseñas que te hacen destacar", text: "Pedimos la reseña de Google en el momento adecuado, justo después de una obra bien terminada." },
+      { title: "Una web y una ficha que convierten", text: "Una página por tipo de obra, una ficha de Google completa y un camino claro hacia el presupuesto." },
+    ],
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      { q: "¿Hace falta saber de marketing?", a: "No. Te explicamos cada acción con palabras sencillas, sin jerga." },
+      { q: "¿En cuánto tiempo se ven resultados?", a: "Medimos durante 3 semanas y tú decides si seguimos. El SEO local suele necesitar más tiempo. Nunca prometemos resultados garantizados." },
+      { q: "¿Qué pasa si quiero parar?", a: "Nos lo dices y paramos, sin permanencia." },
+    ],
+    ctaTitle: "¿Hablamos de tu empresa?",
+    ctaSubtitle: "Cuéntanos tu situación y te decimos, con franqueza, cómo la abordaríamos.",
+    ctaButton: "Pedir un diagnóstico gratuito",
+    calculatorLink: "Calcula lo que se te escapa cada mes",
+  },
 };
 
 const en: Record<Niche, NicheContent> = {
@@ -318,6 +446,70 @@ const en: Record<Niche, NicheContent> = {
     faq: [
       { q: "Do you also work with very small businesses?", a: "We mostly work with established technical small businesses. Tell us about yours and we'll see if it's a fit." },
       { q: "How do I know this works?", a: "It's normal to be skeptical. We measure over 3 weeks and you decide if we continue." },
+      { q: "What if I want to cancel?", a: "You tell us and we stop. No lock-in contract." },
+    ],
+    ctaTitle: "Shall we talk about your business?",
+    ctaSubtitle: "Tell us your situation and we'll tell you, straight up, how we'd approach it.",
+    ctaButton: "Request a free diagnosis",
+    calculatorLink: "Work out what's slipping away every month",
+  },
+  "couvreur": {
+    metaTitle: `Marketing agency for roofing companies | klik`,
+    metaDescription:
+      "klik helps roofing companies get found on Google, stop losing quote requests and emergency calls, and collect reviews. Free diagnosis.",
+    eyebrow: "Roofing",
+    h1: "Marketing agency for roofing companies",
+    intro:
+      "A marketing agency for roofers helps your company show up when someone searches for a roof repair or renovation nearby. A leak, broken tiles, insulation: the customer often calls one of the first companies they find on Google. We set up what it takes for that to be yours.",
+    problemsTitle: "What we see at roofing companies",
+    problems: [
+      { title: "The leak that goes to someone else", text: "You're up on a roof, the phone rings out, and the customer calls the next company on the list." },
+      { title: "Roofing quotes that never get followed up", text: "A big job is decided after some thought. Without follow-up, the quote goes unanswered and the customer signs elsewhere." },
+      { title: "Reviews that reassure too little", text: "Before a major job, customers check the reviews. A thin Google listing makes them hesitate." },
+    ],
+    helpTitle: "What we do for you",
+    help: [
+      { title: "We fill your calendar", text: "Local SEO and targeted campaigns so you show up when people search for a roof repair or renovation in your area." },
+      { title: "We recover lost appointments", text: "Automatic follow-up on missed calls and quotes left unanswered, so no request waits." },
+      { title: "Reviews that make you stand out", text: "We ask for the Google review at the right moment, right after a finished job." },
+      { title: "A website and listing that convert", text: "A clear website, one page per service and a complete Google listing, built so people call you." },
+    ],
+    faqTitle: "Frequently asked questions",
+    faq: [
+      { q: "Is a roofing job really decided on Google?", a: "Often, yes: the customer searches for a roofer nearby and calls one of the first results. Being visible and reassuring with reviews improves your chances of getting the call, with no guarantee." },
+      { q: "What if I can't answer during an emergency?", a: "We set up a follow-up that quickly picks up missed calls, so the request doesn't go to a competitor." },
+      { q: "How long before we see results?", a: "We measure over 3 weeks and you decide if we continue. Local SEO usually takes longer. We never promise guaranteed results." },
+    ],
+    ctaTitle: "Shall we talk about your business?",
+    ctaSubtitle: "Tell us your situation and we'll tell you, straight up, how we'd approach it.",
+    ctaButton: "Request a free diagnosis",
+    calculatorLink: "Work out what's slipping away every month",
+  },
+  "renovation-energetique": {
+    metaTitle: `Marketing agency for energy renovation | klik`,
+    metaDescription:
+      "klik helps energy renovation companies get found on Google, follow up every quote request and collect reviews. Free diagnosis.",
+    eyebrow: "Energy renovation",
+    h1: "Marketing agency for energy renovation companies",
+    intro:
+      "Insulation, heat pumps, windows, ventilation: a homeowner planning works compares several companies before signing. A marketing agency for energy renovation takes care of your local visibility, your quote requests and your reviews, so prospects call you rather than a competitor.",
+    problemsTitle: "What we see at energy renovation companies",
+    problems: [
+      { title: "Quote requests that fade away", text: "A renovation project takes time to mature. Without follow-up, the request goes unanswered and the customer picks another company." },
+      { title: "Calls that come in during jobs", text: "Your teams are on site, the phone rings out, and the request goes elsewhere." },
+      { title: "A website that doesn't explain your services", text: "If the site doesn't detail each type of work and your service area, you're harder to find and harder to trust." },
+    ],
+    helpTitle: "What we do for you",
+    help: [
+      { title: "We fill your calendar", text: "Local SEO and targeted campaigns so you show up when people search for insulation, heating or window works in your area." },
+      { title: "We recover lost appointments", text: "Automatic follow-up on missed calls and quotes left unanswered." },
+      { title: "Reviews that make you stand out", text: "We ask for the Google review at the right moment, right after a successful job." },
+      { title: "A website and listing that convert", text: "One page per type of work, a complete Google listing and a clear path to the quote." },
+    ],
+    faqTitle: "Frequently asked questions",
+    faq: [
+      { q: "Do I need to know about marketing?", a: "No. We explain each action in plain terms, with no jargon." },
+      { q: "How long before we see results?", a: "We measure over 3 weeks and you decide if we continue. Local SEO usually takes longer. We never promise guaranteed results." },
       { q: "What if I want to cancel?", a: "You tell us and we stop. No lock-in contract." },
     ],
     ctaTitle: "Shall we talk about your business?",
