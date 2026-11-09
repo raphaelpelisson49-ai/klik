@@ -43,12 +43,12 @@ const fr: Record<ContentSlug, ContentPageData> = {
     kind: "about",
     metaTitle: `À propos de klik et de son fondateur | ${SUFFIX.fr}`,
     metaDescription:
-      "klik est une agence fondée par Raphaël Pelisson. Elle aide les PME de la climatisation, de la plomberie et de l'électricité à trouver des clients, récupérer les rendez-vous perdus et gagner des avis Google.",
+      "klik est une agence fondée par Raphaël Pelisson. Elle aide les entreprises du bâtiment (plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique…) à trouver des clients, récupérer les rendez-vous perdus et gagner des avis Google.",
     breadcrumb: "À propos",
     eyebrow: "À propos",
     h1: "klik : une agence pour les entreprises techniques qui veulent plus de chantiers",
     intro:
-      "klik accompagne les PME de la climatisation, du chauffage, de la plomberie et de l'électricité, en France et en Espagne. Notre idée est simple : une entreprise qui fait du bon travail ne doit pas perdre de chantiers à cause d'un appel manqué ou d'une fiche Google vide.",
+      "klik accompagne les entreprises du bâtiment (plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique, maçonnerie, peinture), en France et en Espagne. Notre idée est simple : une entreprise qui fait du bon travail ne doit pas perdre de chantiers à cause d'un appel manqué ou d'une fiche Google vide.",
     sections: [
       {
         title: "Qui est derrière klik",
@@ -261,7 +261,7 @@ const fr: Record<ContentSlug, ContentPageData> = {
       {
         title: "Pour quelles entreprises",
         paras: [
-          "Nous travaillons surtout avec les entreprises techniques : climatisation, chauffage, plomberie, électricité. Si vous dirigez une PME de services avec une équipe et un agenda à remplir, parlons-en.",
+          "Nous travaillons surtout avec les entreprises du bâtiment : plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique, maçonnerie, peinture. Si vous dirigez une PME de services avec une équipe et un agenda à remplir, parlons-en.",
         ],
       },
       {
@@ -456,12 +456,12 @@ const es: Record<ContentSlug, ContentPageData> = {
     kind: "about",
     metaTitle: `Sobre klik y su fundador | ${SUFFIX.es}`,
     metaDescription:
-      "klik es una agencia fundada por Raphaël Pelisson. Ayuda a las pymes de climatización, fontanería y electricidad a captar clientes, recuperar citas perdidas y conseguir reseñas en Google.",
+      "klik es una agencia fundada por Raphaël Pelisson. Ayuda a las empresas de la construcción (fontanería, calefacción, climatización, electricidad, cubiertas, rehabilitación energética…) a captar clientes, recuperar citas perdidas y conseguir reseñas en Google.",
     breadcrumb: "Sobre klik",
     eyebrow: "Sobre klik",
     h1: "klik: una agencia para empresas técnicas que quieren más trabajos",
     intro:
-      "klik acompaña a las pymes de climatización, calefacción, fontanería y electricidad en Francia y España. La idea es sencilla: una empresa que trabaja bien no debería perder trabajos por una llamada sin atender o por una ficha de Google vacía.",
+      "klik acompaña a las empresas de la construcción (fontanería, calefacción, climatización, electricidad, cubiertas, rehabilitación energética, albañilería, pintura) en Francia y España. La idea es sencilla: una empresa que trabaja bien no debería perder trabajos por una llamada sin atender o por una ficha de Google vacía.",
     sections: [
       {
         title: "Quién está detrás de klik",
@@ -674,7 +674,7 @@ const es: Record<ContentSlug, ContentPageData> = {
       {
         title: "Para qué empresas",
         paras: [
-          "Trabajamos sobre todo con empresas técnicas: climatización, calefacción, fontanería, electricidad. Si diriges una pyme de servicios con un equipo y una agenda que llenar, hablemos.",
+          "Trabajamos sobre todo con empresas de la construcción: fontanería, calefacción, climatización, electricidad, cubiertas, rehabilitación energética, albañilería, pintura. Si diriges una pyme de servicios con un equipo y una agenda que llenar, hablemos.",
         ],
       },
       {
@@ -869,12 +869,12 @@ const en: Record<ContentSlug, ContentPageData> = {
     kind: "about",
     metaTitle: `About klik and its founder | ${SUFFIX.en}`,
     metaDescription:
-      "klik is an agency founded by Raphaël Pelisson. It helps HVAC, plumbing and electrical businesses win customers, recover lost appointments and earn Google reviews.",
+      "klik is an agency founded by Raphaël Pelisson. It helps building businesses (plumbing, heating, HVAC, electrical, roofing, energy renovation…) win customers, recover lost appointments and earn Google reviews.",
     breadcrumb: "About klik",
     eyebrow: "About klik",
     h1: "klik: an agency for technical businesses that want more jobs",
     intro:
-      "klik works with HVAC, heating, plumbing and electrical businesses in France and Spain. The idea is simple: a company that does good work should not lose jobs because of a missed call or an empty Google listing.",
+      "klik works with building businesses (plumbing, heating, HVAC, electrical, roofing, energy renovation, masonry, painting) in France and Spain. The idea is simple: a company that does good work should not lose jobs because of a missed call or an empty Google listing.",
     sections: [
       {
         title: "Who is behind klik",
@@ -1087,7 +1087,7 @@ const en: Record<ContentSlug, ContentPageData> = {
       {
         title: "Which businesses",
         paras: [
-          "We mostly work with technical businesses: air conditioning, heating, plumbing, electrical. If you run a service business with a team and a calendar to fill, let's talk.",
+          "We mostly work with building businesses: plumbing, heating, air conditioning, electrical, roofing, energy renovation, masonry, painting. If you run a service business with a team and a calendar to fill, let's talk.",
         ],
       },
       {
