@@ -304,6 +304,8 @@ const es = {
       { label: "Climatización", href: "/climatisation" },
       { label: "Fontanería", href: "/plomberie" },
       { label: "Electricidad", href: "/electricite" },
+      { label: "Cubiertas y tejados", href: "/couvreur" },
+      { label: "Rehabilitación energética", href: "/renovation-energetique" },
       { label: "Sobre klik", href: "/a-propos" },
       { label: "Guía: llamadas perdidas", href: "/guide-appels-manques" },
       { label: "Guía: reseñas en Google", href: "/guide-avis-google" },
