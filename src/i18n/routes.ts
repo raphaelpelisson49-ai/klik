@@ -20,6 +20,12 @@ export const ROUTES = [
   "agence-marketing-ia-angers",
   "couvreur",
   "renovation-energetique",
+  "chauffagiste",
+  "macon",
+  "peintre-batiment",
+  "guide-relance-devis",
+  "metiers",
+  "services",
 ] as const;
 export type Route = (typeof ROUTES)[number];
 
@@ -39,6 +45,12 @@ const SLUGS: Record<Locale, Record<Route, string>> = {
     "agence-marketing-ia-angers": "agence-marketing-ia-angers",
     couvreur: "agence-marketing-couvreur",
     "renovation-energetique": "agence-marketing-renovation-energetique",
+    chauffagiste: "agence-marketing-chauffagiste",
+    macon: "agence-marketing-macon",
+    "peintre-batiment": "agence-marketing-peintre-batiment",
+    "guide-relance-devis": "relance-devis-artisan",
+    metiers: "metiers",
+    services: "services",
   },
   es: {
     calculadora: "calculadora",
@@ -55,6 +67,12 @@ const SLUGS: Record<Locale, Record<Route, string>> = {
     "agence-marketing-ia-angers": "agencia-marketing-ia-angers",
     couvreur: "agencia-marketing-tejados",
     "renovation-energetique": "agencia-marketing-rehabilitacion-energetica",
+    chauffagiste: "agencia-marketing-calefaccion",
+    macon: "agencia-marketing-albanil",
+    "peintre-batiment": "agencia-marketing-pintor",
+    "guide-relance-devis": "guia-seguimiento-presupuestos",
+    metiers: "oficios",
+    services: "servicios",
   },
   en: {
     calculadora: "calculator",
@@ -71,6 +89,12 @@ const SLUGS: Record<Locale, Record<Route, string>> = {
     "agence-marketing-ia-angers": "ai-marketing-agency-angers",
     couvreur: "roofing-marketing-agency",
     "renovation-energetique": "energy-renovation-marketing-agency",
+    chauffagiste: "heating-marketing-agency",
+    macon: "masonry-marketing-agency",
+    "peintre-batiment": "painting-marketing-agency",
+    "guide-relance-devis": "guide-quote-follow-up",
+    metiers: "trades",
+    services: "services",
   },
 };
 
