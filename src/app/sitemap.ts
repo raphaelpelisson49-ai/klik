@@ -3,8 +3,8 @@ import { SITE_URL } from "@/lib/seo";
 import { LOCALES } from "@/i18n/locales";
 import { slugFor, type Route } from "@/i18n/routes";
 
-const NICHE_ROUTES: Route[] = ["climatisation", "plomberie", "electricite", "couvreur", "renovation-energetique"];
-const CONTENT_ROUTES: Route[] = ["a-propos", "guide-appels-manques", "guide-avis-google", "agence-marketing-ia-angers"];
+const NICHE_ROUTES: Route[] = ["climatisation", "plomberie", "electricite", "couvreur", "renovation-energetique", "chauffagiste", "macon", "peintre-batiment"];
+const CONTENT_ROUTES: Route[] = ["a-propos", "guide-appels-manques", "guide-avis-google", "agence-marketing-ia-angers", "guide-relance-devis", "metiers", "services"];
 const PAGES: (Route | "")[] = ["", "calculadora", "contacto", ...NICHE_ROUTES, ...CONTENT_ROUTES, "aviso-legal", "privacidad", "cookies"];
 
 // Sin lastmod: con la fecha del build todas las páginas parecían cambiar en cada despliegue,
