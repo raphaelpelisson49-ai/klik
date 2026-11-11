@@ -2,9 +2,9 @@ import type { Dictionary } from "./es";
 
 const fr: Dictionary = {
   meta: {
-    title: "Marketing pour plombiers, climaticiens, électriciens | klik",
+    title: "Agence de marketing IA | klik",
     description:
-      "klik remplit l'agenda des plombiers, climaticiens et électriciens grâce à l'IA : acquisition de clients, avis Google, site et fiche Google.",
+      "klik, agence de marketing IA : acquisition de clients, avis Google, site et fiche Google pour remplir votre agenda.",
   },
 
   nav: {
@@ -139,7 +139,7 @@ const fr: Dictionary = {
     fallback: {
       tag: "Diagnostic général",
       headline: "Avec ça, on voit déjà quelque chose, mais il nous faut encore quelques détails.",
-      body: "Les entreprises techniques perdent presque toujours des clients à trois endroits : on ne les trouve pas, on ne leur répond pas à temps, ou on ne revient jamais vers eux. Avec ce que vous nous racontez, on a déjà une idée de la direction.",
+      body: "Les entreprises perdent presque toujours des clients à trois endroits : on ne les trouve pas, on ne leur répond pas à temps, ou on ne revient jamais vers eux. Avec ce que vous nous racontez, on a déjà une idée de la direction.",
       teaser: "Le moyen le plus rapide d'en être sûr, c'est de nous en dire plus — on vous explique exactement ce qui se passe.",
     },
   },
@@ -150,7 +150,7 @@ const fr: Dictionary = {
     p1: "klik naît d'un parcours peu conventionnel : des années de métiers techniques, de travaux exigeants et appris sur le terrain. Solides, respectables — mais qui laissaient un sentiment persistant d'avenir bouché.",
     p2: "La découverte de l'intelligence artificielle a été le tournant : non pas comme un concept abstrait, mais comme un outil applicable à des problèmes réels de gens réels. La combinaison du savoir-faire technique avec des systèmes d'IA a donné naissance à klik.",
     missionLabel: "Notre mission",
-    missionQuote: "Aider les patrons de PME techniques à avoir l'agenda plein sans perdre leurs week-ends dans le marketing.",
+    missionQuote: "Aider les chefs d'entreprise à avoir l'agenda plein sans perdre leurs week-ends dans le marketing.",
     valores: [
       { title: "Transparence radicale", description: "On dit ce qui marche et ce qui ne marche pas." },
       { title: "Résultats mesurables", description: "Des chiffres, pas des impressions." },
@@ -162,13 +162,13 @@ const fr: Dictionary = {
 
   servicios: {
     number: "02",
-    title: "Marketing digital pour PME techniques : ce qu'on fait pour vous",
+    title: "Marketing digital avec l'IA : ce qu'on fait pour vous",
     subtitle:
       "Pas de solutions omnicanales ni de growth marketing. Des services concrets, expliqués comme on les expliquerait à un client de toujours.",
     items: [
-      { title: "On remplit votre agenda", description: "Du référencement local et des campagnes pour qu'on vous trouve quand on cherche un plombier, un chauffagiste ou un installateur de climatisation près de chez soi. Le téléphone sonne, pas un graphique." },
+      { title: "On remplit votre agenda", description: "Du référencement local et des campagnes pour qu'on vous trouve quand on cherche vos services près de chez soi. Le téléphone sonne, pas un graphique." },
       { title: "On récupère les rendez-vous perdus", description: "Suivi automatique de qui pose une question et ne répond pas. Aucun client n'attend." },
-      { title: "Des avis qui vous font ressortir", description: "On demande l'avis Google au bon moment pour que vous apparaissiez en premier quand on cherche un artisan près de chez soi." },
+      { title: "Des avis qui vous font ressortir", description: "On demande l'avis Google au bon moment pour que vous apparaissiez en premier quand on cherche un professionnel près de chez soi." },
       { title: "Un site et une fiche qui convertissent", description: "Un site web et une fiche Google (Google Business Profile) conçus pour qu'on vous appelle vous, pas le voisin." },
       { title: "Des rapports de cinq minutes", description: "Combien de clients, combien coûte chacun, et la suite. Sans jargon, sans remplissage." },
       { title: "À vos côtés chaque semaine", description: "On ajuste la stratégie selon ce qui marche vraiment, pas selon ce qui sonne bien." },
@@ -213,7 +213,7 @@ const fr: Dictionary = {
     items: [
       { q: "Que faites-vous exactement ?", a: "On remplit votre agenda de clients. Sans que vous ayez besoin de comprendre le marketing." },
       { q: "Comment savoir que ça marche ?", a: "C'est normal de douter. C'est pour ça qu'on mesure sur 3 semaines et que c'est vous qui décidez si on continue." },
-      { q: "Avec quel type d'entreprises travaillez-vous ?", a: "Avec des PME techniques en général : si votre activité se planifie avec des clients et s'exécute sur place, on parle votre langage. Racontez-nous la vôtre et on voit si ça colle." },
+      { q: "Avec quel type d'entreprises travaillez-vous ?", a: "Avec des entreprises de toutes tailles : si vous voulez plus de clients, on parle votre langage. Racontez-nous la vôtre et on voit si ça colle." },
       { q: "Que se passe-t-il si je veux annuler ?", a: "Vous nous le dites et on arrête. On ne vous laisse jamais sans savoir ce qui se passe si vous annulez — sans engagement de durée." },
       { q: "Garantissez-vous des résultats ?", a: "Non. On ne promet jamais de résultats dans des délais irréalistes. Ce qu'on fait, c'est mesurer chaque semaine et vous montrer les chiffres tels qu'ils sont." },
     ],
@@ -234,8 +234,8 @@ const fr: Dictionary = {
     title: "Parlez-nous de votre cas",
     subtitle: "Quatre questions rapides. Au fil de vos réponses, votre fiche se remplit : c'est exactement ce qui nous arrive.",
     steps: ["Votre entreprise", "Ce qui vous arrive", "Quand on vous appelle", "Vos coordonnées"],
-    oficioLabel: "Quel est votre métier ?",
-    oficios: ["Climatisation", "Plomberie", "Électricité", "Maintenance", "Rénovation", "Autre métier"],
+    oficioLabel: "Quel est votre secteur ?",
+    oficios: ["Services", "Commerce", "Restauration", "Santé et bien-être", "Bâtiment et artisanat", "Autre secteur"],
     equipoLabel: "Combien êtes-vous ?",
     equipos: ["Seul", "2 à 5", "6 à 20", "Plus de 20"],
     problemaLabel: "Cochez ce qui vous parle (plusieurs choix possibles)",
@@ -293,7 +293,7 @@ const fr: Dictionary = {
   },
 
   footer: {
-    tagline: "Acquisition de clients avec l'IA pour les PME techniques.",
+    tagline: "Agence de marketing IA.",
     serviciosTitle: "Services",
     servicios: ["Acquisition de clients", "Récupération de rendez-vous", "Avis et réputation", "Site et fiche Google"],
     siteTitle: "klik",
@@ -303,12 +303,6 @@ const fr: Dictionary = {
       { label: "Notre histoire", href: "/#historia" },
       { label: "Comment on travaille", href: "/#proceso" },
       { label: "Questions", href: "/#preguntas" },
-      { label: "Climatisation et CVC", href: "/climatisation" },
-      { label: "Plomberie", href: "/plomberie" },
-      { label: "Électricité", href: "/electricite" },
-      { label: "Couverture et toiture", href: "/couvreur" },
-      { label: "Rénovation énergétique", href: "/renovation-energetique" },
-      { label: "Tous les métiers", href: "/metiers" },
       { label: "Nos services", href: "/services" },
       { label: "À propos", href: "/a-propos" },
       { label: "Guide : appels manqués", href: "/guide-appels-manques" },
