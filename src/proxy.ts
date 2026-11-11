@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "@/i18n/locales";
-import { ROUTES, routeForSlug, slugFor, type Route } from "@/i18n/routes";
+import { ROUTES, REMOVED_SLUGS, routeForSlug, slugFor, type Route } from "@/i18n/routes";
 
 function detectLocale(request: NextRequest): Locale {
   const header = request.headers.get("accept-language");
@@ -32,6 +32,11 @@ export function proxy(request: NextRequest) {
     const segments = pathname.split("/");
     if (segments.length !== 3 || !segments[2]) return NextResponse.next();
     const slug = segments[2];
+    if (REMOVED_SLUGS.includes(slug)) {
+      const to = request.nextUrl.clone();
+      to.pathname = `/${pathLocale}${slugFor(pathLocale, "services")}`;
+      return NextResponse.redirect(to, 301);
+    }
     const route = routeForSlug(pathLocale, slug);
     const url = request.nextUrl.clone();
     if (route && route !== slug) {
