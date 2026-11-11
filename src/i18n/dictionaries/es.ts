@@ -1,8 +1,8 @@
 const es = {
   meta: {
-    title: "Marketing para fontaneros, electricistas y climatización | klik",
+    title: "Agencia de marketing IA | klik",
     description:
-      "klik llena la agenda de pymes técnicas (climatización, fontanería, electricidad) con IA: captación de clientes, reseñas de Google, web y ficha de Google.",
+      "klik, agencia de marketing IA: captación de clientes, reseñas de Google, web y ficha de Google para llenar tu agenda.",
   },
 
   nav: {
@@ -148,7 +148,7 @@ const es = {
     p1: "klik nace de una trayectoria poco convencional: años de oficios técnicos, trabajos exigentes y aprendidos sobre el terreno. Sólidos, respetables — pero que dejaban una sensación persistente de futuro cerrado.",
     p2: "El descubrimiento de la inteligencia artificial fue el punto de inflexión: no como concepto abstracto, sino como herramienta aplicable a problemas reales de gente real. La combinación de conocimiento técnico de oficio con sistemas de IA dio lugar a klik.",
     missionLabel: "Nuestra misión",
-    missionQuote: "Ayudar a dueños de pymes técnicas a tener la agenda llena sin perder fines de semana en marketing.",
+    missionQuote: "Ayudar a dueños de negocios a tener la agenda llena sin perder fines de semana en marketing.",
     valores: [
       { title: "Transparencia radical", description: "Decimos lo que funciona y lo que no." },
       { title: "Resultados medibles", description: "Números, no sensaciones." },
@@ -160,11 +160,11 @@ const es = {
 
   servicios: {
     number: "02",
-    title: "Marketing digital para pymes técnicas: lo que hacemos por ti",
+    title: "Marketing digital con IA: lo que hacemos por ti",
     subtitle:
       "Nada de soluciones omnicanal ni growth marketing. Servicios concretos, explicados como se lo explicaríamos a un cliente de toda la vida.",
     items: [
-      { title: "Te llenamos la agenda", description: "SEO local y campañas para que te encuentren cuando buscan un fontanero, un técnico de climatización o un electricista cerca. Suena el teléfono, no sube un gráfico." },
+      { title: "Te llenamos la agenda", description: "SEO local y campañas para que te encuentren cuando buscan tus servicios cerca. Suena el teléfono, no sube un gráfico." },
       { title: "Recuperamos citas perdidas", description: "Seguimiento automático a quien pregunta y no contesta. Ningún cliente se queda esperando." },
       { title: "Reseñas que te hacen destacar", description: "Pedimos la reseña de Google en el momento justo para que aparezcas primero cuando buscan un profesional cerca." },
       { title: "Web y ficha que convierten", description: "Una página web y una ficha de Google (Google Business Profile) hechas para que te llamen a ti, no al vecino." },
@@ -211,7 +211,7 @@ const es = {
     items: [
       { q: "¿Qué hacéis exactamente?", a: "Te llenamos la agenda de clientes. Sin que tengas que entender de marketing." },
       { q: "¿Cómo sé que esto funciona?", a: "Es normal que desconfíes. Por eso lo medimos en 3 semanas y decides tú si seguimos." },
-      { q: "¿Con qué tipo de negocios trabajáis?", a: "Con pymes técnicas en general: si tu negocio se agenda con clientes y se ejecuta en el sitio, hablamos tu idioma. Cuéntanos el tuyo y vemos si encajamos." },
+      { q: "¿Con qué tipo de negocios trabajáis?", a: "Con negocios de todos los tamaños: si quieres más clientes, hablamos tu idioma. Cuéntanos el tuyo y vemos si encajamos." },
       { q: "¿Qué pasa si quiero cancelar?", a: "Nos lo dices y paramos. Nunca te dejamos sin saber qué pasa si cancelas — sin permanencia forzosa." },
       { q: "¿Prometéis resultados garantizados?", a: "No. Nunca prometemos resultados en plazos irreales. Lo que sí hacemos es medir cada semana y enseñarte los números tal cual son." },
     ],
@@ -232,8 +232,8 @@ const es = {
     title: "Cuéntanos tu caso",
     subtitle: "Cuatro preguntas rápidas. Mientras respondes, tu ficha se va rellenando: es exactamente lo que nos llega.",
     steps: ["Tu negocio", "Qué te está pasando", "Cuándo te llamamos", "Tus datos"],
-    oficioLabel: "¿A qué te dedicas?",
-    oficios: ["Climatización", "Fontanería", "Electricidad", "Mantenimiento", "Reformas", "Otro oficio"],
+    oficioLabel: "¿En qué sector estás?",
+    oficios: ["Servicios", "Comercio", "Restauración", "Salud y bienestar", "Construcción y oficios", "Otro sector"],
     equipoLabel: "¿Cuántos sois?",
     equipos: ["Solo yo", "2 a 5", "6 a 20", "Más de 20"],
     problemaLabel: "Marca lo que te suene (puedes elegir varias)",
@@ -291,7 +291,7 @@ const es = {
   },
 
   footer: {
-    tagline: "Captación de clientes con IA para pymes técnicas.",
+    tagline: "Agencia de marketing IA.",
     serviciosTitle: "Servicios",
     servicios: ["Captación de clientes", "Recuperar citas", "Reseñas y reputación", "Web y ficha de Google"],
     siteTitle: "klik",
@@ -301,12 +301,6 @@ const es = {
       { label: "Nuestra historia", href: "/#historia" },
       { label: "Cómo trabajamos", href: "/#proceso" },
       { label: "Preguntas", href: "/#preguntas" },
-      { label: "Climatización", href: "/climatisation" },
-      { label: "Fontanería", href: "/plomberie" },
-      { label: "Electricidad", href: "/electricite" },
-      { label: "Cubiertas y tejados", href: "/couvreur" },
-      { label: "Rehabilitación energética", href: "/renovation-energetique" },
-      { label: "Todos los oficios", href: "/metiers" },
       { label: "Nuestros servicios", href: "/services" },
       { label: "Sobre klik", href: "/a-propos" },
       { label: "Guía: llamadas perdidas", href: "/guide-appels-manques" },
