@@ -1,7 +1,7 @@
 import type { Locale } from "./locales";
 
 /** Páginas de contenido (À propos y guías). Una por slug y por idioma. */
-export const CONTENT_SLUGS = ["a-propos", "guide-appels-manques", "guide-avis-google", "agence-marketing-ia-angers", "guide-relance-devis", "metiers", "services"] as const;
+export const CONTENT_SLUGS = ["a-propos", "guide-appels-manques", "guide-avis-google", "agence-marketing-ia-angers", "guide-relance-devis", "services"] as const;
 export type ContentSlug = (typeof CONTENT_SLUGS)[number];
 
 export type ContentPageData = {
@@ -28,7 +28,6 @@ export const CONTENT_DATES: Record<ContentSlug, { published: string; modified: s
   "guide-avis-google": { published: "2026-10-27", modified: "2026-10-27" },
   "agence-marketing-ia-angers": { published: "2026-10-29", modified: "2026-10-29" },
   "guide-relance-devis": { published: "2026-11-09", modified: "2026-11-09" },
-  metiers: { published: "2026-11-09", modified: "2026-11-09" },
   services: { published: "2026-11-09", modified: "2026-11-09" },
 };
 
@@ -43,12 +42,12 @@ const fr: Record<ContentSlug, ContentPageData> = {
     kind: "about",
     metaTitle: `À propos de klik et de son fondateur | ${SUFFIX.fr}`,
     metaDescription:
-      "klik est une agence fondée par Raphaël Pelisson. Elle aide les entreprises du bâtiment (plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique…) à trouver des clients, récupérer les rendez-vous perdus et gagner des avis Google.",
+      "klik est une agence de marketing IA fondée par Raphaël Pelisson. Elle aide les entreprises à trouver des clients, récupérer les rendez-vous perdus et gagner des avis Google.",
     breadcrumb: "À propos",
     eyebrow: "À propos",
-    h1: "klik : une agence pour les entreprises techniques qui veulent plus de chantiers",
+    h1: "klik : une agence de marketing IA pour les entreprises qui veulent plus de clients",
     intro:
-      "klik accompagne les entreprises du bâtiment (plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique, maçonnerie, peinture), en France et en Espagne. Notre idée est simple : une entreprise qui fait du bon travail ne doit pas perdre de chantiers à cause d'un appel manqué ou d'une fiche Google vide.",
+      "klik accompagne les entreprises, en France et en Espagne. Notre idée est simple : une entreprise qui fait du bon travail ne doit pas perdre de clients à cause d'un appel manqué ou d'une fiche Google vide.",
     sections: [
       {
         title: "Qui est derrière klik",
@@ -64,7 +63,7 @@ const fr: Record<ContentSlug, ContentPageData> = {
           "Acquisition de clients : un parcours clair du premier contact jusqu'au rendez-vous.",
           "Récupération des rendez-vous perdus : appels manqués, demandes sans réponse, devis non relancés.",
           "Avis Google et réputation : plus d'avis, au bon moment, et une fiche Google qui travaille pour vous.",
-          "Site web et fiche Google : visibles quand vos clients cherchent un dépannage ou une installation.",
+          "Site web et fiche Google : visibles quand vos clients vous cherchent.",
         ],
       },
       {
@@ -86,27 +85,27 @@ const fr: Record<ContentSlug, ContentPageData> = {
   },
   "guide-appels-manques": {
     kind: "article",
-    metaTitle: `Appels manqués : comment ne plus perdre de chantiers | ${SUFFIX.fr}`,
+    metaTitle: `Appels manqués : comment ne plus perdre de clients | ${SUFFIX.fr}`,
     metaDescription:
-      "Plombier, chauffagiste, électricien, installateur de climatisation : pourquoi un appel manqué fait perdre un chantier et 5 actions simples pour réagir vite.",
+      "Pourquoi un appel manqué fait perdre un client et 5 actions simples pour réagir vite.",
     breadcrumb: "Guide : appels manqués",
     eyebrow: "Guide",
-    h1: "Appels manqués : comment ne plus perdre de chantiers",
+    h1: "Appels manqués : comment ne plus perdre de clients",
     intro:
-      "Quand vous êtes sur un chantier, le téléphone sonne sans que vous puissiez répondre. Pour un client qui cherche un plombier, un chauffagiste ou un installateur de climatisation, la suite est presque toujours la même : il appelle l'entreprise suivante.",
+      "Quand vous êtes en rendez-vous ou sur le terrain, le téléphone sonne sans que vous puissiez répondre. Pour un client qui cherche vos services, la suite est presque toujours la même : il appelle l'entreprise suivante.",
     sections: [
       {
         title: "Pourquoi un appel manqué coûte cher",
         paras: [
-          "Un client qui appelle a un besoin précis, souvent urgent. S'il tombe sur un répondeur, il ne laisse pas toujours de message : il appelle quelqu'un d'autre. Le chantier part chez le concurrent, et vous ne le saurez jamais.",
+          "Un client qui appelle a un besoin précis, souvent urgent. S'il tombe sur un répondeur, il ne laisse pas toujours de message : il appelle quelqu'un d'autre. Le client part chez le concurrent, et vous ne le saurez jamais.",
           "Le problème est invisible : un appel manqué ne laisse aucune trace dans votre chiffre d'affaires, seulement dans celui de quelqu'un d'autre.",
         ],
       },
       {
         title: "Les causes les plus fréquentes",
-        paras: ["Dans les entreprises techniques, on retrouve presque toujours les mêmes situations :"],
+        paras: ["Dans la plupart des entreprises, on retrouve presque toujours les mêmes situations :"],
         bullets: [
-          "les techniciens sont sur chantier et le patron aussi",
+          "l'équipe est sur le terrain et le dirigeant aussi",
           "personne ne répond pendant la pause du midi ou après 18 h",
           "la messagerie vocale est pleine ou jamais écoutée",
           "les demandes envoyées par le site ou par message n'ont pas de réponse rapide",
@@ -127,7 +126,7 @@ const fr: Record<ContentSlug, ContentPageData> = {
       {
         title: "Combien ça vous coûte",
         paras: [
-          "Pour estimer ce que représentent vos rendez-vous perdus, utilisez notre calculatrice : elle part du nombre d'appels, du taux de réponse et de la valeur moyenne d'un chantier.",
+          "Pour estimer ce que représentent vos rendez-vous perdus, utilisez notre calculatrice : elle part du nombre d'appels, du taux de réponse et de la valeur moyenne d'un client.",
         ],
       },
     ],
@@ -148,8 +147,6 @@ const fr: Record<ContentSlug, ContentPageData> = {
     linksTitle: "Pour aller plus loin",
     links: [
       { label: "Calculatrice de rendez-vous perdus", href: "/calculadora" },
-      { label: "Marketing pour les entreprises de plomberie", href: "/plomberie" },
-      { label: "Marketing pour les entreprises de climatisation", href: "/climatisation" },
       { label: "Guide : obtenir plus d'avis Google", href: "/guide-avis-google" },
     ],
     ctaTitle: "Vous perdez des appels ? Mesurons-le ensemble",
@@ -158,14 +155,14 @@ const fr: Record<ContentSlug, ContentPageData> = {
   },
   "guide-avis-google": {
     kind: "article",
-    metaTitle: `Avis Google : comment en obtenir plus (plombier, chauffagiste, électricien) | ${SUFFIX.fr}`,
+    metaTitle: `Avis Google : comment en obtenir plus | ${SUFFIX.fr}`,
     metaDescription:
-      "Comment obtenir plus d'avis Google quand on est plombier, chauffagiste, électricien ou installateur de climatisation : quand demander, quoi écrire, comment répondre.",
+      "Comment obtenir plus d'avis Google pour votre entreprise : quand demander, quoi écrire, comment répondre.",
     breadcrumb: "Guide : avis Google",
     eyebrow: "Guide",
-    h1: "Avis Google : comment en obtenir plus quand on est artisan du bâtiment",
+    h1: "Avis Google : comment en obtenir plus pour votre entreprise",
     intro:
-      "Quand un client cherche un plombier, un électricien ou un chauffagiste, il regarde la fiche Google avant d'appeler : le nombre d'avis, la note et les réponses du professionnel. Voici comment en obtenir plus, sans artifice.",
+      "Quand un client cherche un professionnel, il regarde la fiche Google avant d'appeler : le nombre d'avis, la note et les réponses du professionnel. Voici comment en obtenir plus, sans artifice.",
     sections: [
       {
         title: "Pourquoi les avis comptent",
@@ -221,8 +218,6 @@ const fr: Record<ContentSlug, ContentPageData> = {
     ],
     linksTitle: "Pour aller plus loin",
     links: [
-      { label: "Marketing pour les entreprises de plomberie", href: "/plomberie" },
-      { label: "Marketing pour les entreprises d'électricité", href: "/electricite" },
       { label: "Guide : ne plus perdre d'appels", href: "/guide-appels-manques" },
       { label: "À propos de klik", href: "/a-propos" },
     ],
@@ -234,7 +229,7 @@ const fr: Record<ContentSlug, ContentPageData> = {
     kind: "service",
     metaTitle: `Agence marketing IA à Angers et en Maine-et-Loire | ${SUFFIX.fr}`,
     metaDescription:
-      "klik, agence marketing IA à Angers et dans le Maine-et-Loire : acquisition de clients, rendez-vous récupérés, avis Google, site et fiche Google pour les PME et entreprises techniques.",
+      "klik, agence marketing IA à Angers et dans le Maine-et-Loire : acquisition de clients, rendez-vous récupérés, avis Google, site et fiche Google pour les PME et entreprises.",
     breadcrumb: "Agence marketing IA à Angers",
     eyebrow: "Angers et Maine-et-Loire",
     h1: "Agence marketing IA à Angers et en Maine-et-Loire",
@@ -254,14 +249,14 @@ const fr: Record<ContentSlug, ContentPageData> = {
       {
         title: "Une agence marketing IA, concrètement",
         paras: [
-          "L'intelligence artificielle ne remplace pas votre savoir-faire : elle s'occupe de ce qui vous prend du temps et que vous n'avez pas le temps de faire. Répondre tout de suite à un client qui appelle ou écrit, relancer un devis, demander un avis après un chantier, trier les demandes.",
+          "L'intelligence artificielle ne remplace pas votre savoir-faire : elle s'occupe de ce qui vous prend du temps et que vous n'avez pas le temps de faire. Répondre tout de suite à un client qui appelle ou écrit, relancer un devis, demander un avis après une prestation, trier les demandes.",
           "Résultat : moins de rendez-vous perdus, plus de clients qui vous trouvent et vous choisissent, sans ajouter de charge à vos équipes.",
         ],
       },
       {
         title: "Pour quelles entreprises",
         paras: [
-          "Nous travaillons surtout avec les entreprises du bâtiment : plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique, maçonnerie, peinture. Si vous dirigez une PME de services avec une équipe et un agenda à remplir, parlons-en.",
+          "Nous travaillons avec des PME de tous les secteurs. Si vous dirigez une PME de services avec une équipe et un agenda à remplir, parlons-en.",
         ],
       },
       {
@@ -288,7 +283,6 @@ const fr: Record<ContentSlug, ContentPageData> = {
     linksTitle: "Pour aller plus loin",
     links: [
       { label: "Calculatrice de rendez-vous perdus", href: "/calculadora" },
-      { label: "Marketing pour les entreprises de climatisation", href: "/climatisation" },
       { label: "Guide : ne plus perdre d'appels", href: "/guide-appels-manques" },
       { label: "À propos de klik", href: "/a-propos" },
     ],
@@ -298,18 +292,18 @@ const fr: Record<ContentSlug, ContentPageData> = {
   },
   "guide-relance-devis": {
     kind: "article",
-    metaTitle: `Relancer un devis : comment faire quand on est artisan | klik`,
+    metaTitle: `Relancer un devis : comment faire sans paraître insistant | klik`,
     metaDescription:
-      "Pourquoi un devis reste sans réponse, quand et comment le relancer sans paraître insistant, et ce qu'un artisan du bâtiment peut automatiser.",
+      "Pourquoi un devis reste sans réponse, quand et comment le relancer sans paraître insistant, et ce qu'une entreprise peut automatiser.",
     breadcrumb: "Relancer ses devis",
     eyebrow: "Guide",
-    h1: "Relancer ses devis quand on est artisan du bâtiment",
+    h1: "Relancer ses devis : quand et comment",
     intro:
-      "Un devis envoyé sans relance reste souvent sans réponse : le client compare, hésite ou oublie. Voici quand et comment relancer sans paraître insistant, et ce qu'on peut automatiser pour ne plus y penser pendant que vous êtes sur le chantier.",
+      "Un devis envoyé sans relance reste souvent sans réponse : le client compare, hésite ou oublie. Voici quand et comment relancer sans paraître insistant, et ce qu'on peut automatiser pour ne plus y penser pendant que vous êtes occupé.",
     sections: [
       {
         title: "Pourquoi un devis reste sans réponse",
-        paras: ["Ce n'est pas forcément un refus. Dans le bâtiment, plusieurs raisons reviennent :"],
+        paras: ["Ce n'est pas forcément un refus. Plusieurs raisons reviennent :"],
         bullets: [
           "le client compare plusieurs entreprises avant de décider",
           "le projet n'est pas urgent et passe après le reste",
@@ -319,7 +313,7 @@ const fr: Record<ContentSlug, ContentPageData> = {
       },
       {
         title: "Quand relancer",
-        paras: ["Il n'y a pas de règle unique, mais une logique simple : relancer assez tôt pour que le projet reste frais, assez peu pour ne pas gêner. À titre de repères, à adapter à la taille du chantier :"],
+        paras: ["Il n'y a pas de règle unique, mais une logique simple : relancer assez tôt pour que le projet reste frais, assez peu pour ne pas gêner. À titre de repères, à adapter à la taille du projet :"],
         bullets: [
           "quelques jours après l'envoi : un message court pour vérifier que le devis est bien reçu et répondre aux questions",
           "environ une semaine plus tard : un message qui apporte quelque chose d'utile (une précision, une disponibilité)",
@@ -330,7 +324,7 @@ const fr: Record<ContentSlug, ContentPageData> = {
         title: "Que dire dans la relance",
         paras: ["Le ton compte plus que la longueur. Une relance efficace est courte, utile et facile à répondre :"],
         bullets: [
-          "rappeler le chantier en une phrase (« votre projet de toiture à … »)",
+          "rappeler le projet en une phrase (« votre projet de … »)",
           "demander s'il y a des questions sur le devis",
           "proposer un appel ou une visite si besoin",
           "ne jamais mettre la pression sur la décision",
@@ -348,12 +342,12 @@ const fr: Record<ContentSlug, ContentPageData> = {
       },
       {
         title: "Ce qui reste à faire à la main",
-        paras: ["Répondre aux questions techniques, ajuster un prix, appeler quand le chantier est important : la relation reste entre vous et le client. L'outil sert à ne rien laisser passer, pas à remplacer votre jugement."],
+        paras: ["Répondre aux questions techniques, ajuster un prix, appeler quand le projet est important : la relation reste entre vous et le client. L'outil sert à ne rien laisser passer, pas à remplacer votre jugement."],
       },
     ],
     faq: [
       { q: "Combien de fois faut-il relancer un devis ?", a: "Une ou deux relances suffisent en général. Au-delà, on risque de gêner le client. La dernière relance doit laisser la porte ouverte." },
-      { q: "Une relance automatique paraît-elle impersonnelle ?", a: "Pas si le message est court, relié au chantier du client et validé par vous. L'automatisation sert à ne pas oublier, pas à écrire à votre place." },
+      { q: "Une relance automatique paraît-elle impersonnelle ?", a: "Pas si le message est court, relié au projet du client et validé par vous. L'automatisation sert à ne pas oublier, pas à écrire à votre place." },
       { q: "Que faire si le client ne répond jamais ?", a: "Après deux relances, classez le devis comme sans suite, en gardant une note pour reprendre contact plus tard si le contexte change." },
     ],
     linksTitle: "Pour aller plus loin",
@@ -361,68 +355,26 @@ const fr: Record<ContentSlug, ContentPageData> = {
       { label: "Calculatrice de rendez-vous perdus", href: "/calculadora" },
       { label: "Guide : appels manqués", href: "/guide-appels-manques" },
       { label: "Guide : obtenir plus d'avis Google", href: "/guide-avis-google" },
-      { label: "Tous nos métiers du bâtiment", href: "/metiers" },
       { label: "Nos services", href: "/services" },
     ],
     ctaTitle: "Parlons de vos devis",
     ctaSubtitle: "Racontez-nous comment vous suivez vos devis aujourd'hui, et on vous dit comment on s'y prendrait.",
     ctaButton: "Demander un diagnostic gratuit",
   },
-  "metiers": {
-    kind: "hub",
-    metaTitle: `Marketing pour les entreprises du bâtiment, par métier | klik`,
-    metaDescription:
-      "Toutes les pages klik par métier du bâtiment : plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique, maçonnerie, peinture.",
-    breadcrumb: "Métiers",
-    eyebrow: "Métiers",
-    h1: "Marketing pour les entreprises du bâtiment, métier par métier",
-    intro:
-      "klik accompagne les entreprises du bâtiment qui veulent plus de chantiers sans courir après les clients. Choisissez votre métier pour voir ce qu'on fait concrètement pour vous.",
-    sections: [
-      {
-        title: "Ce qui revient dans tous les métiers",
-        paras: ["Quel que soit le métier, on retrouve presque toujours les mêmes pertes :"],
-        bullets: [
-          "des appels manqués pendant les chantiers",
-          "des devis envoyés puis jamais relancés",
-          "trop peu d'avis Google",
-          "un site et une fiche Google qui n'expliquent pas clairement ce que vous faites",
-        ],
-      },
-      {
-        title: "Comment on travaille",
-        paras: ["On commence par un diagnostic gratuit de 20 minutes : on regarde votre entreprise, votre zone et ce qui vous fait perdre des clients. Si ça vous convient, on met en place un plan clair, avec ce qu'on fait et à quoi s'attendre. Sans engagement de durée."],
-      },
-    ],
-    linksTitle: "Nos pages par métier",
-    links: [
-      { label: "Marketing pour les entreprises de plomberie", href: "/plomberie" },
-      { label: "Marketing pour les entreprises de climatisation et de CVC", href: "/climatisation" },
-      { label: "Marketing pour les entreprises d'électricité", href: "/electricite" },
-      { label: "Agence marketing pour couvreurs", href: "/couvreur" },
-      { label: "Agence marketing pour la rénovation énergétique", href: "/renovation-energetique" },
-      { label: "Agence marketing pour chauffagistes", href: "/chauffagiste" },
-      { label: "Agence marketing pour maçons", href: "/macon" },
-      { label: "Agence marketing pour peintres en bâtiment", href: "/peintre-batiment" },
-    ],
-    ctaTitle: "On parle de votre métier ?",
-    ctaSubtitle: "Dites-nous ce que vous faites et où vous intervenez, on vous répond avec la façon dont on s'y prendrait.",
-    ctaButton: "Demander un diagnostic gratuit",
-  },
   "services": {
     kind: "hub",
-    metaTitle: `Nos services pour les entreprises du bâtiment | klik`,
+    metaTitle: `Nos services d'agence de marketing IA | klik`,
     metaDescription:
-      "Acquisition de clients, récupération des rendez-vous perdus, avis Google, site et fiche Google : ce que klik fait pour les entreprises du bâtiment.",
+      "Acquisition de clients, récupération des rendez-vous perdus, avis Google, site et fiche Google : ce que klik fait pour votre entreprise.",
     breadcrumb: "Services",
     eyebrow: "Services",
-    h1: "Nos services pour les entreprises du bâtiment",
+    h1: "Nos services d'agence de marketing IA",
     intro:
-      "Quatre services, un même objectif : que votre agenda se remplisse sans que vous perdiez des chantiers à cause d'un appel manqué, d'un devis oublié ou d'une fiche Google vide.",
+      "Quatre services, un même objectif : que votre agenda se remplisse sans que vous perdiez des clients à cause d'un appel manqué, d'un devis oublié ou d'une fiche Google vide.",
     sections: [
       {
         title: "Acquisition de clients",
-        paras: ["Référencement local et campagnes ciblées pour qu'on vous trouve quand quelqu'un cherche votre métier près de chez lui."],
+        paras: ["Référencement local et campagnes ciblées pour qu'on vous trouve quand quelqu'un cherche vos services près de chez lui."],
       },
       {
         title: "Récupération des rendez-vous perdus",
@@ -430,7 +382,7 @@ const fr: Record<ContentSlug, ContentPageData> = {
       },
       {
         title: "Avis et réputation",
-        paras: ["On demande l'avis Google au bon moment, juste après un chantier réussi, pour que vous apparaissiez avec des avis récents."],
+        paras: ["On demande l'avis Google au bon moment, juste après une prestation réussie, pour que vous apparaissiez avec des avis récents."],
       },
       {
         title: "Site et fiche Google",
@@ -443,7 +395,6 @@ const fr: Record<ContentSlug, ContentPageData> = {
       { label: "Guide : appels manqués", href: "/guide-appels-manques" },
       { label: "Guide : relancer ses devis", href: "/guide-relance-devis" },
       { label: "Guide : obtenir plus d'avis Google", href: "/guide-avis-google" },
-      { label: "Tous nos métiers du bâtiment", href: "/metiers" },
     ],
     ctaTitle: "Quel service vous manque le plus ?",
     ctaSubtitle: "Racontez-nous votre situation, on vous dit par où on commencerait.",
@@ -456,12 +407,12 @@ const es: Record<ContentSlug, ContentPageData> = {
     kind: "about",
     metaTitle: `Sobre klik y su fundador | ${SUFFIX.es}`,
     metaDescription:
-      "klik es una agencia fundada por Raphaël Pelisson. Ayuda a las empresas de la construcción (fontanería, calefacción, climatización, electricidad, cubiertas, rehabilitación energética…) a captar clientes, recuperar citas perdidas y conseguir reseñas en Google.",
+      "klik es una agencia de marketing IA fundada por Raphaël Pelisson. Ayuda a las empresas a captar clientes, recuperar citas perdidas y conseguir reseñas en Google.",
     breadcrumb: "Sobre klik",
     eyebrow: "Sobre klik",
-    h1: "klik: una agencia para empresas técnicas que quieren más trabajos",
+    h1: "klik: una agencia de marketing IA para empresas que quieren más clientes",
     intro:
-      "klik acompaña a las empresas de la construcción (fontanería, calefacción, climatización, electricidad, cubiertas, rehabilitación energética, albañilería, pintura) en Francia y España. La idea es sencilla: una empresa que trabaja bien no debería perder trabajos por una llamada sin atender o por una ficha de Google vacía.",
+      "klik acompaña a las empresas en Francia y España. La idea es sencilla: una empresa que trabaja bien no debería perder clientes por una llamada sin atender o por una ficha de Google vacía.",
     sections: [
       {
         title: "Quién está detrás de klik",
@@ -501,12 +452,12 @@ const es: Record<ContentSlug, ContentPageData> = {
     kind: "article",
     metaTitle: `Llamadas perdidas: cómo dejar de perder trabajos | ${SUFFIX.es}`,
     metaDescription:
-      "Fontanero, calefactor, electricista o instalador de climatización: por qué una llamada perdida cuesta un trabajo y 5 acciones sencillas para reaccionar rápido.",
+      "Por qué una llamada perdida cuesta un cliente y 5 acciones sencillas para reaccionar rápido.",
     breadcrumb: "Guía: llamadas perdidas",
     eyebrow: "Guía",
     h1: "Llamadas perdidas: cómo dejar de perder trabajos",
     intro:
-      "Cuando estás en una obra, el teléfono suena y no puedes contestar. Para un cliente que busca fontanero, calefactor o instalador de climatización, lo que pasa después casi siempre es lo mismo: llama a la siguiente empresa.",
+      "Cuando estás con un cliente o en plena jornada, el teléfono suena y no puedes contestar. Para un cliente que busca tus servicios, lo que pasa después casi siempre es lo mismo: llama a la siguiente empresa.",
     sections: [
       {
         title: "Por qué una llamada perdida cuesta cara",
@@ -517,9 +468,9 @@ const es: Record<ContentSlug, ContentPageData> = {
       },
       {
         title: "Las causas más habituales",
-        paras: ["En las empresas técnicas casi siempre se repiten las mismas situaciones:"],
+        paras: ["En la mayoría de las empresas casi siempre se repiten las mismas situaciones:"],
         bullets: [
-          "los técnicos están en obra y el jefe también",
+          "el equipo está en el terreno y el jefe también",
           "nadie contesta a la hora de comer o pasadas las 18 h",
           "el buzón de voz está lleno o nadie lo escucha",
           "las peticiones del sitio web o por mensaje no reciben respuesta rápida",
@@ -561,8 +512,6 @@ const es: Record<ContentSlug, ContentPageData> = {
     linksTitle: "Para ir más lejos",
     links: [
       { label: "Calculadora de citas perdidas", href: "/calculadora" },
-      { label: "Marketing para empresas de fontanería", href: "/plomberie" },
-      { label: "Marketing para empresas de climatización", href: "/climatisation" },
       { label: "Guía: conseguir más reseñas en Google", href: "/guide-avis-google" },
     ],
     ctaTitle: "¿Pierdes llamadas? Midámoslo juntos",
@@ -571,14 +520,14 @@ const es: Record<ContentSlug, ContentPageData> = {
   },
   "guide-avis-google": {
     kind: "article",
-    metaTitle: `Reseñas en Google: cómo conseguir más (fontanero, calefactor, electricista) | ${SUFFIX.es}`,
+    metaTitle: `Reseñas en Google: cómo conseguir más | ${SUFFIX.es}`,
     metaDescription:
-      "Cómo conseguir más reseñas en Google si eres fontanero, calefactor, electricista o instalador de climatización: cuándo pedirlas, qué escribir y cómo responder.",
+      "Cómo conseguir más reseñas en Google para tu negocio: cuándo pedirlas, qué escribir y cómo responder.",
     breadcrumb: "Guía: reseñas en Google",
     eyebrow: "Guía",
-    h1: "Reseñas en Google: cómo conseguir más si eres profesional de la construcción",
+    h1: "Reseñas en Google: cómo conseguir más para tu negocio",
     intro:
-      "Cuando un cliente busca fontanero, electricista o calefactor, mira la ficha de Google antes de llamar: número de reseñas, nota y respuestas del profesional. Así se consiguen más, sin trucos.",
+      "Cuando un cliente busca un profesional, mira la ficha de Google antes de llamar: número de reseñas, nota y respuestas del profesional. Así se consiguen más, sin trucos.",
     sections: [
       {
         title: "Por qué importan las reseñas",
@@ -634,8 +583,6 @@ const es: Record<ContentSlug, ContentPageData> = {
     ],
     linksTitle: "Para ir más lejos",
     links: [
-      { label: "Marketing para empresas de fontanería", href: "/plomberie" },
-      { label: "Marketing para empresas de electricidad", href: "/electricite" },
       { label: "Guía: no perder más llamadas", href: "/guide-appels-manques" },
       { label: "Sobre klik", href: "/a-propos" },
     ],
@@ -647,7 +594,7 @@ const es: Record<ContentSlug, ContentPageData> = {
     kind: "service",
     metaTitle: `Agencia de marketing con IA en Angers y Maine-et-Loire | ${SUFFIX.es}`,
     metaDescription:
-      "klik, agencia de marketing con IA en Angers y Maine-et-Loire: captación de clientes, citas recuperadas, reseñas en Google, web y ficha de Google para pymes y empresas técnicas.",
+      "klik, agencia de marketing con IA en Angers y Maine-et-Loire: captación de clientes, citas recuperadas, reseñas en Google, web y ficha de Google para pymes y empresas.",
     breadcrumb: "Agencia de marketing IA en Angers",
     eyebrow: "Angers y Maine-et-Loire",
     h1: "Agencia de marketing con IA en Angers y Maine-et-Loire",
@@ -667,14 +614,14 @@ const es: Record<ContentSlug, ContentPageData> = {
       {
         title: "Una agencia de marketing con IA, en la práctica",
         paras: [
-          "La inteligencia artificial no sustituye tu oficio: se ocupa de lo que te quita tiempo y para lo que no tienes tiempo. Responder al momento a quien llama o escribe, retomar un presupuesto, pedir una reseña tras un trabajo, ordenar las peticiones.",
+          "La inteligencia artificial no sustituye tu experiencia: se ocupa de lo que te quita tiempo y para lo que no tienes tiempo. Responder al momento a quien llama o escribe, retomar un presupuesto, pedir una reseña tras un trabajo, ordenar las peticiones.",
           "Resultado: menos citas perdidas y más clientes que te encuentran y te eligen, sin cargar a tus equipos.",
         ],
       },
       {
         title: "Para qué empresas",
         paras: [
-          "Trabajamos sobre todo con empresas de la construcción: fontanería, calefacción, climatización, electricidad, cubiertas, rehabilitación energética, albañilería, pintura. Si diriges una pyme de servicios con un equipo y una agenda que llenar, hablemos.",
+          "Trabajamos con pymes de todos los sectores. Si diriges una pyme de servicios con un equipo y una agenda que llenar, hablemos.",
         ],
       },
       {
@@ -701,7 +648,6 @@ const es: Record<ContentSlug, ContentPageData> = {
     linksTitle: "Para ir más lejos",
     links: [
       { label: "Calculadora de citas perdidas", href: "/calculadora" },
-      { label: "Marketing para empresas de climatización", href: "/climatisation" },
       { label: "Guía: no perder más llamadas", href: "/guide-appels-manques" },
       { label: "Sobre klik", href: "/a-propos" },
     ],
@@ -711,18 +657,18 @@ const es: Record<ContentSlug, ContentPageData> = {
   },
   "guide-relance-devis": {
     kind: "article",
-    metaTitle: `Hacer seguimiento de un presupuesto: guía para empresas de obra | klik`,
+    metaTitle: `Hacer seguimiento de un presupuesto: guía para empresas | klik`,
     metaDescription:
-      "Por qué un presupuesto se queda sin respuesta, cuándo y cómo retomarlo sin agobiar, y qué puede automatizar una empresa del sector de la construcción.",
+      "Por qué un presupuesto se queda sin respuesta, cuándo y cómo retomarlo sin agobiar, y qué puede automatizar una empresa.",
     breadcrumb: "Seguimiento de presupuestos",
     eyebrow: "Guía",
-    h1: "Hacer seguimiento de tus presupuestos si trabajas en la construcción",
+    h1: "Hacer seguimiento de tus presupuestos sin agobiar",
     intro:
-      "Un presupuesto enviado sin seguimiento suele quedarse sin respuesta: el cliente compara, duda o se olvida. Esto es cuándo y cómo retomarlo sin agobiar, y qué se puede automatizar para no tener que pensar en ello mientras estás en obra.",
+      "Un presupuesto enviado sin seguimiento suele quedarse sin respuesta: el cliente compara, duda o se olvida. Esto es cuándo y cómo retomarlo sin agobiar, y qué se puede automatizar para no tener que pensar en ello mientras estás ocupado.",
     sections: [
       {
         title: "Por qué un presupuesto se queda sin respuesta",
-        paras: ["No siempre es un no. En la construcción se repiten varios motivos:"],
+        paras: ["No siempre es un no. Se repiten varios motivos:"],
         bullets: [
           "el cliente compara varias empresas antes de decidir",
           "el proyecto no es urgente y pasa a segundo plano",
@@ -732,7 +678,7 @@ const es: Record<ContentSlug, ContentPageData> = {
       },
       {
         title: "Cuándo retomarlo",
-        paras: ["No hay una regla única, pero sí una lógica sencilla: retomarlo pronto para que el proyecto siga fresco, y no tanto como para molestar. Como referencia, a adaptar al tamaño de la obra:"],
+        paras: ["No hay una regla única, pero sí una lógica sencilla: retomarlo pronto para que el proyecto siga fresco, y no tanto como para molestar. Como referencia, a adaptar al tamaño del proyecto:"],
         bullets: [
           "unos días después del envío: un mensaje corto para comprobar que llegó y resolver dudas",
           "una semana más tarde, aproximadamente: un mensaje que aporte algo útil (una precisión, una disponibilidad)",
@@ -743,7 +689,7 @@ const es: Record<ContentSlug, ContentPageData> = {
         title: "Qué decir en el seguimiento",
         paras: ["El tono importa más que la longitud. Un buen seguimiento es corto, útil y fácil de contestar:"],
         bullets: [
-          "recordar la obra en una frase (« tu proyecto de cubierta en … »)",
+          "recordar el proyecto en una frase (« tu proyecto de … »)",
           "preguntar si hay dudas sobre el presupuesto",
           "proponer una llamada o una visita si hace falta",
           "no presionar nunca para decidir",
@@ -761,12 +707,12 @@ const es: Record<ContentSlug, ContentPageData> = {
       },
       {
         title: "Lo que sigue haciéndose a mano",
-        paras: ["Responder dudas técnicas, ajustar un precio, llamar cuando la obra es importante: la relación sigue siendo entre tú y el cliente. La herramienta sirve para que no se escape nada, no para sustituir tu criterio."],
+        paras: ["Responder dudas técnicas, ajustar un precio, llamar cuando el proyecto es importante: la relación sigue siendo entre tú y el cliente. La herramienta sirve para que no se escape nada, no para sustituir tu criterio."],
       },
     ],
     faq: [
       { q: "¿Cuántas veces hay que retomar un presupuesto?", a: "Con uno o dos seguimientos suele bastar. Más allá, se corre el riesgo de molestar. El último debe dejar la puerta abierta." },
-      { q: "¿Un seguimiento automático resulta impersonal?", a: "No, si el mensaje es corto, está ligado a la obra del cliente y lo validas tú. La automatización sirve para no olvidar, no para escribir en tu lugar." },
+      { q: "¿Un seguimiento automático resulta impersonal?", a: "No, si el mensaje es corto, está ligado al proyecto del cliente y lo validas tú. La automatización sirve para no olvidar, no para escribir en tu lugar." },
       { q: "¿Qué hacer si el cliente nunca contesta?", a: "Tras dos seguimientos, archiva el presupuesto como sin respuesta, anotando que puedes volver a contactar más adelante si cambia el contexto." },
     ],
     linksTitle: "Para ir más lejos",
@@ -774,68 +720,26 @@ const es: Record<ContentSlug, ContentPageData> = {
       { label: "Calculadora de citas perdidas", href: "/calculadora" },
       { label: "Guía: llamadas perdidas", href: "/guide-appels-manques" },
       { label: "Guía: conseguir más reseñas en Google", href: "/guide-avis-google" },
-      { label: "Todos nuestros oficios de la construcción", href: "/metiers" },
       { label: "Nuestros servicios", href: "/services" },
     ],
     ctaTitle: "Hablemos de tus presupuestos",
     ctaSubtitle: "Cuéntanos cómo haces el seguimiento hoy y te decimos cómo lo abordaríamos.",
     ctaButton: "Pedir un diagnóstico gratuito",
   },
-  "metiers": {
-    kind: "hub",
-    metaTitle: `Marketing para empresas de la construcción, por oficio | klik`,
-    metaDescription:
-      "Todas las páginas de klik por oficio: fontanería, calefacción, climatización, electricidad, cubiertas, rehabilitación energética, albañilería, pintura.",
-    breadcrumb: "Oficios",
-    eyebrow: "Oficios",
-    h1: "Marketing para empresas de la construcción, oficio por oficio",
-    intro:
-      "klik acompaña a las empresas de la construcción que quieren más obras sin perseguir a los clientes. Elige tu oficio para ver qué hacemos concretamente por ti.",
-    sections: [
-      {
-        title: "Lo que se repite en todos los oficios",
-        paras: ["Sea cual sea el oficio, casi siempre se repiten las mismas pérdidas:"],
-        bullets: [
-          "llamadas perdidas durante las obras",
-          "presupuestos enviados y nunca retomados",
-          "muy pocas reseñas en Google",
-          "una web y una ficha de Google que no explican con claridad lo que haces",
-        ],
-      },
-      {
-        title: "Cómo trabajamos",
-        paras: ["Empezamos con un diagnóstico gratuito de 20 minutos: miramos tu empresa, tu zona y lo que te hace perder clientes. Si te encaja, montamos un plan claro, con lo que hacemos y qué esperar. Sin permanencia."],
-      },
-    ],
-    linksTitle: "Nuestras páginas por oficio",
-    links: [
-      { label: "Marketing para empresas de fontanería", href: "/plomberie" },
-      { label: "Marketing para empresas de climatización", href: "/climatisation" },
-      { label: "Marketing para empresas de electricidad", href: "/electricite" },
-      { label: "Agencia de marketing para empresas de tejados", href: "/couvreur" },
-      { label: "Agencia de marketing para rehabilitación energética", href: "/renovation-energetique" },
-      { label: "Agencia de marketing para empresas de calefacción", href: "/chauffagiste" },
-      { label: "Agencia de marketing para albañiles", href: "/macon" },
-      { label: "Agencia de marketing para pintores de obra", href: "/peintre-batiment" },
-    ],
-    ctaTitle: "¿Hablamos de tu oficio?",
-    ctaSubtitle: "Dinos qué haces y dónde trabajas, y te respondemos cómo lo abordaríamos.",
-    ctaButton: "Pedir un diagnóstico gratuito",
-  },
   "services": {
     kind: "hub",
-    metaTitle: `Nuestros servicios para empresas de la construcción | klik`,
+    metaTitle: `Nuestros servicios de agencia de marketing IA | klik`,
     metaDescription:
-      "Captación de clientes, recuperación de citas perdidas, reseñas de Google, web y ficha de Google: lo que hace klik por las empresas de la construcción.",
+      "Captación de clientes, recuperación de citas perdidas, reseñas de Google, web y ficha de Google: lo que hace klik por tu empresa.",
     breadcrumb: "Servicios",
     eyebrow: "Servicios",
-    h1: "Nuestros servicios para empresas de la construcción",
+    h1: "Nuestros servicios de agencia de marketing IA",
     intro:
-      "Cuatro servicios, un mismo objetivo: que tu agenda se llene sin que pierdas obras por una llamada perdida, un presupuesto olvidado o una ficha de Google vacía.",
+      "Cuatro servicios, un mismo objetivo: que tu agenda se llene sin que pierdas clientes por una llamada perdida, un presupuesto olvidado o una ficha de Google vacía.",
     sections: [
       {
         title: "Captación de clientes",
-        paras: ["SEO local y campañas para que te encuentren cuando alguien busca tu oficio cerca de casa."],
+        paras: ["SEO local y campañas para que te encuentren cuando alguien busca tus servicios cerca de casa."],
       },
       {
         title: "Recuperación de citas perdidas",
@@ -843,7 +747,7 @@ const es: Record<ContentSlug, ContentPageData> = {
       },
       {
         title: "Reseñas y reputación",
-        paras: ["Pedimos la reseña de Google en el momento adecuado, justo después de una obra bien hecha, para que aparezcas con reseñas recientes."],
+        paras: ["Pedimos la reseña de Google en el momento adecuado, justo después de un trabajo bien hecho, para que aparezcas con reseñas recientes."],
       },
       {
         title: "Web y ficha de Google",
@@ -856,7 +760,6 @@ const es: Record<ContentSlug, ContentPageData> = {
       { label: "Guía: llamadas perdidas", href: "/guide-appels-manques" },
       { label: "Guía: hacer seguimiento de presupuestos", href: "/guide-relance-devis" },
       { label: "Guía: conseguir más reseñas en Google", href: "/guide-avis-google" },
-      { label: "Todos nuestros oficios de la construcción", href: "/metiers" },
     ],
     ctaTitle: "¿Qué servicio te hace más falta?",
     ctaSubtitle: "Cuéntanos tu situación y te decimos por dónde empezaríamos.",
@@ -869,12 +772,12 @@ const en: Record<ContentSlug, ContentPageData> = {
     kind: "about",
     metaTitle: `About klik and its founder | ${SUFFIX.en}`,
     metaDescription:
-      "klik is an agency founded by Raphaël Pelisson. It helps building businesses (plumbing, heating, HVAC, electrical, roofing, energy renovation…) win customers, recover lost appointments and earn Google reviews.",
+      "klik is an AI marketing agency founded by Raphaël Pelisson. It helps businesses win customers, recover lost appointments and earn Google reviews.",
     breadcrumb: "About klik",
     eyebrow: "About klik",
-    h1: "klik: an agency for technical businesses that want more jobs",
+    h1: "klik: an AI marketing agency for businesses that want more customers",
     intro:
-      "klik works with building businesses (plumbing, heating, HVAC, electrical, roofing, energy renovation, masonry, painting) in France and Spain. The idea is simple: a company that does good work should not lose jobs because of a missed call or an empty Google listing.",
+      "klik works with businesses in France and Spain. The idea is simple: a company that does good work should not lose customers because of a missed call or an empty Google listing.",
     sections: [
       {
         title: "Who is behind klik",
@@ -912,14 +815,14 @@ const en: Record<ContentSlug, ContentPageData> = {
   },
   "guide-appels-manques": {
     kind: "article",
-    metaTitle: `Missed calls: how to stop losing jobs | ${SUFFIX.en}`,
+    metaTitle: `Missed calls: how to stop losing customers | ${SUFFIX.en}`,
     metaDescription:
-      "Plumber, heating engineer, electrician or air conditioning installer: why a missed call loses a job, and 5 simple actions to respond fast.",
+      "Why a missed call loses a customer, and 5 simple actions to respond fast.",
     breadcrumb: "Guide: missed calls",
     eyebrow: "Guide",
-    h1: "Missed calls: how to stop losing jobs",
+    h1: "Missed calls: how to stop losing customers",
     intro:
-      "When you are on a job site, the phone rings and you cannot answer. For a customer looking for a plumber, a heating engineer or an air conditioning installer, what happens next is almost always the same: they call the next company.",
+      "When you are with a client or busy on the job, the phone rings and you cannot answer. For a customer looking for your services, what happens next is almost always the same: they call the next company.",
     sections: [
       {
         title: "Why a missed call is expensive",
@@ -930,9 +833,9 @@ const en: Record<ContentSlug, ContentPageData> = {
       },
       {
         title: "The most common causes",
-        paras: ["In technical businesses the same situations come up again and again:"],
+        paras: ["In most businesses the same situations come up again and again:"],
         bullets: [
-          "technicians are on site, and so is the owner",
+          "the team is out in the field, and so is the owner",
           "nobody answers during lunch or after 6 pm",
           "voicemail is full or never listened to",
           "requests from the website or by message get no quick reply",
@@ -974,8 +877,6 @@ const en: Record<ContentSlug, ContentPageData> = {
     linksTitle: "Go further",
     links: [
       { label: "Lost appointments calculator", href: "/calculadora" },
-      { label: "Marketing for plumbing businesses", href: "/plomberie" },
-      { label: "Marketing for HVAC businesses", href: "/climatisation" },
       { label: "Guide: getting more Google reviews", href: "/guide-avis-google" },
     ],
     ctaTitle: "Losing calls? Let's measure it together",
@@ -984,14 +885,14 @@ const en: Record<ContentSlug, ContentPageData> = {
   },
   "guide-avis-google": {
     kind: "article",
-    metaTitle: `Google reviews: how to get more (plumber, heating engineer, electrician) | ${SUFFIX.en}`,
+    metaTitle: `Google reviews: how to get more | ${SUFFIX.en}`,
     metaDescription:
-      "How to get more Google reviews as a plumber, heating engineer, electrician or air conditioning installer: when to ask, what to write, how to reply.",
+      "How to get more Google reviews for your business: when to ask, what to write, how to reply.",
     breadcrumb: "Guide: Google reviews",
     eyebrow: "Guide",
-    h1: "Google reviews: how to get more as a building trades business",
+    h1: "Google reviews: how to get more for your business",
     intro:
-      "When a customer searches for a plumber, an electrician or a heating engineer, they look at the Google listing before calling: number of reviews, rating and the business's replies. Here is how to earn more, without tricks.",
+      "When a customer searches for a professional, they look at the Google listing before calling: number of reviews, rating and the business's replies. Here is how to earn more, without tricks.",
     sections: [
       {
         title: "Why reviews matter",
@@ -1047,8 +948,6 @@ const en: Record<ContentSlug, ContentPageData> = {
     ],
     linksTitle: "Go further",
     links: [
-      { label: "Marketing for plumbing businesses", href: "/plomberie" },
-      { label: "Marketing for electrical businesses", href: "/electricite" },
       { label: "Guide: stop losing calls", href: "/guide-appels-manques" },
       { label: "About klik", href: "/a-propos" },
     ],
@@ -1060,7 +959,7 @@ const en: Record<ContentSlug, ContentPageData> = {
     kind: "service",
     metaTitle: `AI marketing agency in Angers and Maine-et-Loire | ${SUFFIX.en}`,
     metaDescription:
-      "klik, AI marketing agency in Angers and Maine-et-Loire: customer acquisition, recovered appointments, Google reviews, website and Google listing for small businesses and technical trades.",
+      "klik, AI marketing agency in Angers and Maine-et-Loire: customer acquisition, recovered appointments, Google reviews, website and Google listing for small businesses.",
     breadcrumb: "AI marketing agency in Angers",
     eyebrow: "Angers and Maine-et-Loire",
     h1: "AI marketing agency in Angers and Maine-et-Loire",
@@ -1087,7 +986,7 @@ const en: Record<ContentSlug, ContentPageData> = {
       {
         title: "Which businesses",
         paras: [
-          "We mostly work with building businesses: plumbing, heating, air conditioning, electrical, roofing, energy renovation, masonry, painting. If you run a service business with a team and a calendar to fill, let's talk.",
+          "We work with small businesses across all sectors. If you run a service business with a team and a calendar to fill, let's talk.",
         ],
       },
       {
@@ -1114,7 +1013,6 @@ const en: Record<ContentSlug, ContentPageData> = {
     linksTitle: "Go further",
     links: [
       { label: "Lost appointments calculator", href: "/calculadora" },
-      { label: "Marketing for HVAC businesses", href: "/climatisation" },
       { label: "Guide: stop losing calls", href: "/guide-appels-manques" },
       { label: "About klik", href: "/a-propos" },
     ],
@@ -1124,18 +1022,18 @@ const en: Record<ContentSlug, ContentPageData> = {
   },
   "guide-relance-devis": {
     kind: "article",
-    metaTitle: `Following up a quote: a guide for building trades | klik`,
+    metaTitle: `Following up a quote: a practical guide | klik`,
     metaDescription:
-      "Why a quote goes unanswered, when and how to follow it up without being pushy, and what a building business can automate.",
+      "Why a quote goes unanswered, when and how to follow it up without being pushy, and what a business can automate.",
     breadcrumb: "Following up quotes",
     eyebrow: "Guide",
-    h1: "Following up your quotes when you work in the building trades",
+    h1: "Following up your quotes without being pushy",
     intro:
       "A quote sent without follow-up often goes unanswered: the customer compares, hesitates or forgets. Here is when and how to follow up without being pushy, and what you can automate so you don't have to think about it while you're on site.",
     sections: [
       {
         title: "Why a quote goes unanswered",
-        paras: ["It isn't necessarily a no. In the building trades, a few reasons come up again and again:"],
+        paras: ["It isn't necessarily a no. A few reasons come up again and again:"],
         bullets: [
           "the customer is comparing several companies before deciding",
           "the project isn't urgent and slips down the list",
@@ -1156,7 +1054,7 @@ const en: Record<ContentSlug, ContentPageData> = {
         title: "What to say in the follow-up",
         paras: ["Tone matters more than length. A good follow-up is short, useful and easy to answer:"],
         bullets: [
-          "recall the job in one sentence (\"your roofing project at …\")",
+          "recall the job in one sentence (\"your project at …\")",
           "ask whether there are questions about the quote",
           "offer a call or a visit if needed",
           "never pressure the decision",
@@ -1187,68 +1085,26 @@ const en: Record<ContentSlug, ContentPageData> = {
       { label: "Missed-appointments calculator", href: "/calculadora" },
       { label: "Guide: missed calls", href: "/guide-appels-manques" },
       { label: "Guide: getting more Google reviews", href: "/guide-avis-google" },
-      { label: "All our building trades", href: "/metiers" },
       { label: "Our services", href: "/services" },
     ],
     ctaTitle: "Let's talk about your quotes",
     ctaSubtitle: "Tell us how you follow up quotes today, and we'll tell you how we'd approach it.",
     ctaButton: "Request a free diagnosis",
   },
-  "metiers": {
-    kind: "hub",
-    metaTitle: `Marketing for building businesses, trade by trade | klik`,
-    metaDescription:
-      "All klik pages by trade: plumbing, heating, air conditioning, electrical, roofing, energy renovation, masonry, painting.",
-    breadcrumb: "Trades",
-    eyebrow: "Trades",
-    h1: "Marketing for building businesses, trade by trade",
-    intro:
-      "klik works with building businesses that want more jobs without chasing customers. Pick your trade to see what we concretely do for you.",
-    sections: [
-      {
-        title: "What comes up in every trade",
-        paras: ["Whatever the trade, the same losses nearly always appear:"],
-        bullets: [
-          "missed calls while on site",
-          "quotes sent and never followed up",
-          "too few Google reviews",
-          "a website and Google listing that don't clearly explain what you do",
-        ],
-      },
-      {
-        title: "How we work",
-        paras: ["We start with a free 20-minute diagnosis: we look at your business, your area and what's losing you customers. If it suits you, we set up a clear plan with what we do and what to expect. No lock-in."],
-      },
-    ],
-    linksTitle: "Our pages by trade",
-    links: [
-      { label: "Marketing for plumbing businesses", href: "/plomberie" },
-      { label: "Marketing for HVAC and air conditioning businesses", href: "/climatisation" },
-      { label: "Marketing for electrical businesses", href: "/electricite" },
-      { label: "Marketing agency for roofing companies", href: "/couvreur" },
-      { label: "Marketing agency for energy renovation", href: "/renovation-energetique" },
-      { label: "Marketing agency for heating companies", href: "/chauffagiste" },
-      { label: "Marketing agency for masons", href: "/macon" },
-      { label: "Marketing agency for painters and decorators", href: "/peintre-batiment" },
-    ],
-    ctaTitle: "Shall we talk about your trade?",
-    ctaSubtitle: "Tell us what you do and where you work, and we'll tell you how we'd approach it.",
-    ctaButton: "Request a free diagnosis",
-  },
   "services": {
     kind: "hub",
-    metaTitle: `Our services for building businesses | klik`,
+    metaTitle: `Our AI marketing agency services | klik`,
     metaDescription:
-      "Customer acquisition, recovering lost appointments, Google reviews, website and Google listing: what klik does for building businesses.",
+      "Customer acquisition, recovering lost appointments, Google reviews, website and Google listing: what klik does for your business.",
     breadcrumb: "Services",
     eyebrow: "Services",
-    h1: "Our services for building businesses",
+    h1: "Our AI marketing agency services",
     intro:
-      "Four services, one goal: a calendar that fills up without you losing jobs to a missed call, a forgotten quote or an empty Google listing.",
+      "Four services, one goal: a calendar that fills up without you losing customers to a missed call, a forgotten quote or an empty Google listing.",
     sections: [
       {
         title: "Customer acquisition",
-        paras: ["Local SEO and targeted campaigns so you show up when someone searches for your trade nearby."],
+        paras: ["Local SEO and targeted campaigns so you show up when someone searches for your services nearby."],
       },
       {
         title: "Recovering lost appointments",
@@ -1269,7 +1125,6 @@ const en: Record<ContentSlug, ContentPageData> = {
       { label: "Guide: missed calls", href: "/guide-appels-manques" },
       { label: "Guide: following up quotes", href: "/guide-relance-devis" },
       { label: "Guide: getting more Google reviews", href: "/guide-avis-google" },
-      { label: "All our building trades", href: "/metiers" },
     ],
     ctaTitle: "Which service do you need most?",
     ctaSubtitle: "Tell us your situation and we'll tell you where we'd start.",

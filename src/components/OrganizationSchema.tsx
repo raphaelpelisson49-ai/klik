@@ -53,10 +53,6 @@ export function OrganizationSchema({ locale }: { locale: Locale }) {
               "Avis clients et réputation Google",
               "Création de site web et fiche Google",
             ],
-            audience: {
-              "@type": "BusinessAudience",
-              name: "Entreprises du bâtiment : plomberie, chauffage, climatisation, électricité, couverture, rénovation énergétique, maçonnerie, peinture",
-            },
           },
           {
             "@type": "WebSite",

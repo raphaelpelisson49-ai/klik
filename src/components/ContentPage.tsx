@@ -13,15 +13,12 @@ const HOME_LABEL: Record<Locale, string> = { fr: "Accueil", es: "Inicio", en: "H
 /** Les guides renvoient toujours vers les pages hub (métiers et services). */
 const HUB_LINKS: Record<Locale, { label: string; href: string }[]> = {
   fr: [
-    { label: "Tous nos métiers du bâtiment", href: "/metiers" },
     { label: "Nos services", href: "/services" },
   ],
   es: [
-    { label: "Todos nuestros oficios de la construcción", href: "/metiers" },
     { label: "Nuestros servicios", href: "/services" },
   ],
   en: [
-    { label: "All our building trades", href: "/metiers" },
     { label: "Our services", href: "/services" },
   ],
 };
