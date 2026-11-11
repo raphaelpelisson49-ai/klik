@@ -2,9 +2,9 @@ import type { Dictionary } from "./es";
 
 const en: Dictionary = {
   meta: {
-    title: "Marketing for plumbers, electricians and HVAC | klik",
+    title: "AI marketing agency | klik",
     description:
-      "klik fills the calendar of technical small businesses (HVAC, plumbing, electrical) with AI: customer acquisition, Google reviews, website and Google listing.",
+      "klik, an AI marketing agency: customer acquisition, Google reviews, website and Google listing to fill your calendar.",
   },
 
   nav: {
@@ -138,7 +138,7 @@ const en: Dictionary = {
     fallback: {
       tag: "General diagnosis",
       headline: "We can already see something here, but we need a few more details.",
-      body: "Technical businesses almost always lose customers in three places: people can't find them, don't get a timely reply, or never hear back. From what you've told us, we already have a hunch.",
+      body: "Businesses almost always lose customers in three places: people can't find them, don't get a timely reply, or never hear back. From what you've told us, we already have a hunch.",
       teaser: "The fastest way to know for sure is to tell us more — we'll tell you exactly what's going on.",
     },
   },
@@ -149,7 +149,7 @@ const en: Dictionary = {
     p1: "klik was born from an unconventional path: years of technical trades, demanding work learned on the job. Solid, respectable — but leaving a persistent feeling of a closed-off future.",
     p2: "Discovering artificial intelligence was the turning point: not as an abstract concept, but as a tool applicable to real problems faced by real people. Combining hands-on trade knowledge with AI systems gave rise to klik.",
     missionLabel: "Our mission",
-    missionQuote: "Help owners of technical small businesses keep their calendar full without losing weekends to marketing.",
+    missionQuote: "Help business owners keep their calendar full without losing weekends to marketing.",
     valores: [
       { title: "Radical transparency", description: "We say what works and what doesn't." },
       { title: "Measurable results", description: "Numbers, not feelings." },
@@ -161,13 +161,13 @@ const en: Dictionary = {
 
   servicios: {
     number: "02",
-    title: "Digital marketing for technical small businesses: what we do for you",
+    title: "AI-powered digital marketing: what we do for you",
     subtitle:
       "No omnichannel solutions or growth-marketing buzzwords. Concrete services, explained the way we'd explain them to a lifelong customer.",
     items: [
-      { title: "We fill your calendar", description: "Local SEO and campaigns so people find you when they search for a plumber, an HVAC technician or an electrician nearby. The phone rings, not a chart." },
+      { title: "We fill your calendar", description: "Local SEO and campaigns so people find you when they search for your services nearby. The phone rings, not a chart." },
       { title: "We recover lost appointments", description: "Automatic follow-up for anyone who asks and doesn't hear back. No customer is left waiting." },
-      { title: "Reviews that make you stand out", description: "We ask for the Google review at the right moment so you show up first when people search for a tradesperson nearby." },
+      { title: "Reviews that make you stand out", description: "We ask for the Google review at the right moment so you show up first when people search for a business like yours nearby." },
       { title: "A website and listing that convert", description: "A website and a Google Business Profile built so people call you, not your neighbor." },
       { title: "Five-minute reports", description: "How many customers, how much each one costs, what's next. No jargon, no filler." },
       { title: "By your side every week", description: "We adjust the strategy based on what actually works, not what sounds good." },
@@ -212,7 +212,7 @@ const en: Dictionary = {
     items: [
       { q: "What exactly do you do?", a: "We fill your calendar with customers. Without you needing to understand marketing." },
       { q: "How do I know this works?", a: "It's normal to be skeptical. That's why we measure it over 3 weeks and you decide if we continue." },
-      { q: "What kind of businesses do you work with?", a: "Technical small businesses in general: if your business is booked with customers and delivered on-site, we speak your language. Tell us about yours and we'll see if it's a fit." },
+      { q: "What kind of businesses do you work with?", a: "Businesses of every size: if you want more customers, we speak your language. Tell us about yours and we'll see if it's a fit." },
       { q: "What happens if I want to cancel?", a: "You tell us and we stop. We never leave you unsure of what happens if you cancel — no lock-in contracts." },
       { q: "Do you guarantee results?", a: "No. We never promise results on unrealistic timelines. What we do is measure every week and show you the numbers exactly as they are." },
     ],
@@ -233,8 +233,8 @@ const en: Dictionary = {
     title: "Tell us about your case",
     subtitle: "Four quick questions. As you answer, your card fills itself in: it's exactly what reaches us.",
     steps: ["Your business", "What's going on", "When we call you", "Your details"],
-    oficioLabel: "What do you do?",
-    oficios: ["HVAC", "Plumbing", "Electrical", "Maintenance", "Renovation", "Another trade"],
+    oficioLabel: "What sector are you in?",
+    oficios: ["Services", "Retail", "Food & hospitality", "Health & wellness", "Construction & trades", "Another sector"],
     equipoLabel: "How big is your team?",
     equipos: ["Just me", "2 to 5", "6 to 20", "More than 20"],
     problemaLabel: "Tick whatever sounds familiar (you can pick several)",
@@ -292,7 +292,7 @@ const en: Dictionary = {
   },
 
   footer: {
-    tagline: "AI-driven customer acquisition for technical small businesses.",
+    tagline: "AI marketing agency.",
     serviciosTitle: "Services",
     servicios: ["Customer acquisition", "Recovering appointments", "Reviews & reputation", "Website & Google listing"],
     siteTitle: "klik",
@@ -302,12 +302,6 @@ const en: Dictionary = {
       { label: "Our story", href: "/#historia" },
       { label: "How we work", href: "/#proceso" },
       { label: "FAQ", href: "/#preguntas" },
-      { label: "HVAC and air conditioning", href: "/climatisation" },
-      { label: "Plumbing", href: "/plomberie" },
-      { label: "Electrical", href: "/electricite" },
-      { label: "Roofing", href: "/couvreur" },
-      { label: "Energy renovation", href: "/renovation-energetique" },
-      { label: "All trades", href: "/metiers" },
       { label: "Our services", href: "/services" },
       { label: "About klik", href: "/a-propos" },
       { label: "Guide: missed calls", href: "/guide-appels-manques" },
